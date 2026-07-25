@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- Langhuce Aribc -->
@@ -24,9 +25,58 @@
     <link rel="stylesheet" href="Style/sass.css">
 
 </head>
+
 <body>
 
     <!-- Header Start -->
+    <header class="h-[100px] flex border-b-1 border-border">
+        <div class="container">
+            <div class="header-top flex justify-between items-center">
+                <div class="w-[180px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
+                    <img src="Imgs/logo.png" alt="Logo">
+                </div>
+
+                <div class="flex items-center bg-border rounded-lg overflow-hidden h-16">
+                    <select
+                        class="border-0 bg-transparent px-6 ps-0 w-auto h-full text-center font-bold text-[16px] outline-none cursor-pointer">
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics & Digita</option>
+                        <option value="phones">Phones & Tablety</option>
+                        <option value="fashion">Fashion & Clothings</option>
+                        <option value="tv">Telivsion & Monitor</option>
+                        <option value="jewelry">Jewelry & Watches</option>
+                        <option value="washing">Washing Machine</option>
+                        <option value="toys">Toys & Hobbies</option>
+                    </select>
+
+                    <!-- الخط الفاصل بين الـ Select والـ Input -->
+                    <div class="h-16 w-[2px] bg-gray-400"></div>
+
+                    <input class="w-98 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
+                        type="text" placeholder="Search For Products">
+
+                    <button
+                        class="w-14 text-white h-full bg-main cursor-pointer hover:bg-orange-500 duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <!-- أيقونات المفضلة والسلة -->
+
+                <div class="flex items-center gap-7">
+                    <button class="cursor-pointer relative">
+                        <i class="text-[23px] fa-regular fa-heart"></i>
+                        <span
+                            class="absolute -top-2 -right-3 z-10 bg-main text-white w-5 h-5 rounded-full flex justify-center items-center text-xs font-bold">0</span>
+                    </button>
+                    <button class="cursor-pointer relative">
+                        <i class="text-[23px] fa-solid fa-cart-shopping"></i>
+                        <span
+                            class="absolute -top-2 -right-3 z-10 bg-main text-white w-5 h-5 rounded-full flex justify-center items-center text-xs font-bold">0</span>
+                    </button>
+                </div>
+            </div>
+    </header>
     <!-- Header End -->
 
 
@@ -65,4 +115,5 @@
     <script type="module" src="JS/submit.js"></script>
 
 </body>
+
 </html>

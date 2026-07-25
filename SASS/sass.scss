@@ -26,8 +26,27 @@ body {
 }
 
 
+// Unittlty
+.container{
+  width: 90%;
+  max-width: 1350px;
+  margin: auto;
+}
+
+input::placeholder{
+  color: var(--p-color);
+}
 
 // Header Start
+header .header-top select{
+  position: relative;
+}
+header .header-top select::after{
+  width: 100%;
+  height: 3px;
+  background-color: var(--p-color);
+  
+}
 // Header End
 
 
