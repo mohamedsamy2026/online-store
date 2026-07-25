@@ -1,9 +1,11 @@
 /* Import Tailwind CSS */
 @import "tailwindcss";
 
+
 /* Import Flowbite */
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
+
 
 /* Virbiles */
 @theme {
