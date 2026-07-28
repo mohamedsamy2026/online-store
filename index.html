@@ -3,7 +3,7 @@
 
 <head>
 
-    <!-- Langhuce Aribc -->
+    <!-- Language Arabic -->
     <meta charset="UTF-8">
 
     <!-- Responsive Design -->
@@ -24,21 +24,74 @@
     <!-- Link Style SASS -->
     <link rel="stylesheet" href="Style/sass.css">
 
+    <link rel="stylesheet" href="Style/style.css">
+
 </head>
 
 <body>
 
+    <!-- Carts Start -->
+    <section class="cart">
+        <div class="cart-drawer bg-white shadow-xl p-5 flex flex-col justify-between h-full">
+
+            <!-- الهيدر -->
+            <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                <h3 class="font-bold text-xl text-gray-800">Cart Items : <span
+                        class="text-orange-500 font-bold">2</span></h3>
+                <button class="close-btn text-gray-600 hover:text-black cursor-pointer">
+                    <i class="fa-solid fa-circle-xmark text-3xl close-cart"></i>
+                </button>
+            </div>
+
+            <!-- 1 -->
+            <div class="cart-items flex-1 overflow-y-auto py-2">
+                <div class="cart-item flex items-center gap-3 py-3 border-b border-gray-100">
+                    <img src="Imgs/banner3_1.png" alt="product" class="w-18 h-18 object-cover rounded">
+                    <div class="flex-1 ps-4">
+                        <p class="text-xs font-semibold text-gray-800">Lorem ipsum dolor sit amet consectetur
+                            adipisicing.</p>
+                        <span class="text-gray-500 text-sm font-medium">$300</span>
+                        <div class="flex items-center gap-4 mt-2">
+                            <button class="qty-btn"><i class="fa-solid fa-minus"></i></button>
+                            <span class="text-orange-500 font-bold text-sm">1</span>
+                            <button class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <button class="delete-btn text-2xl text-gray-400 hover:text-red-500 cursor-pointer"><i
+                            class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+
+            <!-- الفوتر -->
+            <div class="cart-footer pt-4 border-t border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600 font-medium">subtotal</span>
+                    <span class="text-orange-500 font-bold text-lg">$ 580</span>
+                </div>
+                <div class="flex justify-between items-center gap-3 mt-8">
+                    <a href="HTML/check.html" class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
+                    <button class="main-btn shop-more-btn cursor-pointer close-cart">SHOP MORE</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Carts End -->
+
     <!-- Header Start -->
-    <header class="h-[100px] flex border-b-1 border-border">
-        <div class="container">
-            <div class="header-top flex justify-between items-center">
+    <header class="py-4 ">
+
+        <!-- Header Top Start -->
+        <div class="header-top flex justify-between items-center pb-5">
+            <div class="container mx-auto flex justify-between items-center">
                 <div class="w-[180px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
                     <img src="Imgs/logo.png" alt="Logo">
                 </div>
 
-                <div class="flex items-center bg-border rounded-lg overflow-hidden h-16">
+                <div class="flex items-center bg-border rounded-lg overflow-hidden h-14">
                     <select
-                        class="border-0 bg-transparent px-6 ps-0 w-auto h-full text-center font-bold text-[16px] outline-none cursor-pointer">
+                        class="border-0 bg-transparent px-4 w-auto h-full text-center font-bold text-[16px] outline-none cursor-pointer">
                         <option value="all">All Categories</option>
                         <option value="electronics">Electronics & Digita</option>
                         <option value="phones">Phones & Tablety</option>
@@ -50,9 +103,9 @@
                     </select>
 
                     <!-- الخط الفاصل بين الـ Select والـ Input -->
-                    <div class="h-16 w-[2px] bg-gray-400"></div>
+                    <div class="h-10 w-[2px] bg-gray-400"></div>
 
-                    <input class="w-98 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
+                    <input class="w-96 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
                         type="text" placeholder="Search For Products">
 
                     <button
@@ -62,54 +115,183 @@
                 </div>
 
                 <!-- أيقونات المفضلة والسلة -->
-
-                <div class="flex items-center gap-7">
-                    <button class="cursor-pointer relative">
-                        <i class="text-[23px] fa-regular fa-heart"></i>
-                        <span
-                            class="absolute -top-2 -right-3 z-10 bg-main text-white w-5 h-5 rounded-full flex justify-center items-center text-xs font-bold">0</span>
+                <div class="icons">
+                    <button>
+                        <i class="fa-regular fa-heart"></i>
+                        <span>0</span>
                     </button>
-                    <button class="cursor-pointer relative">
-                        <i class="text-[23px] fa-solid fa-cart-shopping"></i>
-                        <span
-                            class="absolute -top-2 -right-3 z-10 bg-main text-white w-5 h-5 rounded-full flex justify-center items-center text-xs font-bold">0</span>
+                    <button class="close-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span>0</span>
                     </button>
                 </div>
             </div>
+
+        </div>
+        <!-- Header Top End -->
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom border-t border-border w-full shadow-sm">
+            <div class="container mx-auto flex justify-between items-center">
+
+                <div class="bg-main relative">
+                    <button id="btn"
+                        class="text-white h-17 px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                        <span class="font-bold">Browse Category</span>
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </button>
+                    <ul class="category-list">
+                        <li><a href="#">Top 10 Offers</a></li>
+                        <li><a href="#">Electronics & Digital</a></li>
+                        <li><a href="#">Phones & Tablets</a></li>
+                        <li><a href="#">Fashion & Clothings</a></li>
+                        <li><a href="#">Television & Monitor</a></li>
+                        <li><a href="#">Jewelry & Watches</a></li>
+                        <li><a href="#">Toys & Hobbies</a></li>
+                    </ul>
+                </div>
+
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#accesories">Accesories</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="flex items-center gap-4">
+                    <a href="#"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Login</span>
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </a>
+                    <a href="#"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Sign UP</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Header Bottom End -->
+
+        </div>
     </header>
     <!-- Header End -->
 
 
     <!-- Hero Section Start -->
+    <section id="home">
+        <div class="container flex items-start">
+            <div class="swiper swiper-home">
+                <div class="swiper-wrapper banner1">
+                    <div class="swiper-slide"><a href="#"><img src="Imgs/banner_home1.png" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="Imgs/banner_home2.png" alt=""></a></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="box-img banner1">
+                <img src="Imgs/banner_home3.png" alt="">
+            </div>
+        </div>
+    </section>
     <!-- Hero Section End -->
 
+    <!-- Hero Bottom Start -->
+    <section id="hero-bottom" class="py-10">
+        <div class="container">
+            <div class="items flex justify-between items-center flex-wrap gap-3">
+                <div class="item flex justify-between items-center gap-4 py-4 px-5 rounded-[10px]">
+                    <img src="Imgs/banner3_1.png">
+                    <div class="content">
+                        <h5 class="font-bold">Break Disc</h5>
+                        <h5 class="font-bold">deals on this</h5>
 
-    <!-- Banners 1 Start -->
-    <!-- Banners 1 End -->
+                        <div class="sale flex items-center justify-center gap-2">
+                            <p class="text-p">Up <br> To</p>
+                            <span class="font-black text-main text-[30px]">70%</span>
+                        </div>
+
+                        <h6 class="font-bold my-1">Shop Now</h6>
+
+                    </div>
+                </div>
+
+                <div class="item flex justify-between items-center gap-4 py-4 px-5 rounded-[10px]">
+                    <img src="Imgs/banner3_2.png">
+                    <div class="content">
+                        <h5 class="font-bold">Break Disc</h5>
+                        <h5 class="font-bold">deals on this</h5>
+
+                        <div class="sale flex items-center justify-center gap-2">
+                            <p class="text-p">Up <br> To</p>
+                            <span class="font-black text-main text-[30px]">70%</span>
+                        </div>
+
+                        <h6 class="font-bold my-1">Shop Now</h6>
+
+                    </div>
+                </div>
+
+                <div class="item flex justify-between items-center gap-4 py-4 px-5 rounded-[10px]">
+                    <img src="Imgs/banner3_3.png">
+                    <div class="content">
+                        <h5 class="font-bold">Break Disc</h5>
+                        <h5 class="font-bold">deals on this</h5>
+
+                        <div class="sale flex items-center justify-center gap-2">
+                            <p class="text-p">Up <br> To</p>
+                            <span class="font-black text-main text-[30px]">70%</span>
+                        </div>
+
+                        <h6 class="font-bold my-1">Shop Now</h6>
+
+                    </div>
+                </div>
+
+                <div class="item flex justify-between items-center gap-4 py-4 px-5 rounded-[10px]">
+                    <img src="Imgs/banner3_4.png">
+                    <div class="content">
+                        <h5 class="font-bold">Break Disc</h5>
+                        <h5 class="font-bold">deals on this</h5>
+
+                        <div class="sale flex items-center justify-center gap-2">
+                            <p class="text-p">Up <br> To</p>
+                            <span class="font-black text-main text-[30px]">70%</span>
+                        </div>
+
+                        <h6 class="font-bold my-1">Shop Now</h6>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Hero Bottom End -->
 
 
-    <!-- Banners 3 Start -->
-    <!-- Banners 3 End -->
-
-
-    <!-- Products 1 Start -->
-    <!-- Banners 1 End -->
-
-
-    <!-- Footer Start -->
-    <!-- Footer End -->
-
+    <!-- Product 1 Start -->
+    <section id="products1">
+        <div class="container">
+            <div class="title">
+                <h2><i class="fa-solid fa-tags"></i> Hot Deals</h2>
+            </div>
+        </div>
+    </section>
+    <!-- Product 1 End -->
 
 
 
     <!-- Product JS -->
     <script type="module" src="./JS/product.js"></script>
 
-    <!-- Swiper JS -->
-    <script type="module" src="./JS/swiper.js"></script>
-
     <!-- Script JS -->
     <script type="module" src="./JS/script.js"></script>
+
+    <!-- Swiper JS -->
+    <script type="module" src="./JS/swiper.js"></script>
 
     <!-- Submit JS -->
     <script type="module" src="JS/submit.js"></script>
