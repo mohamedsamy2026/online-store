@@ -13,7 +13,8 @@ input::placeholder {
   color: #7b7b7b;
 }
 
-p {
+p,
+h5 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -160,8 +161,7 @@ header .header-bottom .category-list li a:hover {
 .cart.active {
   right: 0;
 }
-
-.qty-btn {
+.cart .qty-btn {
   width: 24px;
   height: 24px;
   background-color: #f3f4f6;
@@ -174,11 +174,10 @@ header .header-bottom .category-list li a:hover {
   cursor: pointer;
   transition: 0.2s;
 }
-.qty-btn:hover {
+.cart .qty-btn:hover {
   background-color: #e5e7eb;
 }
-
-.main-btn {
+.cart .main-btn {
   width: 100%;
   padding: 13px;
   font-weight: bold;
@@ -187,20 +186,80 @@ header .header-bottom .category-list li a:hover {
   transition: 0.3s;
   border-radius: 4px;
 }
-
-.checkout-btn {
+.cart .checkout-btn {
   background-color: #ff7a00;
   color: #fff;
+  text-transform: uppercase;
 }
-.checkout-btn:hover {
+.cart .checkout-btn:hover {
   transform: scale(1.05);
 }
-
-.shop-more-btn {
+.cart .shop-more-btn {
   background-color: #fff;
   color: #ff7a00;
   border: 2px solid #ff7a00;
 }
-.shop-more-btn:hover {
+.cart .shop-more-btn:hover {
   transform: scale(1.05);
+}
+
+#products1 .container:first-child {
+  border-bottom: 3px solid #ff8716 !important;
+}
+#products1 .container:first-child .slider-btns button {
+  width: 38px;
+  height: 38px;
+  background-color: #f3f3f3;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #374151;
+  transition: all 0.2s ease-in-out;
+}
+#products1 .container:first-child .slider-btns button i {
+  font-size: 16px;
+}
+#products1 .container:first-child .slider-btns button:hover {
+  background-color: #d07118;
+  border-color: #d07118;
+  color: white;
+}
+#products1 .container:first-child .title-h2 {
+  position: relative;
+  padding: 12px 30px;
+  width: fit-content;
+  cursor: pointer;
+}
+#products1 .container:first-child .title-h2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  z-index: -1;
+}
+#products1 .container:first-child .title-h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 22px 22px 0 0;
+  border-color: white #d07118 transparent transparent;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+#products1 .container:first-child .title-h2 > * {
+  position: relative;
+  z-index: 2;
+}
+#products1 .container .start i {
+  color: #ff8716;
+  font-size: 14px;
 }

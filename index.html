@@ -12,7 +12,6 @@
     <!-- Title WebSite Online Store -->
     <title>Online Store | Mohamed Samy</title>
 
-    <!-- Link FlowBite And Tailwind CSS -->
     <link rel="stylesheet" href="./Style/style.css">
 
     <!-- Link Font Awesome  -->
@@ -24,6 +23,7 @@
     <!-- Link Style SASS -->
     <link rel="stylesheet" href="Style/sass.css">
 
+    <!-- Link FlowBite And Tailwind CSS -->
     <link rel="stylesheet" href="Style/style.css">
 
 </head>
@@ -70,7 +70,8 @@
                     <span class="text-orange-500 font-bold text-lg">$ 580</span>
                 </div>
                 <div class="flex justify-between items-center gap-3 mt-8">
-                    <a href="HTML/check.html" class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
+                    <a href="HTML/check.html"
+                        class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
                     <button class="main-btn shop-more-btn cursor-pointer close-cart">SHOP MORE</button>
                 </div>
             </div>
@@ -273,10 +274,64 @@
 
 
     <!-- Product 1 Start -->
-    <section id="products1">
-        <div class="container">
+    <section id="products1" class="py-8">
+        <div class="container flex justify-between items-center">
             <div class="title">
-                <h2><i class="fa-solid fa-tags"></i> Hot Deals</h2>
+                <h2 class="title-h2 bg-main text-white text-2xl font-bold flex items-center gap-3">
+                    <i class="fa-solid fa-tags"></i> ELECTRONICS
+                </h2>
+            </div>
+            <div class="slider-btns flex gap-3">
+                <button class="prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="next-btn"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <div class="container py-8 overflow-hidden">
+            <div class="swiper products-swiper">
+                <div class="swiper-wrapper flex items-center">
+
+                    <div class="swiper-slide max-w-sm p-6 border-2 border-border rounded-base shadow-xl group">
+                        <a href="#">
+                            <img class="rounded-base mb-8 mx-auto group-hover:scale-110 duration-200"
+                                src="Imgs/product/0.png" alt="product image" />
+                        </a>
+                        <div>
+                            <div class="start flex items-center space-x-3 mb-6">
+                                <div class="flex items-center space-x-1 rtl:space-x-reverse">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <a href="#" class="hover:underline duration-200">
+                                <h5 class="text-xl text-heading font-semibold tracking-tight">Apple Watch Series 7 GPS,
+                                    Aluminium Case, Starlight</h5>
+                            </a>
+                            <div class="py-5">
+                                <p class="text-main text-2xl font-bold">$80 <span
+                                        class="text-sm text-p line-through">$300</span></p>
+                            </div>
+                            <div class="flex items-center mt-3">
+                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i>
+                                        Add to cart
+                                    </button>
+                                </div>
+                                <div
+                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </section>
