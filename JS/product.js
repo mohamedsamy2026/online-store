@@ -1,4 +1,4 @@
-fetch("Folder Sub/products.json")
+fetch("products.json")
 
     .then(response => response.json())
 
