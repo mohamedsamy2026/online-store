@@ -50,8 +50,10 @@ header .header-top .icons button span {
   font-size: 0.75rem;
   font-weight: bold;
 }
+header .header-bottom .hum {
+  display: none;
+}
 header .header-bottom ul {
-  display: flex;
   align-items: center;
   gap: 2rem;
   font-weight: 600;
@@ -104,31 +106,40 @@ header .header-bottom .category-list li a:hover {
   color: white;
 }
 
-#home .container {
-  gap: 20px;
+.slider {
+  position: relative;
 }
-#home .container .swiper-home {
-  width: 100%;
-}
-#home .container .swiper-home .swiper-wrapper {
-  height: 100%;
-}
-#home .container .swiper-home .swiper-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-#home .container .box-img {
-  width: 28%;
-  height: 485px;
+.slider .container {
   display: flex;
+  justify-content: space-between;
 }
-#home .container .box-img img {
-  width: 100%;
+.slider .container .slide-swp {
+  width: 75%;
+  overflow: hidden;
+  position: relative;
+}
+.slider .container .slide-swp .swiper-pagination span {
+  background: #fff;
+  opacity: 1;
+}
+.slider .container .banner_2 {
+  width: 23%;
   height: 100%;
   object-fit: cover;
+}
+.slider .container .banner_2 a {
+  height: 100%;
+  width: 100%;
   display: block;
+}
+.slider .swiper-wrapper {
+  height: auto !important;
+}
+.slider .swiper-pagination-bullet-active {
+  background: #ff8716 !important;
+  width: 34px !important;
+  height: 8px !important;
+  border-radius: 30px !important;
 }
 
 #hero-bottom .items .item {
@@ -297,7 +308,7 @@ header .header-bottom .category-list li a:hover {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
 }
 
-footer .container .big-row p {
+footer .container .big-row span {
   width: 80%;
   padding: 10px 0;
 }
@@ -327,4 +338,44 @@ footer .container .row a i {
   color: #ff8716;
   font-size: 16px;
   margin-right: 5px;
+}
+
+@media (max-width: 1024px) {
+  header .header-bottom .container .hum {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ff8716;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #ff8716;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header .header-bottom .nav-links {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -400px;
+    width: 400px;
+    height: 100vh;
+    background-color: white;
+    z-index: 999;
+    justify-content: flex-start;
+    padding-top: 140px;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    transition: all 0.3s ease-in-out;
+  }
+  header .header-bottom .nav-links.active {
+    left: 0;
+  }
+  #home .slide-swp {
+    width: 100%;
+  }
 }

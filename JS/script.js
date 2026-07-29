@@ -28,3 +28,19 @@ close.forEach(element => {
 
 })
 // Cart End
+
+
+// Media Humborger Start
+let xmark = document.querySelector(".xmark");
+let bars = document.querySelector(".fa-bars");
+let nav_links = document.querySelector(".nav-links");
+
+bars.addEventListener("click", () => {
+   nav_links.classList.toggle("active")  
+})
+
+xmark.addEventListener("click", () => {
+   nav_links.classList.toggle("active")  
+})
+// Media Humborger End
+

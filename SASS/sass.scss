@@ -8,7 +8,6 @@ $color-heading: #121416;
 $border-color: #e5e5e5d5;
 $Sale-color: #e51a1a;
 
-
 // Body
 body {
   scroll-behavior: smooth;
@@ -86,8 +85,11 @@ header {
 
   //  Header bottom Start
   .header-bottom {
+    .hum {
+      display: none;
+    }
+
     ul {
-      display: flex;
       align-items: center;
       gap: 2rem;
       font-weight: 600;
@@ -155,41 +157,51 @@ header {
 // Header End
 
 // Hero Section Start
-#home {
+.slider {
+  position: relative;
+
   .container {
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
 
-    .swiper-home {
-      width: 100%;
+    .slide-swp {
+      width: 75%;
+      overflow: hidden;
+      position: relative;
 
-      .swiper-wrapper {
-        height: 100%;
-      }
-
-      .swiper-slide {
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
+      .swiper-pagination {
+        span {
+          background: #fff;
+          opacity: 1;
         }
       }
     }
 
-    .box-img {
-      width: 28%;
-      height: 485px;
-      display: flex;
+    .banner_2 {
+      width: 23%;
+      height: 100%;
+      object-fit: cover;
 
-      img {
-        width: 100%;
+      a {
         height: 100%;
-        object-fit: cover;
+        width: 100%;
         display: block;
       }
     }
   }
+
+  .swiper-wrapper {
+    height: auto !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $main-color !important;
+    width: 34px !important;
+    height: 8px !important;
+    border-radius: 30px !important;
+  }
 }
+
 // Hero Section End
 
 // Hero Bottom Start
@@ -213,6 +225,7 @@ header {
         transition: 0.3s;
       }
     }
+    
   }
 }
 // Hero Bottom End
@@ -371,7 +384,7 @@ header {
 footer {
   .container {
     .big-row {
-      p {
+      span {
         width: 80%;
         padding: 10px 0;
       }
@@ -393,11 +406,13 @@ footer {
         }
       }
     }
-   .row {
+    .row {
       a {
         display: inline-block;
-        transition: transform 0.2s ease, color 0.2s ease;
-        
+        transition:
+          transform 0.2s ease,
+          color 0.2s ease;
+
         &:hover {
           transform: translateX(7px);
           color: $main-color;
@@ -413,3 +428,61 @@ footer {
   }
 }
 // Footer End
+
+// Media Start
+
+// Header Start
+@media (max-width: 1024px) {
+  header {
+    .header-bottom {
+      .container {
+        .hum {
+          cursor: pointer;
+          font-size: 24px;
+          color: $main-color;
+          width: 40px;
+          height: 40px;
+          border-radius: 5px;
+          border: 2px solid $main-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .nav-links {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: -400px;
+        width: 400px;
+        height: 100vh;
+        background-color: white;
+        z-index: 999;
+        justify-content: flex-start;
+        padding-top: 140px;
+        align-items: center;
+        flex-direction: column;
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  // Home Swiper Start
+  #home {
+    .slide-swp {
+      width: 100%;
+    }
+  }
+  // Home Swiper End
+}
+// Header End
+
+// Media End

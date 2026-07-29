@@ -11,7 +11,7 @@ import 'swiper/css/autoplay';
 
 
 // 1. Hero Section Start
-const swiper = new Swiper('.swiper-home', {
+const swiper = new Swiper('.slide-swp', {
     modules: [Autoplay, Pagination],
     autoplay: {
         delay: 2500,
