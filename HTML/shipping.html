@@ -201,36 +201,101 @@
 
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 py-8 bg-white shadow-md rounded-lg mb-12 flex-grow w-full">
-        <h1 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-4">معلومات الشحن والتوصيل</h1>
+    <main dir="rtl"
+        class="max-w-4xl mx-auto px-6 py-10 bg-white shadow-xl rounded-2xl mb-12 flex-grow w-full border border-gray-100">
 
-        <p class="text-gray-600 mb-6">
-            نحن نحرص على توصيل طلباتكم بأسرع وقت وبأفضل جودة ممكنة لضمان راحتكم.
-        </p>
-
-        <section class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-2">1. مناطق التوصيل</h2>
-            <p class="text-gray-600 leading-relaxed">
-                نقوم بالشحن والتوصيل لكافة المحافظات والمدن داخل الجمهورية، ونسعى دائماً لتوسيع نطاق خدماتنا.
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-3 border-b-2 border-orange-500 pb-4 inline-block">رحلة
+                شحنتك معنا</h1>
+            <p class="text-gray-600 max-w-xl mx-auto text-base leading-relaxed">
+                نحن لا نقوم فقط بتوصيل الطلبات، بل نضمن لك تجربة نقل آمنة وسريعة من مستودعاتنا وحتى باب منزلك.
             </p>
-        </section>
+        </div>
 
-        <section class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-2">2. تكاليف الشحن</h2>
-            <p class="text-gray-600 leading-relaxed">
-                تختلف تكلفة الشحن بناءً على المدينة أو المحافظة التابع لها. يتم حساب تكلفة الشحن النهائية تلقائياً أثناء
-                إتمام طلب الشراء (Checkout) قبل تأكيد الطلب.
-            </p>
-        </section>
+        <!-- Timeline Container -->
+        <div class="relative border-r-2 border-orange-200 pr-6 mr-4 space-y-10">
 
-        <section class="mb-4">
-            <h2 class="text-xl font-semibold text-gray-800 mb-2">3. تتبع الشحنة</h2>
-            <p class="text-gray-600 leading-relaxed">
-                بمجرد خروج طلبك مع شركة الشحن، ستصلك رسالة نصية أو بريد إلكتروني يحتوي على رقم التتبع الخاص بطلبك لتتمكن
-                من متابعة حالة الشحنة لحظة بلحظة.
-            </p>
-        </section>
+            <!-- Step 1: Delivery Areas -->
+            <div class="relative group">
+                <span
+                    class="absolute -right-[35px] top-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </span>
+                <div
+                    class="p-6 bg-orange-50/40 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <h2 class="text-xl font-bold text-orange-600 mb-2 flex items-center gap-2">
+                        1. مناطق التوصيل الواسعة
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        نقوم بالشحن والتوصيل لكافة المحافظات والمدن داخل الجمهورية بكفاءة عالية، ونسعى دائماً لتوسيع
+                        نطاق خدماتنا لتصل أينما كنت.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2: Shipping Costs -->
+            <div class="relative group">
+                <span
+                    class="absolute -right-[35px] top-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-calculator"></i>
+                </span>
+                <div
+                    class="p-6 bg-orange-50/40 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <h2 class="text-xl font-bold text-orange-600 mb-2 flex items-center gap-2">
+                        2. تكاليف شحن شفافة
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        تختلف التكلفة بناءً على مدينتك، ويتم حسابها ووضوحها تلقائياً بالكامل أثناء خطوة إتمام الطلب
+                        (<span class="font-bold text-gray-800">Checkout</span>) قبل تأكيده نهائياً.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3: Tracking -->
+            <div class="relative group">
+                <span
+                    class="absolute -right-[35px] top-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-route"></i>
+                </span>
+                <div
+                    class="p-6 bg-orange-50/40 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <h2 class="text-xl font-bold text-orange-600 mb-2 flex items-center gap-2">
+                        3. تتبع الشحنة لحظة بلحظة
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        بمجرد خروج طلبك مع شركة الشحن، تصلك رسالة نصية أو بريد إلكتروني برقم التتبع الخاص بك لتتمكن من
+                        متابعة خط سير الطلب حتى الاستلام.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Extra Banner Box -->
+        <div
+            class="mt-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-6 text-white text-center shadow-lg">
+            <h3 class="text-xl font-bold mb-2">هل لديك استفسار خاص عن موعد التوصيل؟</h3>
+            <p class="text-orange-100 text-sm mb-4">فريق الخدمات اللوجستية متاح دائماً للإجابة على أسئلتك.</p>
+            <a href="support.html"
+                class="inline-block bg-white text-orange-600 font-bold px-6 py-2.5 rounded-xl hover:bg-gray-100 transition duration-300 shadow">
+                تواصل مع الدعم الفني
+            </a>
+        </div>
+
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -307,11 +372,11 @@
                 <div class="row space-y-3">
                     <h4 class="text-lg font-bold pb-2">Service us</h4>
                     <div class="links flex flex-col space-y-3 text-sm text-gray-300">
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Help</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                        <a href="support.html"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                        <a href="term.html"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                        <a href="privacy.html"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                        <a href="help.html"><i class="fa-solid fa-caret-right"></i> Help</a>
+                        <a href="faqs.html"><i class="fa-solid fa-caret-right"></i> FAQS</a>
                     </div>
                 </div>
 

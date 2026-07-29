@@ -197,36 +197,94 @@
 
 
 
+
+
+
+
+
+
+
+
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 py-8 bg-white shadow-md rounded-lg mb-12 flex-grow w-full">
-        <h1 class="text-3xl font-bold text-gray-900 mb-6 border-b pb-4">وقت التوصيل المتوقع</h1>
+    <main dir="rtl"
+        class="max-w-4xl mx-auto px-6 py-10 bg-white shadow-xl rounded-2xl mb-12 flex-grow w-full border border-gray-100">
 
-        <p class="text-gray-600 mb-6">
-            نعمل بجهد لضمان وصول طلبك في أسرع وقت ممكن. إليك تفاصيل المواعيد المتوقعة للتوصيل:
-        </p>
-
-        <section class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-2">1. المدن الرئيسية</h2>
-            <p class="text-gray-600 leading-relaxed">
-                عادة ما تستغرق مدة التوصيل للمدن الرئيسية من <strong>2 إلى 3 أيام عمل</strong> من تاريخ تأكيد الطلب.
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-3 border-b-2 border-orange-500 pb-4 inline-block">وقت
+                التوصيل المتوقع</h1>
+            <p class="text-gray-600 max-w-xl mx-auto text-base leading-relaxed">
+                نعمل بجهد لضمان وصول طلبك في أسرع وقت وبأعلى كفاءة. إليك تفاصيل المواعيد المتوقعة للتوصيل:
             </p>
-        </section>
+        </div>
 
-        <section class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-2">2. المحافظات والمدن الأخرى</h2>
-            <p class="text-gray-600 leading-relaxed">
-                قد تستغرق مدة التوصيل للمحافظات الأخرى والمناطق النائية من <strong>3 إلى 5 أيام عمل</strong>.
-            </p>
-        </section>
+        <!-- Time Grid Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
 
-        <section class="mb-4">
-            <h2 class="text-xl font-semibold text-gray-800 mb-2">3. أيام العطلات والإجازات الرسمية</h2>
-            <p class="text-gray-600 leading-relaxed">
-                يرجى ملاحظة أن أيام الجمعة والعطلات الرسمية لا تُحتسب ضمن أيام العمل الخاصة بالتوصيل، وقد تحدث بعض
-                التأخيرات البسيطة في أوقات المواسم والأعياد.
-            </p>
-        </section>
+            <!-- Card 1: Main Cities -->
+            <div
+                class="p-6 bg-gradient-to-l from-orange-50/60 to-white border border-orange-200 rounded-2xl shadow-sm hover:shadow-md transition duration-300 relative overflow-hidden group">
+                <div
+                    class="absolute -left-4 -bottom-4 text-orange-100/60 text-8xl font-black pointer-events-none group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+                <div class="relative z-10">
+                    <span class="inline-block p-3 bg-orange-500 text-white rounded-xl shadow-md mb-4 text-xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+                    <h2 class="text-xl font-bold text-gray-900 mb-2">1. المدن الرئيسية</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        عادة ما تستغرق مدة التوصيل للمدن الرئيسية من <strong class="text-orange-600 font-extrabold">2
+                            إلى 3 أيام عمل</strong> من تاريخ تأكيد الطلب.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Other Cities -->
+            <div
+                class="p-6 bg-gradient-to-l from-orange-50/60 to-white border border-orange-200 rounded-2xl shadow-sm hover:shadow-md transition duration-300 relative overflow-hidden group">
+                <div
+                    class="absolute -left-4 -bottom-4 text-orange-100/60 text-8xl font-black pointer-events-none group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-map"></i>
+                </div>
+                <div class="relative z-10">
+                    <span class="inline-block p-3 bg-orange-500 text-white rounded-xl shadow-md mb-4 text-xl">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </span>
+                    <h2 class="text-xl font-bold text-gray-900 mb-2">2. المحافظات والمدن الأخرى</h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        قد تستغرق مدة التوصيل للمحافظات الأخرى والمناطق النائية من <strong
+                            class="text-orange-600 font-extrabold">3 إلى 5 أيام عمل</strong>.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Holidays Alert Section -->
+        <div
+            class="p-6 bg-orange-50 border border-orange-200 rounded-2xl flex flex-col md:flex-row items-center gap-5 shadow-inner">
+            <div
+                class="w-16 h-16 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 shadow-md">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-gray-900 mb-1">3. أيام العطلات والإجازات الرسمية</h2>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    يرجى ملاحظة أن أيام الجمعة والعطلات الرسمية لا تُحتسب ضمن أيام العمل الخاصة بالتوصيل، وقد تحدث بعض
+                    التأخيرات البسيطة في أوقات المواسم والأعياد.
+                </p>
+            </div>
+        </div>
+
     </main>
+
+
+
+
+
+
+
 
 
 
@@ -301,11 +359,11 @@
                 <div class="row space-y-3">
                     <h4 class="text-lg font-bold pb-2">Service us</h4>
                     <div class="links flex flex-col space-y-3 text-sm text-gray-300">
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Support Center</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> Help</a>
-                        <a href="#"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                        <a href="support.html"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                        <a href="term.html"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                        <a href="privacy.html"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                        <a href="help.html"><i class="fa-solid fa-caret-right"></i> Help</a>
+                        <a href="faqs.html"><i class="fa-solid fa-caret-right"></i> FAQS</a>
                     </div>
                 </div>
 
