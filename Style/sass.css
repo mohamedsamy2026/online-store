@@ -296,3 +296,35 @@ header .header-bottom .category-list li a:hover {
 #products4 .container .over {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
 }
+
+footer .container .big-row p {
+  width: 80%;
+  padding: 10px 0;
+}
+footer .container .big-row .icons i {
+  background-color: #ff8716;
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all ease-in-out;
+  font-size: 22px;
+}
+footer .container .big-row .icons i:hover {
+  transform: translateY(-10px);
+}
+footer .container .row a {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+footer .container .row a:hover {
+  transform: translateX(7px);
+  color: #ff8716;
+}
+footer .container .row a i {
+  color: #ff8716;
+  font-size: 16px;
+  margin-right: 5px;
+}
