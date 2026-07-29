@@ -52,14 +52,14 @@ header {
     .icons {
       display: flex;
       align-items: center;
-      gap: 1.75rem;
+      gap: 2rem;
 
       button {
         cursor: pointer;
         position: relative;
 
         i {
-          font-size: 23px;
+          font-size: 30px;
         }
 
         span {
@@ -115,7 +115,8 @@ header {
       border: 2px solid $white-color;
       position: absolute;
       top: 100%;
-      width: 100%;
+      left: 26%;
+      width: 75%;
       z-index: 1545;
       display: flex;
       flex-direction: column;
@@ -225,7 +226,6 @@ header {
         transition: 0.3s;
       }
     }
-    
   }
 }
 // Hero Bottom End
@@ -233,8 +233,12 @@ header {
 // Cart Start
 
 .cart {
+   .cart-items {
+    min-height: 0;
+  }
   position: fixed;
   width: 350px;
+  height: 100%;
   right: -350px;
   top: 0;
   bottom: 0;
@@ -438,10 +442,9 @@ footer {
       .container {
         .hum {
           cursor: pointer;
-          font-size: 24px;
+          font-size: 30px;
           color: $main-color;
-          width: 40px;
-          height: 40px;
+          width: 65px;
           border-radius: 5px;
           border: 2px solid $main-color;
           display: flex;
@@ -484,5 +487,27 @@ footer {
   // Home Swiper End
 }
 // Header End
+@media (max-width: 768px) {
+  .cart {
+    width: 100%;
+    right: -100%;
+    &.active {
+      right: 0;
+    }
+  }
+  header {
+    .header-bottom {
+      .nav-links {
+        left: -100%;
+        width: 100%;
+
+        &.active {
+          left: 0;
+        }
+      }
+    }
+  }
+}
 
 // Media End
+

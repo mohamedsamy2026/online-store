@@ -25,14 +25,14 @@ h5 {
 header .header-top .icons {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 2rem;
 }
 header .header-top .icons button {
   cursor: pointer;
   position: relative;
 }
 header .header-top .icons button i {
-  font-size: 23px;
+  font-size: 30px;
 }
 header .header-top .icons button span {
   position: absolute;
@@ -73,7 +73,8 @@ header .header-bottom .category-list {
   border: 2px solid #fff;
   position: absolute;
   top: 100%;
-  width: 100%;
+  left: 26%;
+  width: 75%;
   z-index: 1545;
   display: flex;
   flex-direction: column;
@@ -160,9 +161,13 @@ header .header-bottom .category-list li a:hover {
   transition: 0.3s;
 }
 
+.cart .cart-items {
+  min-height: 0;
+}
 .cart {
   position: fixed;
   width: 350px;
+  height: 100%;
   right: -350px;
   top: 0;
   bottom: 0;
@@ -343,10 +348,9 @@ footer .container .row a i {
 @media (max-width: 1024px) {
   header .header-bottom .container .hum {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 30px;
     color: #ff8716;
-    width: 40px;
-    height: 40px;
+    width: 65px;
     border-radius: 5px;
     border: 2px solid #ff8716;
     display: flex;
@@ -377,5 +381,21 @@ footer .container .row a i {
   }
   #home .slide-swp {
     width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .cart {
+    width: 100%;
+    right: -100%;
+  }
+  .cart.active {
+    right: 0;
+  }
+  header .header-bottom .nav-links {
+    left: -100%;
+    width: 100%;
+  }
+  header .header-bottom .nav-links.active {
+    left: 0;
   }
 }
