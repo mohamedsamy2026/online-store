@@ -104,7 +104,7 @@ header .header-bottom .category-list li:last-child {
 header .header-bottom .category-list li a {
   display: block;
   width: 100%;
-  color: black;
+  color: #121416;
 }
 header .header-bottom .category-list li a:hover {
   color: white;
@@ -335,8 +335,12 @@ footer .container .big-row .icons i:hover {
   transform: translateY(-10px);
 }
 footer .container .row a {
+  margin-left: -10px;
+  color: white;
+  font-weight: bold;
   display: inline-block;
   transition: transform 0.2s ease, color 0.2s ease;
+  font-size: 17px;
 }
 footer .container .row a:hover {
   transform: translateX(7px);
@@ -344,7 +348,7 @@ footer .container .row a:hover {
 }
 footer .container .row a i {
   color: #ff8716;
-  font-size: 16px;
+  font-size: 18px;
   margin-right: 5px;
 }
 

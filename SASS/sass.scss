@@ -145,7 +145,7 @@ header {
         a {
           display: block;
           width: 100%;
-          color: black;
+          color: $color-heading;
 
           &:hover {
             color: white;
@@ -414,10 +414,14 @@ footer {
     }
     .row {
       a {
+        margin-left: -10px;
+        color: white;
+        font-weight: bold;
         display: inline-block;
         transition:
           transform 0.2s ease,
           color 0.2s ease;
+          font-size: 17px;
 
         &:hover {
           transform: translateX(7px);
@@ -426,7 +430,7 @@ footer {
 
         i {
           color: $main-color;
-          font-size: 16px;
+          font-size: 18px;
           margin-right: 5px;
         }
       }
