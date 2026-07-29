@@ -73,8 +73,8 @@ header .header-bottom .category-list {
   border: 2px solid #fff;
   position: absolute;
   top: 100%;
-  left: 26%;
-  width: 75%;
+  left: 0%;
+  width: 100%;
   z-index: 1545;
   display: flex;
   flex-direction: column;
@@ -346,6 +346,10 @@ footer .container .row a i {
 }
 
 @media (max-width: 1024px) {
+  header .header-bottom .container .category-list {
+    left: 26%;
+    width: 75%;
+  }
   header .header-bottom .container .hum {
     cursor: pointer;
     font-size: 30px;
