@@ -1,7 +1,8 @@
-// Import Flowbite
+// Import Flowbite Start
 import 'flowbite';
 import { initFlowbite } from 'flowbite';
 initFlowbite();
+// Import Flowbite End
 
 
 
@@ -9,7 +10,6 @@ initFlowbite();
 let btnCategory = document.getElementById("btn");
 let category_list = document.querySelector(".category-list");
 let links = document.querySelectorAll(".category-list li a");
-
 
 btnCategory.addEventListener("click", () => {
     category_list.classList.toggle("active")
@@ -21,21 +21,6 @@ links.forEach(link => {
     })
 })
 // Categroy End
-
-
-
-// Cart Start
-let close = document.querySelectorAll(".close-cart");
-let cart = document.querySelector(".cart");
-
-
-close.forEach(element => {
-    element.addEventListener("click", () => {
-        cart.classList.toggle("active")
-    })
-
-})
-// Cart End
 
 
 // Media Humborger Start
@@ -63,3 +48,15 @@ links_hum.forEach(link => {
 
 
 
+// Add Cart Start
+let close = document.querySelectorAll(".close-cart");
+let cart = document.querySelector(".cart");
+
+
+close.forEach(element => {
+    element.addEventListener("click", () => {
+        cart.classList.toggle("active")
+    })
+
+})
+// Add Cart End
