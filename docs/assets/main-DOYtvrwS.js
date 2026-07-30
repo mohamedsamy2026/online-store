@@ -1,4 +1,4 @@
-import"./script-67D_VgRf.js";/* empty css              */fetch(`products.json`).then(e=>e.json()).then(e=>{e.forEach(e=>{if(e.old_price){let t=document.querySelector(`.products1`),n=Math.round((e.old_price-e.price)/e.old_price*100);t.innerHTML+=`
+import"./script-Dht-ynbT.js";/* empty css              */fetch(`products.json`).then(e=>e.json()).then(e=>{e.forEach(e=>{if(e.old_price){let t=document.querySelector(`.products1`),n=Math.round((e.old_price-e.price)/e.old_price*100);t.innerHTML+=`
                   <div
                         class="swiper-slide relative max-w-sm p-6 border-2 border-border rounded-base shadow-xl group flex flex-col justify-between h-[500px]">
                         <div>
