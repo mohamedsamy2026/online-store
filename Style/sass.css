@@ -316,6 +316,65 @@ header .header-bottom .category-list li a:hover {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
 }
 
+main #checkout .container .all .input-coupon {
+  margin: 10px 0;
+  width: 100%;
+  outline: none;
+  border: 2px solid rgba(229, 229, 229, 0.8352941176);
+  padding: 15px 10px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #121416;
+}
+main #checkout .container .all .input-coupon::placeholder {
+  font-size: 16px;
+}
+main #checkout .container .all .cards .card .qty-btn {
+  width: 26px;
+  height: 26px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #374151;
+  cursor: pointer;
+  transition: 0.2s;
+}
+main #checkout .container .all .cards .card .qty-btn:hover {
+  background-color: #e5e7eb;
+}
+main #checkout .container .all .cards .card {
+  border-bottom: 1px solid rgba(229, 229, 229, 0.8352941176);
+}
+main #checkout .container .all .cards .card:last-child {
+  border-bottom: none;
+}
+main #checkout .container .all .form form .title {
+  margin: 0;
+}
+main #checkout .container .all .form form div {
+  margin: 10px 15px;
+  padding: 10px 0;
+}
+main #checkout .container .all .form form div label {
+  display: inline-block;
+  padding-bottom: 7px;
+  margin-left: 5px;
+}
+main #checkout .container .all .form form div input {
+  width: 100%;
+  outline: none;
+  border: 2px solid rgba(229, 229, 229, 0.8352941176);
+  padding: 15px 10px;
+  border-radius: 7px;
+  font-weight: bold;
+  font-size: 17px;
+  color: #121416;
+}
+
 footer .container .big-row span {
   width: 80%;
   padding: 10px 0;

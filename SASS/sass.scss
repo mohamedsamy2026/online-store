@@ -386,6 +386,86 @@ header {
 
 // Products End
 
+// Check Out Start
+
+main {
+  #checkout {
+    .container {
+      .all {
+        .input-coupon {
+          margin: 10px 0;
+          width: 100%;
+          outline: none;
+          border:2px solid $border-color;
+          padding: 15px 10px;
+          border-radius: 7px;
+          font-weight: bold;
+          font-size: 18px;
+          color: $color-heading;
+
+          &::placeholder{
+            font-size: 16px;
+          }
+        }
+        .cards {
+          .card {
+            .qty-btn {
+              width: 26px;
+              height: 26px;
+              background-color: #f3f4f6;
+              border: 1px solid #e5e7eb;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 15px;
+              color: #374151;
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover {
+                background-color: #e5e7eb;
+              }
+            }
+            border-bottom: 1px solid $border-color;
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+        .form {
+          form {
+            .title {
+              margin: 0;
+            }
+            div {
+              margin: 10px 15px;
+              padding: 10px 0;
+              label {
+                display: inline-block;
+                padding-bottom: 7px;
+                margin-left: 5px;
+              }
+              input {
+                width: 100%;
+                outline: none;
+                border:2px solid $border-color;
+                padding: 15px 10px;
+                border-radius: 7px;
+                font-weight: bold;
+                font-size: 17px;
+                color: $color-heading;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Check Out End
+
 // Footer Start
 footer {
   .container {
@@ -421,7 +501,7 @@ footer {
         transition:
           transform 0.2s ease,
           color 0.2s ease;
-          font-size: 17px;
+        font-size: 17px;
 
         &:hover {
           transform: translateX(7px);
