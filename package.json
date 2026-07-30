@@ -12,6 +12,7 @@
     "vite": "^8.1.5"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.111.0",
     "flowbite": "^4.0.2",
     "swiper": "^14.0.6",
     "tailwindcss": "^4.3.3"
