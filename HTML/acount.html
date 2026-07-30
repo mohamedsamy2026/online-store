@@ -105,7 +105,6 @@
                     </button>
                 </div>
 
-                <!-- 3. أيقونات المفضلة والسلة -->
                 <div class="icons flex items-center order-2 lg:order-3">
                     <button class="relative">
                         <i class="fa-regular fa-heart"></i>
@@ -204,80 +203,84 @@
 
 
 
-
     <!-- Main Content -->
-    <main dir="rtl"
-        class="max-w-4xl mx-auto px-6 py-10 bg-white shadow-xl rounded-2xl mb-12 flex-grow w-full border border-gray-100">
+    <main class="max-w-3xl mx-auto px-4 py-10 w-full flex-grow">
 
-        <!-- Header -->
-        <div class="text-center mb-10">
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-3 border-b-2 border-orange-500 pb-4 inline-block">وقت
-                التوصيل المتوقع</h1>
-            <p class="text-gray-600 max-w-xl mx-auto text-base leading-relaxed">
-                نعمل بجهد لضمان وصول طلبك في أسرع وقت وبأعلى كفاءة. إليك تفاصيل المواعيد المتوقعة للتوصيل:
-            </p>
-        </div>
+        <!-- Account Card -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
 
-        <!-- Time Grid Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-
-            <!-- Card 1: Main Cities -->
+            <!-- Card Header Banner -->
             <div
-                class="p-6 bg-gradient-to-l from-orange-50/60 to-white border border-orange-200 rounded-2xl shadow-sm hover:shadow-md transition duration-300 relative overflow-hidden group">
-                <div
-                    class="absolute -left-4 -bottom-4 text-orange-100/60 text-8xl font-black pointer-events-none group-hover:scale-110 transition duration-300">
-                    <i class="fa-solid fa-city"></i>
-                </div>
-                <div class="relative z-10">
-                    <span class="inline-block p-3 bg-orange-500 text-white rounded-xl shadow-md mb-4 text-xl">
-                        <i class="fa-solid fa-bolt"></i>
-                    </span>
-                    <h2 class="text-xl font-bold text-gray-900 mb-2">1. المدن الرئيسية</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        عادة ما تستغرق مدة التوصيل للمدن الرئيسية من <strong class="text-orange-600 font-extrabold">2
-                            إلى 3 أيام عمل</strong> من تاريخ تأكيد الطلب.
-                    </p>
+                class="bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-8 text-white flex flex-col sm:flex-row items-center gap-4">
+              
+                <div class="mx-auto sm:text-center w-full">
+                    <h2 class="text-2xl font-bold">محمد سامي</h2>
+                    <p class="text-orange-100 text-sm mt-1">عميل مميز</p>
                 </div>
             </div>
 
-            <!-- Card 2: Other Cities -->
-            <div
-                class="p-6 bg-gradient-to-l from-orange-50/60 to-white border border-orange-200 rounded-2xl shadow-sm hover:shadow-md transition duration-300 relative overflow-hidden group">
-                <div
-                    class="absolute -left-4 -bottom-4 text-orange-100/60 text-8xl font-black pointer-events-none group-hover:scale-110 transition duration-300">
-                    <i class="fa-solid fa-map"></i>
+            <!-- Profile Info Body -->
+            <div class="p-6 sm:p-8 space-y-6">
+
+                <h3 class="text-lg font-bold text-gray-800 border-b pb-3">البيانات الشخصية</h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Name -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="block text-xs font-semibold text-gray-400 mb-1">الاسم بالكامل</span>
+                        <span class="text-gray-800 font-medium text-base">محمد سامي محمود</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="block text-xs font-semibold text-gray-400 mb-1">البريد الإلكتروني</span>
+                        <span class="text-gray-800 font-medium text-base" dir="ltr">mohamed.sami@gmail.com</span>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="block text-xs font-semibold text-gray-400 mb-1">رقم الموبايل</span>
+                        <span class="text-gray-800 font-medium text-base" dir="ltr">+20 101 234 5678</span>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="block text-xs font-semibold text-gray-400 mb-1">العنوان الافتراضي</span>
+                        <span class="text-gray-800 font-medium text-base">بني سويف</span>
+                    </div>
                 </div>
-                <div class="relative z-10">
-                    <span class="inline-block p-3 bg-orange-500 text-white rounded-xl shadow-md mb-4 text-xl">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </span>
-                    <h2 class="text-xl font-bold text-gray-900 mb-2">2. المحافظات والمدن الأخرى</h2>
-                    <p class="text-gray-600 text-sm leading-relaxed">
-                        قد تستغرق مدة التوصيل للمحافظات الأخرى والمناطق النائية من <strong
-                            class="text-orange-600 font-extrabold">3 إلى 5 أيام عمل</strong>.
-                    </p>
+
+                <!-- Action Buttons -->
+                <div class="cursor-pointer pt-4 flex flex-col sm:flex-row gap-4 border-t">
+                    <button
+                        class="cursor-pointer flex-1 bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-6 rounded-xl transition shadow-sm text-center">
+                        تعديل البيانات
+                    </button>
+                    <button
+                        class="cursor-pointer flex-1 bg-red-50 hover:bg-red-100 text-red-600 font-semibold py-3 px-6 rounded-xl transition text-center border border-red-100">
+                        تسجيل الخروج
+                    </button>
                 </div>
+
             </div>
 
-        </div>
-
-        <!-- Holidays Alert Section -->
-        <div
-            class="p-6 bg-orange-50 border border-orange-200 rounded-2xl flex flex-col md:flex-row items-center gap-5 shadow-inner">
-            <div
-                class="w-16 h-16 bg-orange-500 text-white rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 shadow-md">
-                <i class="fa-solid fa-calendar-days"></i>
-            </div>
-            <div>
-                <h2 class="text-xl font-bold text-gray-900 mb-1">3. أيام العطلات والإجازات الرسمية</h2>
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    يرجى ملاحظة أن أيام الجمعة والعطلات الرسمية لا تُحتسب ضمن أيام العمل الخاصة بالتوصيل، وقد تحدث بعض
-                    التأخيرات البسيطة في أوقات المواسم والأعياد.
-                </p>
-            </div>
         </div>
 
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -341,7 +344,7 @@
                 </div>
 
 
-                <div class="row space-y-3">
+                              <div class="row space-y-3">
                     <h4 class="text-lg font-bold pb-2">Quick Links</h4>
                     <div class="links flex flex-col space-y-3 text-sm text-gray-300">
                         <!-- لغايه ما اربطه بالباك اند -->
