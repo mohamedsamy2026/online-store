@@ -118,6 +118,7 @@ header .header-bottom .category-list li a:hover {
   justify-content: space-between;
 }
 .slider .container .slide-swp {
+  border-radius: 10px;
   width: 75%;
   overflow: hidden;
   position: relative;
@@ -127,6 +128,7 @@ header .header-bottom .category-list li a:hover {
   opacity: 1;
 }
 .slider .container .banner_2 {
+  border-radius: 10px;
   width: 23%;
   height: 100%;
   object-fit: cover;

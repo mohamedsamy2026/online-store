@@ -202,79 +202,85 @@
     <main>
         <section id="checkout">
             <div class="container">
-                <div class="all grid lg:grid-cols-2 grid-cols-1 py-10 gap-y-10 lg:gap-5 justify-between items-start">
+                <div class="all grid xl:grid-cols-2 grid-cols-1 py-10 gap-y-10 lg:gap-5 justify-between items-start">
 
-                    <!-- Order Summary Column -->
                     <div
-                        class="order-summary relative border-2 border-border border-b-0 rounded-xl overflow-hidden shadow-sm mx-auto h-[98%] w-[85%]">
-                        <div class="title bg-main">
-                            <h3 class="text-white font-bold text-3xl py-4 text-center">Order Summary</h3>
+                        class="order-summary border-2 border-border rounded-xl overflow-hidden shadow-sm w-[100%] lg:w-[85%] mx-auto flex flex-col justify-between h-full">
+
+                        <!-- Top Section (Title & Cards) -->
+                        <div>
+                            <div class="title bg-main">
+                                <h3 class="text-white font-bold text-3xl py-4 text-center">Order Summary</h3>
+                            </div>
+
+                            <div class="cards px-8 overflow-y-auto max-h-[400px] divide-y divide-border">
+                                
+                                <!-- Card 1 -->
+                                <div class="card flex items-center gap-3 py-5 relative">
+                                    <img src="../public/Imgs/product/12.png" class="w-20 h-20 object-cover rounded-lg">
+                                    <div class="content flex-1">
+                                        <p class="text-heading font-bold">Large Venue building mapping Projector</p>
+                                        <span class="price text-p py-1 block">$400</span>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
+                                                    class="fa-solid fa-minus"></i></button>
+                                            <span class="text-orange-500 font-bold text-sm">1</span>
+                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
+                                                    class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+
+
+                                <!-- Card 2 -->
+                                <div class="card flex items-center gap-3 py-5 relative">
+                                    <img src="../public/Imgs/product/15.png" class="w-20 h-20 object-cover rounded-lg">
+                                    <div class="content flex-1">
+                                        <p class="text-heading font-bold">Large Venue building mapping Projector</p>
+                                        <span class="price text-p py-1 block">$400</span>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
+                                                    class="fa-solid fa-minus"></i></button>
+                                            <span class="text-orange-500 font-bold text-sm">1</span>
+                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
+                                                    class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="card flex items-center gap-3 py-5 relative">
+                                    <img src="../public/Imgs/product/11.png" class="w-20 h-20 object-cover rounded-lg">
+                                    <div class="content flex-1">
+                                        <p class="text-heading font-bold">Large Venue building mapping Projector</p>
+                                        <span class="price text-p py-1 block">$400</span>
+                                        <div class="flex items-center gap-4 mt-2">
+                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
+                                                    class="fa-solid fa-minus"></i></button>
+                                            <span class="text-orange-500 font-bold text-sm">1</span>
+                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
+                                                    class="fa-solid fa-plus"></i></button>
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
+
+                            </div>
                         </div>
 
-                        <div class="cards px-8 overflow-y-auto h-[400px] divide-y divide-border">
-                            <!-- Card 1 -->
-                            <div class="card flex items-center gap-3 py-5 relative">
-                                <img src="../public/Imgs/product/12.png" class="w-20 h-20 object-cover rounded-lg">
-                                <div class="content flex-1">
-                                    <p class="text-heading font-bold">Large Venue building mapping Projector</p>
-                                    <span class="price text-p py-1 block">$400</span>
-                                    <div class="flex items-center gap-4 mt-2">
-                                        <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                class="fa-solid fa-minus"></i></button>
-                                        <span class="text-orange-500 font-bold text-sm">1</span>
-                                        <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                                <button
-                                    class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </div>
-
-                            <!-- Card 2 -->
-                            <div class="card flex items-center gap-3 py-5 relative">
-                                <img src="../public/Imgs/product/15.png" class="w-20 h-20 object-cover rounded-lg">
-                                <div class="content flex-1">
-                                    <p class="text-heading font-bold">Large Venue building mapping Projector</p>
-                                    <span class="price text-p py-1 block">$400</span>
-                                    <div class="flex items-center gap-4 mt-2">
-                                        <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                class="fa-solid fa-minus"></i></button>
-                                        <span class="text-orange-500 font-bold text-sm">1</span>
-                                        <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                                <button
-                                    class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </div>
-
-                            <!-- Card 3 -->
-                            <div class="card flex items-center gap-3 py-5 relative">
-                                <img src="../public/Imgs/product/11.png" class="w-20 h-20 object-cover rounded-lg">
-                                <div class="content flex-1">
-                                    <p class="text-heading font-bold">Large Venue building mapping Projector</p>
-                                    <span class="price text-p py-1 block">$400</span>
-                                    <div class="flex items-center gap-4 mt-2">
-                                        <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                class="fa-solid fa-minus"></i></button>
-                                        <span class="text-orange-500 font-bold text-sm">1</span>
-                                        <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                class="fa-solid fa-plus"></i></button>
-                                    </div>
-                                </div>
-                                <button
-                                    class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
-                                    <i class="fa-solid fa-trash-can"></i>
-                                </button>
-                            </div>
-                        </div>
-                        
-
-                        <div class="absolute bottom-0 left-0 right-0">
+                        <!-- Bottom Section (Totals & Button) -->
+                        <div>
                             <div class="held border-t-2 border-border w-full px-8 py-5 bg-gray-50">
                                 <div class="space-y-3">
                                     <div
@@ -299,9 +305,12 @@
                                 Place Order
                             </button>
                         </div>
+
                     </div>
 
-                    <div class="form w-[85%] mx-auto">
+
+                    <!-- Form -->
+                    <div class="form w-[100%] lg:w-[85%] mx-auto">
                         <form id="form"
                             class="bg-white border-2 border-t-0 border-border rounded-xl overflow-hidden shadow-sm">
 
@@ -332,8 +341,7 @@
                             <div class="title  py-3 text-center text-2xl font-bold text-white bg-main">
                                 <h3>Coupon Code</h3>
                             </div>
-                            <div
-                                class="flex flex-col bg-white px-4">
+                            <div class="flex flex-col bg-white px-4">
                                 <h4 class="pt-3  text-[17px] font-extrabold">Coupon Code</h4>
                                 <input class="input-coupon" type="text" placeholder="Enter Your Coupon Code">
                                 <button
