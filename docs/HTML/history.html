@@ -195,60 +195,191 @@
     </header>
     <!-- Header End -->
 
-    <main class="text-centermax-w-6xl mx-auto px-6 py-12 text-center">
 
-        <!-- العنوان الرئيسي -->
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-gray-800 mb-4">About <span class="text-orange-500">Us</span></h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">نحن متجر إلكتروني متكامل نسعى لتوفير أفضل المنتجات الأصلية بأفضل
-                الأسعار لعملائنا مع تجربة تسوق سهلة وآمنة.</p>
+
+
+
+
+
+
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-10 w-full flex-grow">
+        
+        <!-- Page Title Header -->
+        <div class="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">سجل الطلبات السابقة</h2>
+                <p class="text-gray-500 text-sm mt-1">تابع طلباتك السابقة وتفاصيل المنتجات التي قمت بشرائها</p>
+            </div>
+            <div class="bg-orange-100 text-orange-700 font-semibold px-4 py-2 rounded-xl text-sm self-start sm:self-auto">
+                إجمالي الطلبات: 3 طلبات
+            </div>
         </div>
 
-        <!-- الكروت التعريفية (من نحن، رؤيتنا، مميزاتنا) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Orders List Container -->
+        <div class="space-y-6">
+            
+            <!-- Order Card 1 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400">رقم الطلب:</span>
+                        <span class="text-sm font-bold text-gray-800">#ORD-9821</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400">تاريخ الطلب:</span>
+                        <span class="text-sm text-gray-600">24 يوليو 2026</span>
+                    </div>
+                    <div>
+                        <span class="bg-emerald-50 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100">تم التوصيل</span>
+                    </div>
+                </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-orange-500 text-center">
-                <div class="text-orange-500 text-3xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">رؤيتنا</h3>
-                <p class="text-gray-600 text-sm">أن نكون الوجهة الأولى والأساسية لكل من يبحث عن الجودة والابتكار في عالم
-                    التسوق الإلكتروني.</p>
+                <!-- Order Items -->
+                <div class="p-6 divide-y divide-gray-100">
+                    <!-- Product Item -->
+                    <div class="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center text-2xl shrink-0 border border-gray-200">
+                                📱
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base">سماعة بلوتوث لاسلكية بريميوم</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">الكمية: 1 | اللون: أسود</p>
+                            </div>
+                        </div>
+                        <div class="text-left w-full sm:w-auto flex justify-between sm:block items-center">
+                            <span class="text-xs text-gray-400 block sm:hidden">السعر الإجمالي:</span>
+                            <span class="font-bold text-orange-600 text-base">1,450 ج.م</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Footer Total -->
+                <div class="bg-gray-50/50 px-6 py-4 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-sm font-semibold text-gray-600">إجمالي الطلب شامل الشحن:</span>
+                    <span class="text-lg font-bold text-gray-900">1,550 ج.م</span>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-orange-500 text-center">
-                <div class="text-orange-500 text-3xl mb-4"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">الجودة والثقة</h3>
-                <p class="text-gray-600 text-sm">نحرص على اختيار كل منتج بعناية فائقة لضمان حصول عملائنا على أعلى معايير
-                    الجودة العالمية.</p>
+            <!-- Order Card 2 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400">رقم الطلب:</span>
+                        <span class="text-sm font-bold text-gray-800">#ORD-8742</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400">تاريخ الطلب:</span>
+                        <span class="text-sm text-gray-600">15 يونيو 2026</span>
+                    </div>
+                    <div>
+                        <span class="bg-amber-50 text-amber-600 text-xs font-bold px-3 py-1 rounded-full border border-amber-100">جاري الشحن</span>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="p-6 divide-y divide-gray-100">
+                    <!-- Product Item 1 -->
+                    <div class="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center text-2xl shrink-0 border border-gray-200">
+                                ⌚
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base">ساعة ذكية رياضية بشاشة أموليد</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">الكمية: 1 | اللون: رمادي غامق</p>
+                            </div>
+                        </div>
+                        <div class="text-left w-full sm:w-auto flex justify-between sm:block items-center">
+                            <span class="text-xs text-gray-400 block sm:hidden">السعر:</span>
+                            <span class="font-bold text-orange-600 text-base">2,800 ج.م</span>
+                        </div>
+                    </div>
+                    <!-- Product Item 2 -->
+                    <div class="py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center text-2xl shrink-0 border border-gray-200">
+                                🔌
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base">شاحن جداري سريع 65 واط</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">الكمية: 2 | اللون: أبيض</p>
+                            </div>
+                        </div>
+                        <div class="text-left w-full sm:w-auto flex justify-between sm:block items-center">
+                            <span class="text-xs text-gray-400 block sm:hidden">السعر:</span>
+                            <span class="font-bold text-orange-600 text-base">950 ج.م</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Footer Total -->
+                <div class="bg-gray-50/50 px-6 py-4 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-sm font-semibold text-gray-600">إجمالي الطلب شامل الشحن:</span>
+                    <span class="text-lg font-bold text-gray-900">3,850 ج.م</span>
+                </div>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-orange-500 text-center">
-                <div class="text-orange-500 text-3xl mb-4"><i class="fa-solid fa-headset"></i></div>
-                <h3 class="text-xl font-bold text-gray-800 mb-2">دعم العملاء</h3>
-                <p class="text-gray-600 text-sm">فريق دعم متواجد على مدار الساعة لمساعدتك والإجابة عن كافة استفساراتك
-                    بكل سرعة وسهولة.</p>
-            </div>
+            <!-- Order Card 3 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition">
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-100 flex flex-wrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400">رقم الطلب:</span>
+                        <span class="text-sm font-bold text-gray-800">#ORD-7105</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs font-bold text-gray-400">تاريخ الطلب:</span>
+                        <span class="text-sm text-gray-600">02 مايو 2026</span>
+                    </div>
+                    <div>
+                        <span class="bg-emerald-50 text-emerald-600 text-xs font-bold px-3 py-1 rounded-full border border-emerald-100">تم التوصيل</span>
+                    </div>
+                </div>
 
-        </div>
+                <!-- Order Items -->
+                <div class="p-6 divide-y divide-gray-100">
+                    <!-- Product Item -->
+                    <div class="py-4 first:pt-0 last:pb-0 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-4 w-full sm:w-auto">
+                            <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center text-2xl shrink-0 border border-gray-200">
+                                🎒
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 text-base">حقيبة ظهر للابتوب مضادة للماء</h4>
+                                <p class="text-gray-400 text-xs mt-0.5">الكمية: 1 | اللون: كحلي</p>
+                            </div>
+                        </div>
+                        <div class="text-left w-full sm:w-auto flex justify-between sm:block items-center">
+                            <span class="text-xs text-gray-400 block sm:hidden">السعر:</span>
+                            <span class="font-bold text-orange-600 text-base">750 ج.م</span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="bg-white rounded-2xl shadow-md p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-            <div class="flex-1">
-                <img src="/online-store/assets/banner_home1-BCZz_oii.png" alt="Store"
-                    class="rounded-xl shadow-lg w-full object-contain h-full">
-            </div>
-            <div class="flex-1">
-                <h3 class="text-3xl font-bold text-gray-800 mb-4">لماذا تختار متجرنا؟</h3>
-                <p class="text-gray-600 mb-4 leading-relaxed">لأننا نؤمن بأن التسوق ليس مجرد عملية شراء، بل هو تجربة
-                    متكاملة تبدأ من سهولة تصفح المنتجات وحتى وصولها لباب منزلك.</p>
-                <ul class="space-y-2 text-gray-700">
-                    <li><i class="fa-solid fa-check text-orange-500 mr-2"></i> توصيل سريع وآمن لجميع المحافظات.</li>
-                    <li><i class="fa-solid fa-check text-orange-500 mr-2"></i> طرق دفع متنوعة وسهلة.</li>
-                    <li><i class="fa-solid fa-check text-orange-500 mr-2"></i> ضمان حقيقي واسترجاع سهل للمنتجات.</li>
-                </ul>
+                <!-- Order Footer Total -->
+                <div class="bg-gray-50/50 px-6 py-4 border-t border-gray-100 flex justify-between items-center">
+                    <span class="text-sm font-semibold text-gray-600">إجمالي الطلب شامل الشحن:</span>
+                    <span class="text-lg font-bold text-gray-900">850 ج.م</span>
+                </div>
             </div>
 
         </div>
 
     </main>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- Footer Start -->
@@ -301,7 +432,7 @@
                 </div>
 
 
-                       <div class="row space-y-3">
+                <div class="row space-y-3">
                     <h4 class="text-lg font-bold pb-2">Quick Links</h4>
                     <div class="links flex flex-col space-y-3 text-sm text-gray-300">
                         <!-- لغايه ما اربطه بالباك اند -->
@@ -315,7 +446,6 @@
                         <a href="history.html"><i class="fa-solid fa-caret-right"></i> Purchase History</a>
                     </div>
                 </div>
-
 
               <div class="row space-y-3">
                     <h4 class="text-lg font-bold pb-2">Service us</h4>
@@ -352,3 +482,27 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
