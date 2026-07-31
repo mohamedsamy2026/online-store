@@ -1,8 +1,4 @@
-// Import Flowbite Start
-import 'flowbite';
-import { initFlowbite } from 'flowbite';
-initFlowbite();
-// Import Flowbite End
+
 
 
 
@@ -59,4 +55,8 @@ close.forEach(element => {
     })
 
 })
+
+
+
+
 // Add Cart End
