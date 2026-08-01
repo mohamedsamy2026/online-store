@@ -32,9 +32,6 @@ header .header-top .icons button {
   cursor: pointer;
   position: relative;
 }
-header .header-top .icons button i {
-  font-size: 30px;
-}
 header .header-top .icons button span {
   position: absolute;
   top: -0.5rem;
