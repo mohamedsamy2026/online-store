@@ -115,10 +115,11 @@ header {
 
     .category-list {
       border: 2px solid $white-color;
+      border-top: none;
       position: absolute;
       top: 100%;
-      left: 0%;
-      width: 100%;
+      left:-0.7%;
+      width: 101.5%;
       z-index: 1545;
       display: flex;
       flex-direction: column;
@@ -206,7 +207,6 @@ header {
     border-radius: 30px !important;
   }
 }
-
 // Hero Section End
 
 // Hero Bottom Start
@@ -398,14 +398,14 @@ main {
           margin: 10px 0;
           width: 100%;
           outline: none;
-          border:2px solid $border-color;
+          border: 2px solid $border-color;
           padding: 15px 10px;
           border-radius: 7px;
           font-weight: bold;
           font-size: 18px;
           color: $color-heading;
 
-          &::placeholder{
+          &::placeholder {
             font-size: 16px;
           }
         }
@@ -451,7 +451,7 @@ main {
               input {
                 width: 100%;
                 outline: none;
-                border:2px solid $border-color;
+                border: 2px solid $border-color;
                 padding: 15px 10px;
                 border-radius: 7px;
                 font-weight: bold;
@@ -529,8 +529,8 @@ footer {
     .header-bottom {
       .container {
         .category-list {
-          left: 26%;
-          width: 75%;
+          left: 28.3%;
+          width: 72.2%;
         }
         .hum {
           cursor: pointer;
