@@ -49,18 +49,12 @@ fetch("products.json")
                                         class="text-sm text-p line-through">$${element.old_price}</span>` : ''}
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
+                                <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
                                     <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -111,18 +105,12 @@ fetch("products.json")
                                         class="text-sm text-p line-through">$${element.old_price}</span>` : ''}
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                       <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                                 <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -162,18 +150,12 @@ fetch("products.json")
                                     
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                       <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                             <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -226,18 +208,12 @@ fetch("products.json")
                                         class="text-sm text-p line-through">$${element.old_price}</span>` : ''}
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                        <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                             <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -277,18 +253,12 @@ fetch("products.json")
                                     
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                       <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                            <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -341,18 +311,12 @@ fetch("products.json")
                                         class="text-sm text-p line-through">$${element.old_price}</span>` : ''}
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                       <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                            <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     
@@ -392,18 +356,12 @@ fetch("products.json")
                                     
                                 </p>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                      <button type="button"
-                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
+                             <div class=" mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
+                                    <button type="button"
+                                        class="text-white shadow-xs text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
                                     </button>
                                 </div>
-                                <div
-                                    class="w-11 h-11 ms-2 border border-border rounded-sm flex items-center justify-center cursor-pointer hover:bg-main hover:text-white duration-300">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     

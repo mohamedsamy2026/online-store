@@ -1,7 +1,3 @@
-
-
-
-
 // Categroy Start
 let btnCategory = document.getElementById("btn");
 let category_list = document.querySelector(".category-list");
@@ -55,8 +51,4 @@ close.forEach(element => {
     })
 
 })
-
-
-
-
 // Add Cart End
