@@ -46,7 +46,7 @@ document.querySelectorAll('.products-swiper').forEach(swiperEl => {
             nextEl: nextBtn,
             prevEl: prevBtn,
         },
-        rewind: true,
+        loop: true,
         breakpoints: {
             1200: { slidesPerView: 4, spaceBetween: 15 },
             1000: { slidesPerView: 3, spaceBetween: 15 },
