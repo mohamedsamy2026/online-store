@@ -420,9 +420,10 @@ footer .container .row a i {
     cursor: pointer;
     font-size: 30px;
     color: #ff8716;
-    width: 65px;
+    height: 65px;
+    width: 55px;
     border-radius: 5px;
-    border: 2px solid #ff8716;
+    border: 3px solid #ff8716;
     display: flex;
     justify-content: center;
     align-items: center;

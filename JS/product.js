@@ -52,8 +52,8 @@ fetch("products.json")
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
                                     <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
@@ -113,9 +113,9 @@ fetch("products.json")
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                    <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                       <button type="button"
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
@@ -164,9 +164,9 @@ fetch("products.json")
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                    <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                       <button type="button"
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
@@ -228,9 +228,9 @@ fetch("products.json")
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                    <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                        <button type="button"
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
@@ -279,9 +279,9 @@ fetch("products.json")
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                    <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                       <button type="button"
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
@@ -297,7 +297,7 @@ fetch("products.json")
             }
             // appliances End
 
-            
+
             // mobiles Start
             if (element.catetory == "mobiles") {
                 let swiper_wrapper4 = document.querySelector(".products4");
@@ -343,9 +343,9 @@ fetch("products.json")
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                    <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                       <button type="button"
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
@@ -394,9 +394,9 @@ fetch("products.json")
                             </div>
                             <div class="flex items-center mt-2">
                                 <div class="bg-main w-fit py-2 px-3 rounded-sm hover:scale-105 duration-300">
-                                    <button type="button"
-                                        class="text-white shadow-xs text-[16px] font-semibold cursor-pointer">
-                                        <i class="fa-solid fa-cart-shopping text-[15px]"></i> Add to cart
+                                      <button type="button"
+                                        class="text-white shadow-xs text-[13px] xl:text-[17px] font-semibold cursor-pointer">
+                                        <i class="fa-solid fa-cart-shopping text-[12px] xl:text-[15px]"></i> Add to cart
                                     </button>
                                 </div>
                                 <div
