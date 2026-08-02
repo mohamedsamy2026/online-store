@@ -48,6 +48,12 @@ h5 {
 
 // Header Start
 header {
+  position: fixed;
+  z-index: 54545847;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
   //  Header Top Start
   .header-top {
     .icons {
@@ -235,16 +241,16 @@ header {
 .cart {
   .cart-items {
     min-height: 0;
+    padding-inline: 5px;
   }
   position: fixed;
-  width: 350px;
+  width: 400px;
   height: 100%;
-  right: -350px;
+  right: -400px;
   top: 0;
   bottom: 0;
-  z-index: 565;
+  z-index: 55445565584;
   transition: right 0.3s ease-in-out;
-
   &.active {
     right: 0;
   }
@@ -380,8 +386,14 @@ header {
     .over {
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
     }
+    
+    .div-btn-cart.active{
+      background-color: white;
+    }
+
   }
 }
+
 
 // Products End
 
@@ -526,8 +538,8 @@ footer {
     .header-bottom {
       .container {
         .category-list {
-          left: 25.7%;
-          width: 74.7%;
+          left: 27.2%;
+          width: 73.5%;
         }
         .hum {
           cursor: pointer;

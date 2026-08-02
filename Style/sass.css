@@ -23,6 +23,14 @@ h5 {
   text-overflow: ellipsis;
 }
 
+header {
+  position: fixed;
+  z-index: 54545847;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
 header .header-top .icons {
   display: flex;
   align-items: center;
@@ -166,15 +174,16 @@ header .header-bottom .category-list li a:hover {
 
 .cart .cart-items {
   min-height: 0;
+  padding-inline: 5px;
 }
 .cart {
   position: fixed;
-  width: 350px;
+  width: 400px;
   height: 100%;
-  right: -350px;
+  right: -400px;
   top: 0;
   bottom: 0;
-  z-index: 565;
+  z-index: 55445565584;
   transition: right 0.3s ease-in-out;
 }
 .cart.active {
@@ -315,6 +324,12 @@ header .header-bottom .category-list li a:hover {
 #products4 .container .over {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
 }
+#products1 .container .div-btn-cart.active,
+#products2 .container .div-btn-cart.active,
+#products3 .container .div-btn-cart.active,
+#products4 .container .div-btn-cart.active {
+  background-color: white;
+}
 
 main #checkout .container .all .input-coupon {
   margin: 10px 0;
@@ -413,8 +428,8 @@ footer .container .row a i {
 
 @media (max-width: 1024px) {
   header .header-bottom .container .category-list {
-    left: 25.7%;
-    width: 74.7%;
+    left: 27.2%;
+    width: 73.5%;
   }
   header .header-bottom .container .hum {
     cursor: pointer;

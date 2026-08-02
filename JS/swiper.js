@@ -38,7 +38,7 @@ document.querySelectorAll('.products-swiper').forEach(swiperEl => {
     new Swiper(swiperEl, {
         modules: [Autoplay, Navigation],
         slidesPerView: 4,
-        spaceBetween: 20,
+        spaceBetween: 15,
         autoplay: {
             delay: 2500,
         },
