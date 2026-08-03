@@ -164,6 +164,8 @@ header {
 
 // Hero Section Start
 .slider {
+    padding-top: 210px;
+
   position: relative;
 
   .container {
@@ -387,7 +389,8 @@ header {
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
     }
     
-    .div-btn-cart.active{
+    .div-btn-cart.active,
+    .productDivButtons.active{
       background-color: white;
     }
 
@@ -534,6 +537,9 @@ footer {
 
 // Header Start
 @media (max-width: 1024px) {
+  .slider {
+    padding-top: 250px;
+  }
   header {
     .header-bottom {
       .container {

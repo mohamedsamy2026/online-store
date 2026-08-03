@@ -23,21 +23,30 @@
 
     <!-- Link FlowBite And Tailwind CSS -->
 
-  <script type="module" crossorigin src="/online-store/assets/main-D6TuJrIX.js"></script>
-  <link rel="modulepreload" crossorigin href="/online-store/assets/script-BYwCBtGZ.js">
+  <script type="module" crossorigin src="/online-store/assets/main-BhhV0I9V.js"></script>
+  <link rel="modulepreload" crossorigin href="/online-store/assets/script-BtzMkABp.js">
   <link rel="stylesheet" crossorigin href="/online-store/assets/main-BHCwELWW.css">
-  <link rel="stylesheet" crossorigin href="/online-store/assets/sass-CzNEQTG5.css">
+  <link rel="stylesheet" crossorigin href="/online-store/assets/sass-Cgh5IGOv.css">
 </head>
 
 <body>
 
+    <!-- رسالة التنبيه العائمة من اليمين -->
+    <div id="toast-message"
+        class="fixed top-5 right-5 z-50456454545 translate-x-[120%] transition-transform duration-500 ease-in-out bg-white border-2 border-main shadow-lg rounded-xl px-6 py-4 flex items-center gap-3">
+        <i class="fa-solid fa-circle-exclamation text-orange-500 text-xl"></i>
+        <span class="text-gray-800 font-semibold text-sm">هذا المنتج موجود بالفعل في السلة!</span>
+    </div>
+
+
+    <!-- Cart Start -->
     <section class="cart">
         <div class="cart-drawer bg-white shadow-xl p-6 flex flex-col justify-between h-full">
 
             <!-- الهيدر -->
             <div class="flex items-center justify-between pb-4 border-b border-gray-200">
                 <h3 class="font-bold text-xl text-gray-800">Cart Items : <span
-                        class="cart-count text-orange-500 font-bold">0</span></h3>
+                        class="total-count text-orange-500 font-bold">0</span></h3>
                 <button class="close-btn text-gray-600 hover:text-black cursor-pointer">
                     <i
                         class="fa-regular fa-circle-xmark text-3xl close-cart text-black hover:text-red-500 duration-300"></i>
@@ -52,7 +61,7 @@
             <div class="cart-footer pt-4 border-t border-gray-200">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-gray-600 font-medium">subtotal</span>
-                    <span class="subtotal-cart text-orange-500 font-bold text-lg">0</span>
+                    <span class="total-price text-orange-500 font-bold text-lg">0</span>
                 </div>
                 <div class="flex justify-between flex-wrap items-center gap-3 mt-8">
                     <a href="HTML/check.html"
@@ -65,7 +74,7 @@
     </section>
     <!-- Carts End -->
 
-   
+
 
     <!-- Header Start -->
     <header class="py-4">
@@ -524,3 +533,5 @@
 </body>
 
 </html>
+
+

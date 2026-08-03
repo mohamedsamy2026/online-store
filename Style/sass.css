@@ -117,6 +117,7 @@ header .header-bottom .category-list li a:hover {
 }
 
 .slider {
+  padding-top: 210px;
   position: relative;
 }
 .slider .container {
@@ -325,9 +326,13 @@ header .header-bottom .category-list li a:hover {
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
 }
 #products1 .container .div-btn-cart.active,
+#products1 .container .productDivButtons.active,
 #products2 .container .div-btn-cart.active,
+#products2 .container .productDivButtons.active,
 #products3 .container .div-btn-cart.active,
-#products4 .container .div-btn-cart.active {
+#products3 .container .productDivButtons.active,
+#products4 .container .div-btn-cart.active,
+#products4 .container .productDivButtons.active {
   background-color: white;
 }
 
@@ -427,6 +432,9 @@ footer .container .row a i {
 }
 
 @media (max-width: 1024px) {
+  .slider {
+    padding-top: 250px;
+  }
   header .header-bottom .container .category-list {
     left: 27.2%;
     width: 73.5%;

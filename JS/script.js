@@ -57,10 +57,24 @@ close.forEach(element => {
 // Close Cart End
 
 
-// Add To Cart Start
-let items = [];
+
+
+// Show Aleart Start
+function showToast() {
+    let toast = document.getElementById("toast-message");
+
+    toast.classList.toggle("translate-x-[120%]");
+
+    setTimeout(() => {
+        toast.classList.toggle("translate-x-[120%]");
+    }, 2500);
+}
+// Show Aleart End
+
+
 let cards = document.querySelector(".cart-items");
 
+// Add To Cart Start
 document.addEventListener("click", (event) => {
     let button = event.target.closest(".swiper-slide .div-btn-cart");
 
@@ -68,6 +82,24 @@ document.addEventListener("click", (event) => {
     if (button) {
 
         let productCard = button.closest(".swiper-slide");
+
+        let productname = productCard.querySelector(".product-name").innerText;
+        let cardsitems = document.querySelectorAll(".cart-item");
+        let isAlreadyInCart = false;
+
+        cardsitems.forEach(card => {
+            let itemTitle = card.querySelector("p").innerText;
+            if (itemTitle == productname) {
+                isAlreadyInCart = true;
+            }
+
+        });
+        if (isAlreadyInCart) {
+            showToast()
+            return;
+        }
+
+
 
 
         let div = button.closest(".div-btn-cart");
@@ -80,15 +112,11 @@ document.addEventListener("click", (event) => {
                 </button>
            `;
 
+
         // تعريفات 
         let productImg = productCard.querySelector("img").src;
         let productName = productCard.querySelector(".product-name").innerText;
         let productPrice = productCard.querySelector(".product-price").innerText;
-
-        let productPrice_number = Number(productPrice.replace('$', '').trim());
-        
-        let subtotal_cart = document.querySelector(".subtotal-cart");
-        subtotal_cart.innerText =  "$"+ productPrice_number;
 
 
         cards.innerHTML +=
@@ -97,7 +125,7 @@ document.addEventListener("click", (event) => {
                     <img src="${productImg}" alt="product" class="w-18 h-18 object-cover rounded">
                     <div class="flex-1 ps-4">
                         <p class="text-xs font-semibold text-gray-800">${productName}</p>
-                        <span class="text-gray-500 text-sm font-medium">${productPrice}</span>
+                        <span class="price-cart text-gray-500 text-sm font-medium">${productPrice}</span>
 
                         <div class="flex items-center gap-4 mt-2">
                             <button class="qty-btn musnis"><i class="fa-solid fa-minus"></i></button>
@@ -113,24 +141,54 @@ document.addEventListener("click", (event) => {
 
 
 
-    updateCount()
+    updateCount();
+    setitem();
 
 });
+// Add To Cart End
 
 
-// Count
+// Count And price Start
 function updateCount() {
-    let cards = document.querySelector(".cart-items");
-    let shop = document.querySelector(".shoping-count");
-    let cart_count = document.querySelector(".cart-count");
 
-    shop.innerText = cards.children.length;
-    cart_count.innerText = cards.children.length;
+    let cards2 = document.querySelector(".cart-items");
+    let cards = document.querySelectorAll(".cart-item");
+    let shop = document.querySelector(".shoping-count")
+    let totalCountEl = document.querySelector(".total-count");
+    let totalPriceEl = document.querySelector(".total-price");
+
+    if (!cards) return;
+
+
+
+
+    let totalItemsCount = 0;
+    let totalMoney = 0;
+
+    cards.forEach(item => {
+
+        let quantity = Number(item.querySelector(".span-bls").innerText);
+        let priceText = item.querySelector(".price-cart").innerText;
+        let price = Number(priceText.replace('$', '').trim());
+
+        totalItemsCount += quantity;
+        totalMoney += price * quantity;
+    });
+
+    if (totalCountEl) {
+        totalCountEl.innerText = totalItemsCount;
+        shop.innerText = cards2.children.length;
+    }
+
+    if (totalPriceEl) {
+        totalPriceEl.innerText = "$" + totalMoney;
+    }
+    setitem()
 }
+// Count And price End
 
 
-// - or +
-
+// - or + Start
 document.addEventListener("click", (event) => {
 
     let munis = event.target.closest(".musnis");
@@ -139,28 +197,33 @@ document.addEventListener("click", (event) => {
     if (munis) {
         let container = munis.closest("div");
         let span = container.querySelector(".span-bls");
-        let spanNumber = Number(span.innerText)
-
+        let spanNumber = Number(span.innerText);
 
         if (spanNumber > 1) {
             spanNumber--;
-            span.innerText = spanNumber
+            span.innerText = spanNumber;
 
+            updateCount();
         }
-
     }
+
     if (colletion) {
         let container = colletion.closest("div");
         let span = container.querySelector(".span-bls");
-        let spanNumber = Number(span.innerText)
+        let spanNumber = Number(span.innerText);
 
         spanNumber++;
-        span.innerText = spanNumber
+        span.innerText = spanNumber;
 
+        updateCount();
     }
+    setitem()
 
-})
+});
+// - or + End
 
+
+// Delete Start
 document.addEventListener("click", (event) => {
     let Delete = event.target.closest(".delete-btn");
 
@@ -170,13 +233,61 @@ document.addEventListener("click", (event) => {
         updateCount()
 
     }
+
+    let cartItemsText = localStorage.getItem("cards") || "";
+    let productButtons = document.querySelectorAll(".btn-cart");
+
+    productButtons.forEach(button => {
+        let productCard = button.closest(".swiper-slide");
+        let productName = productCard ? productCard.querySelector(".product-name").textContent.trim() : "";
+
+        let divBtnCart = button.closest(".div-btn-cart");
+
+        if (cartItemsText.includes(productName)) {
+            if (divBtnCart) divBtnCart.classList.add("active");
+
+            button.innerHTML = `
+            <i class="fa-solid fa-cart-shopping text-main text-[17px]"></i> Item In cart
+        `;
+            button.className = "btn-cart text-black border-2 border-main shadow-xs text-[18px] py-[10px] w-full font-semibold cursor-pointer";
+        }
+        else {
+            if (divBtnCart) divBtnCart.classList.remove("active");
+
+            button.innerHTML = `
+            <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
+        `;
+            button.className = "btn-cart text-white shadow-xs text-[17px] font-semibold cursor-pointer w-full h-full";
+        }
+    });
+    setitem()
 })
+// Delete End
 
-
-
-
-
-// Add To Cart End
 
 
 // Carts End
+
+
+// LocalStorge Start
+function setitem() {
+    let cardsContainer = document.querySelector(".cart-items");
+    localStorage.setItem("cards", cardsContainer.innerHTML);
+}
+
+
+function getitem() {
+    let cardsContainer = document.querySelector(".cart-items");
+    let getcard = localStorage.getItem("cards");
+
+    if (getcard) {
+        cardsContainer.innerHTML = getcard;
+        updateCount();
+    }
+}
+
+
+// LocalStorge End
+
+
+getitem();
