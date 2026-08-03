@@ -290,11 +290,14 @@ function getitem() {
 // LocalStorge End
 // Search Start
 
+// Search Start
+
 let iconSearch = document.querySelector(".icon-search");
 let inputSearch = document.querySelector(".inputSearch");
 
+// Search Start
 function search() {
-    let cardsSearch = document.querySelectorAll(".swiper-slide");
+    let cardsSearch = document.querySelectorAll(".swiper-slide:not(.swiper-slide-duplicate)");
     let inputValue = inputSearch.value.trim().toLocaleLowerCase();
     
     if (inputValue !== "") {
@@ -302,22 +305,58 @@ function search() {
             if (swiperEl.swiper && swiperEl.swiper.autoplay) {
                 swiperEl.swiper.autoplay.stop();
             }
-           
+            // بنجبر الـ swiper إنه يبطل يحرك الكروت ويسمح بظهورها كلها
+            let wrapper = swiperEl.querySelector('.swiper-wrapper');
+            if (wrapper) {
+                wrapper.style.display = "flex";
+                wrapper.style.flexWrap = "wrap";
+                wrapper.style.transform = "none !important";
+            }
         });
     }
 
+    // 2. البحث في كل الكروت (الظاهرة والمخفية)
     cardsSearch.forEach(card => {
         let productElement = card.querySelector(".product-name");
         if (productElement) {
             let productName = productElement.textContent.trim().toLocaleLowerCase();
             if (productName.includes(inputValue)) {
-                card.style.display = "";
+                card.style.display = "block"; // بنجبر الكارت المطابق إنه يظهر حتى لو كان مخفي جوه السايبر
             } else {
                 card.style.display = "none";
             }
         }
     });
 }
+// Search End
+
+
+// Restart Start
+function resetSearchAndSwiper() {
+    let cardsSearch = document.querySelectorAll(".swiper-slide:not(.swiper-slide-duplicate)");
+    cardsSearch.forEach(card => {
+        card.style.display = ""; 
+    });
+
+    // إعادة السايبر لطبيعته وتشغيله تاني
+    document.querySelectorAll('.products-swiper').forEach(swiperEl => {
+        let wrapper = swiperEl.querySelector('.swiper-wrapper');
+        if (wrapper) {
+            wrapper.style.display = "";
+            wrapper.style.flexWrap = "";
+            wrapper.style.transform = "";
+        }
+        
+        if (swiperEl.swiper) {
+            swiperEl.swiper.update(); 
+            if (swiperEl.swiper.autoplay) {
+                swiperEl.swiper.autoplay.start();
+            }
+        }
+    });
+}
+// Restart End
+
 
 if (inputSearch) {
     inputSearch.addEventListener("input", search);
@@ -330,24 +369,12 @@ if (inputSearch) {
     });
 }
 
-function resetSearchAndSwiper() {
-    let cardsSearch = document.querySelectorAll(".swiper-slide");
-    cardsSearch.forEach(card => {
-        card.style.display = "";
-    });
-
-    // تشغيل اللوب لسايبرات المنتجات بس أول ما نخرج أو نفضي الإنبوت
-    document.querySelectorAll('.products-swiper').forEach(swiperEl => {
-        if (swiperEl.swiper && swiperEl.swiper.autoplay) {
-            swiperEl.swiper.autoplay.start();
-        }
-    });
-}
 
 if (iconSearch) {
     iconSearch.addEventListener("click", search);
 }
 
+// Search End
 // Search End
 
 
