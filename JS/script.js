@@ -309,7 +309,9 @@ function search() {
             let wrapper = swiperEl.querySelector('.swiper-wrapper');
             if (wrapper) {
                 wrapper.style.display = "flex";
+                wrapper.style.justifyContent = "center";
                 wrapper.style.flexWrap = "wrap";
+                wrapper.style.gap = "20px";
                 wrapper.style.transform = "none !important";
             }
         });
