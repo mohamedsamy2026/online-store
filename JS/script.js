@@ -38,6 +38,17 @@ links_hum.forEach(link => {
 // Media Humborger End
 
 
+window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+    if (loader) {
+        loader.style.opacity = "0";
+        loader.style.visblity = "hidden";
+        loader.style.transition = "opacity 0.5s ease";
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    }
+});
 
 
 // Carts Start
@@ -299,7 +310,7 @@ let inputSearch = document.querySelector(".inputSearch");
 function search() {
     let cardsSearch = document.querySelectorAll(".swiper-slide:not(.swiper-slide-duplicate)");
     let inputValue = inputSearch.value.trim().toLocaleLowerCase();
-    
+
     if (inputValue !== "") {
         document.querySelectorAll('.products-swiper').forEach(swiperEl => {
             if (swiperEl.swiper && swiperEl.swiper.autoplay) {
@@ -337,7 +348,7 @@ function search() {
 function resetSearchAndSwiper() {
     let cardsSearch = document.querySelectorAll(".swiper-slide:not(.swiper-slide-duplicate)");
     cardsSearch.forEach(card => {
-        card.style.display = ""; 
+        card.style.display = "";
     });
 
     // إعادة السايبر لطبيعته وتشغيله تاني
@@ -348,9 +359,9 @@ function resetSearchAndSwiper() {
             wrapper.style.flexWrap = "";
             wrapper.style.transform = "";
         }
-        
+
         if (swiperEl.swiper) {
-            swiperEl.swiper.update(); 
+            swiperEl.swiper.update();
             if (swiperEl.swiper.autoplay) {
                 swiperEl.swiper.autoplay.start();
             }

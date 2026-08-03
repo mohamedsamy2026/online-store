@@ -5,6 +5,9 @@
 @plugin "flowbite/plugin";
 @source "../node_modules/flowbite";
 
+/* Import Loading CSS */
+@import "loaders.css/loaders.min.css";
+
 
 /* Virbiles */
 @theme {
