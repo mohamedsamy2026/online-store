@@ -288,6 +288,67 @@ function getitem() {
 
 
 // LocalStorge End
+// Search Start
+
+let iconSearch = document.querySelector(".icon-search");
+let inputSearch = document.querySelector(".inputSearch");
+
+function search() {
+    let cardsSearch = document.querySelectorAll(".swiper-slide");
+    let inputValue = inputSearch.value.trim().toLocaleLowerCase();
+    
+    if (inputValue !== "") {
+        document.querySelectorAll('.products-swiper').forEach(swiperEl => {
+            if (swiperEl.swiper && swiperEl.swiper.autoplay) {
+                swiperEl.swiper.autoplay.stop();
+            }
+           
+        });
+    }
+
+    cardsSearch.forEach(card => {
+        let productElement = card.querySelector(".product-name");
+        if (productElement) {
+            let productName = productElement.textContent.trim().toLocaleLowerCase();
+            if (productName.includes(inputValue)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        }
+    });
+}
+
+if (inputSearch) {
+    inputSearch.addEventListener("input", search);
+
+    inputSearch.addEventListener("blur", resetSearchAndSwiper);
+    inputSearch.addEventListener("input", () => {
+        if (inputSearch.value.trim() === "") {
+            resetSearchAndSwiper();
+        }
+    });
+}
+
+function resetSearchAndSwiper() {
+    let cardsSearch = document.querySelectorAll(".swiper-slide");
+    cardsSearch.forEach(card => {
+        card.style.display = "";
+    });
+
+    // تشغيل اللوب لسايبرات المنتجات بس أول ما نخرج أو نفضي الإنبوت
+    document.querySelectorAll('.products-swiper').forEach(swiperEl => {
+        if (swiperEl.swiper && swiperEl.swiper.autoplay) {
+            swiperEl.swiper.autoplay.start();
+        }
+    });
+}
+
+if (iconSearch) {
+    iconSearch.addEventListener("click", search);
+}
+
+// Search End
 
 
 getitem();

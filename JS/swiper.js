@@ -9,52 +9,54 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 // Import Swiper styles End
 
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Hero Section Swiper Start
+    const swiperEl = document.querySelector('.slide-swp');
+    if (swiperEl) {
+        const swiper = new Swiper(swiperEl, {
+            modules: [Autoplay, Pagination],
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    }
+    // Hero Section End
 
 
-// Hero Section Start
-const swiper = new Swiper('.slide-swp', {
-    modules: [Autoplay, Pagination],
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
+    // 2. Products Sections Swiper Start
+    document.querySelectorAll('.products-swiper').forEach(swiperEl => {
+        let parentSection = swiperEl.closest('section');
+        let nextBtn = parentSection ? parentSection.querySelector('.next-btn') : null;
+        let prevBtn = parentSection ? parentSection.querySelector('.prev-btn') : null;
 
-// Hero Section End
-
-
-// Products Start
-document.querySelectorAll('.products-swiper').forEach(swiperEl => {
-
-    let parentSection = swiperEl.closest('section');
-    let nextBtn = parentSection ? parentSection.querySelector('.next-btn') : null;
-    let prevBtn = parentSection ? parentSection.querySelector('.prev-btn') : null;
-
-    new Swiper(swiperEl, {
-        modules: [Autoplay, Navigation],
-        slidesPerView: 5,
-        spaceBetween: 15,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-
-        },
-        navigation: {
-            nextEl: nextBtn,
-            prevEl: prevBtn,
-        },
-        loop: true,
-        breakpoints: {
-            1200: { slidesPerView: 5, spaceBetween: 15 },
-            1000: { slidesPerView: 4, spaceBetween: 15 },
-            700: { slidesPerView: 3, spaceBetween: 10 },
-            0: { slidesPerView: 2, spaceBetween: 7 }
-        }
+        new Swiper(swiperEl, {
+            modules: [Autoplay, Navigation],
+            slidesPerView: 5,
+            spaceBetween: 15,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: nextBtn,
+                prevEl: prevBtn,
+            },
+            loop: true,
+            breakpoints: {
+                1200: { slidesPerView: 5, spaceBetween: 15 },
+                1000: { slidesPerView: 4, spaceBetween: 15 },
+                700: { slidesPerView: 3, spaceBetween: 10 },
+                0: { slidesPerView: 2, spaceBetween: 7 }
+            }
+        });
     });
+    // Products End
+
 });
-// Products End
