@@ -1,5 +1,4 @@
 // Virible
-
 $main-color: #ff8716;
 $p-color: #7b7b7b;
 $bg-color: #f3f3f3;
@@ -396,8 +395,6 @@ header {
 
   }
 }
-
-
 // Products End
 
 // Check Out Start
@@ -477,8 +474,8 @@ main {
     }
   }
 }
-
 // Check Out End
+
 
 // Footer Start
 footer {
@@ -533,9 +530,9 @@ footer {
 }
 // Footer End
 
+
 // Media Start
 
-// Header Start
 @media (max-width: 1024px) {
   .slider {
     padding-top: 250px;
@@ -594,7 +591,8 @@ footer {
   }
   // Home Swiper End
 }
-// Header End
+
+
 @media (max-width: 768px) {
   .cart {
     width: 100%;

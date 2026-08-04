@@ -38,6 +38,7 @@ links_hum.forEach(link => {
 // Media Humborger End
 
 
+//  Loading CSS Start
 window.addEventListener("load", () => {
     const loader = document.querySelector(".loader");
     if (loader) {
@@ -49,6 +50,7 @@ window.addEventListener("load", () => {
         }, 500);
     }
 });
+//  Loading CSS End
 
 
 // Carts Start
