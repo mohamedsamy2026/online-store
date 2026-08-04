@@ -119,7 +119,7 @@ header {
       border-top: none;
       position: absolute;
       top: 100%;
-      left:-0.7%;
+      left: -0.7%;
       width: 101.5%;
       z-index: 1545;
       display: flex;
@@ -304,7 +304,6 @@ header {
   }
 }
 
-
 // Cart End
 
 // Products Start
@@ -386,12 +385,11 @@ header {
     .over {
       clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
     }
-    
+
     .div-btn-cart.active,
-    .productDivButtons.active{
+    .productDivButtons.active {
       background-color: white;
     }
-
   }
 }
 // Products End
@@ -402,6 +400,23 @@ main {
   #checkout {
     .container {
       .all {
+        .qty-btn {
+          width: 24px;
+          height: 24px;
+          background-color: #f3f4f6;
+          border: 1px solid #e5e7eb;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 15px;
+          color: #374151;
+          cursor: pointer;
+          transition: 0.2s;
+
+          &:hover {
+            background-color: #e5e7eb;
+          }
+        }
         .input-coupon {
           margin: 10px 0;
           width: 100%;
@@ -415,32 +430,6 @@ main {
 
           &::placeholder {
             font-size: 16px;
-          }
-        }
-        .cards {
-          .card {
-            .qty-btn {
-              width: 26px;
-              height: 26px;
-              background-color: #f3f4f6;
-              border: 1px solid #e5e7eb;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 15px;
-              color: #374151;
-              cursor: pointer;
-              transition: 0.2s;
-
-              &:hover {
-                background-color: #e5e7eb;
-              }
-            }
-            border-bottom: 1px solid $border-color;
-
-            &:last-child {
-              border-bottom: none;
-            }
           }
         }
         .form {
@@ -474,7 +463,6 @@ main {
   }
 }
 // Check Out End
-
 
 // Footer Start
 footer {
@@ -529,7 +517,6 @@ footer {
 }
 // Footer End
 
-
 // Media Start
 
 @media (max-width: 1024px) {
@@ -547,7 +534,7 @@ footer {
           cursor: pointer;
           font-size: 27px;
           color: $main-color;
-          height:65px;
+          height: 65px;
           width: 55px;
           border-radius: 5px;
           border: 3px solid $main-color;
@@ -590,7 +577,6 @@ footer {
   }
   // Home Swiper End
 }
-
 
 @media (max-width: 768px) {
   .cart {

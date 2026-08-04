@@ -21,8 +21,20 @@
     <!-- Link Style SASS -->
     <link rel="stylesheet" href="/Style/sass.css">
 
-    <!-- Link FlowBite And Tailwind CSS -->
+    <!-- Link FlowBite And Tailwind CSS And loading -->
     <link rel="stylesheet" href="/Style/style.css">
+
+    <style>
+        main {
+            padding-top: 210px;
+        }
+
+        @media(max-width:1024px) {
+            main {
+                padding-top: 250px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -30,47 +42,30 @@
 
     <!-- Cart Start -->
     <section class="cart">
-        <div class="cart-drawer bg-white shadow-xl p-5 flex flex-col justify-between h-full">
+        <div class="cart-drawer bg-white shadow-xl p-6 flex flex-col justify-between h-full">
 
             <!-- الهيدر -->
             <div class="flex items-center justify-between pb-4 border-b border-gray-200">
                 <h3 class="font-bold text-xl text-gray-800">Cart Items : <span
-                        class="text-orange-500 font-bold">2</span></h3>
+                        class="total-count text-orange-500 font-bold">0</span></h3>
                 <button class="close-btn text-gray-600 hover:text-black cursor-pointer">
                     <i
                         class="fa-regular fa-circle-xmark text-3xl close-cart text-black hover:text-red-500 duration-300"></i>
                 </button>
             </div>
 
-            <!-- 1 -->
             <div class="cart-items flex-1 overflow-y-auto py-2">
-                <div class="cart-item flex items-center gap-3 py-3 border-b border-gray-100">
-                    <img src="../public/Imgs/product/11.png" alt="product" class="w-18 h-18 object-cover rounded">
-                    <div class="flex-1 ps-4">
-                        <p class="text-xs font-semibold text-gray-800">Lorem ipsum dolor sit amet consectetur
-                            adipisicing.</p>
-                        <span class="text-gray-500 text-sm font-medium">$300</span>
-                        <div class="flex items-center gap-4 mt-2">
-                            <button class="qty-btn"><i class="fa-solid fa-minus"></i></button>
-                            <span class="text-orange-500 font-bold text-sm">1</span>
-                            <button class="qty-btn"><i class="fa-solid fa-plus"></i></button>
-                        </div>
-                    </div>
-                    <button class="delete-btn text-2xl text-gray-400 hover:text-red-500 cursor-pointer"><i
-                            class="fa-solid fa-trash"></i></button>
-                </div>
-            </div>
 
+            </div>
 
             <!-- الفوتر -->
             <div class="cart-footer pt-4 border-t border-gray-200">
                 <div class="flex justify-between items-center mb-4">
                     <span class="text-gray-600 font-medium">subtotal</span>
-                    <span class="text-orange-500 font-bold text-lg">$ 580</span>
+                    <span class="total-price text-orange-500 font-bold text-lg">0</span>
                 </div>
                 <div class="flex justify-between flex-wrap items-center gap-3 mt-8">
-                    <a href="HTML/check.html"
-                        class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
+                    <a href="check.html" class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
                     <button class="main-btn shop-more-btn cursor-pointer close-cart">SHOP MORE</button>
                 </div>
             </div>
@@ -79,16 +74,17 @@
     </section>
     <!-- Carts End -->
 
+
+
     <!-- Header Start -->
     <header class="py-4">
 
         <!-- Header Top Start -->
         <div class="header-top py-5 px-6 pb-7">
-            <div
-                class="container mx-auto flex flex-wrap lg:flex-nowrap justify-center md:justify-between space-y-5 items-center gap-6">
+            <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-center gap-6 lg:gap-y-8">
 
-                <div class="w-[180px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
-                    <img src="/public/Imgs/logo.png" alt="Logo">
+                <div class="md:w-[180px] w-[120px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
+                    <img src="../public/Imgs/logo.png" alt="Logo">
                 </div>
 
                 <div
@@ -97,25 +93,21 @@
 
 
                     <input
-                        class="w-full md:flex-1 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
+                        class="inputSearch w-full md:flex-1 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
                         type="text" placeholder="Search For Products">
                     <button
-                        class="w-20 text-white h-full bg-main cursor-pointer hover:bg-orange-500 duration-300 flex items-center justify-center">
+                        class="icon-search w-20 text-white h-full bg-main cursor-pointer hover:bg-orange-500 duration-300 flex items-center justify-center">
                         <i class="fa-solid fa-magnifying-glass text-[22px]"></i>
                     </button>
                 </div>
 
                 <!-- 3. أيقونات المفضلة والسلة -->
                 <div class="icons flex items-center order-2 lg:order-3">
-                    <button class="relative">
-                        <i class="fa-regular fa-heart"></i>
-                        <span
-                            class="absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
-                    </button>
+
                     <button class="close-cart relative">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i class="fa-solid fa-cart-shopping md:text-[30px] text-[25px]"></i>
                         <span
-                            class="absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
+                            class="shoping-count absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
                     </button>
                 </div>
 
@@ -132,23 +124,20 @@
 
                 <div class="relative">
                     <div class="flex items-center gap-5">
-                        <i class="fa-solid fa-bars hum h-17"></i>
-                        <button id="btn"
-                            class="bg-main text-white h-17 px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
-                            <i class="fa-solid fa-bars text-lg"></i>
-                            <span class="font-bold">Browse Category</span>
-                            <i class="fa-solid fa-chevron-down text-sm"></i>
+                        <i class="fa-solid fa-bars hum"></i> <button id="btn"
+                            class="bg-main text-white h-17 px-2 lg:px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
+                            <i class="fa-solid fa-bars text-sm lg:text-lg"></i>
+                            <span class="font-bold lg:text-lg text-sm">Browse Category</span>
+                            <i class="fa-solid fa-chevron-down text-sm lg:text-lg"></i>
                         </button>
                     </div>
 
                     <ul class="category-list">
-                        <li><a href="#">Top 10 Offers</a></li>
-                        <li><a href="#">Electronics & Digital</a></li>
-                        <li><a href="#">Phones & Tablets</a></li>
-                        <li><a href="#">Fashion & Clothings</a></li>
-                        <li><a href="#">Television & Monitor</a></li>
-                        <li><a href="#">Jewelry & Watches</a></li>
-                        <li><a href="#">Toys & Hobbies</a></li>
+                        <li><a href="#hero-bottom">Special Discounts</a></li>
+                        <li><a href="#products1">Top 7 Offers</a></li>
+                        <li><a href="#products2">Electronics</a></li>
+                        <li><a href="#products3">Appliances</a></li>
+                        <li><a href="#products4">Phones & Tablets</a></li>
                     </ul>
                 </div>
 
@@ -161,12 +150,12 @@
                     <li><a href="#contact">Contact</a></li>
 
                     <div class="flex items-center flex-col gap-4 lg:hidden">
-                        <a href="#"
+                        <a href="HTML/login.html"
                             class="text-center bg-main text-white w-full ps-8 pe-3 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
-                            <span>Login</span>
+                            <span>Log In</span>
                             <i class="fa-solid fa-right-to-bracket"></i>
                         </a>
-                        <a href="#"
+                        <a href="HTML/signup.html"
                             class="text-center bg-main text-white px-6  w-full py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                             <span>Sign UP</span>
                             <i class="fa-solid fa-user-plus"></i>
@@ -176,12 +165,12 @@
                 </ul>
 
                 <div class="lg:flex hidden items-center gap-4">
-                    <a href="#"
+                    <a href="HTML/login.html"
                         class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                         <span>Login</span>
                         <i class="fa-solid fa-right-to-bracket"></i>
                     </a>
-                    <a href="#"
+                    <a href="HTML/signup.html"
                         class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                         <span>Sign UP</span>
                         <i class="fa-solid fa-user-plus"></i>
@@ -198,49 +187,47 @@
 
 
 
-
     <main>
         <section id="checkout">
             <div class="container">
                 <div class="all grid xl:grid-cols-2 grid-cols-1 py-10 gap-y-10 lg:gap-5 justify-between items-start">
-
                     <div
-                        class="order-summary border-2 border-border border-y-0 rounded-xl overflow-hidden shadow-sm w-[100%] lg:w-[85%] mx-auto flex flex-col justify-between h-full xl:h-[98%]">
+                        class="order-summary border-2 border-border border-y-0 rounded-xl overflow-hidden shadow-sm w-[100%] lg:w-[85%] mx-auto flex flex-col justify-between h-full">
 
-                        <!-- Top Section (Title & Cards) -->
+                        <!-- Top Section -->
                         <div>
                             <div class="title bg-main">
-                                <h3 class="text-white font-bold text-3xl py-4 text-center">Order Summary</h3>
+                                <h3 class="text-white font-bold text-2xl md:text-3xl py-4 text-center">Order Summary
+                                </h3>
                             </div>
 
-                            <div class="cards px-8 overflow-y-auto max-h-[400px] divide-y divide-border">
-                                
+                            <!-- Cards -->
+                            <div class="cards overflow-y-auto h-[600px] divide-y divide-border">
+
                                 <!-- Card 1 -->
-                                <div class="card flex items-center gap-3 py-5 relative">
-                                    <img src="../public/Imgs/product/12.png" class="w-20 h-20 object-cover rounded-lg">
-                                    <div class="content flex-1 me-8">
-                                        <p class="text-heading font-bold">Large Venue building mapping Projector</p>
-                                        <span class="price text-p py-1 block">$400</span>
+                                <!-- <div class="cart-item flex items-center gap-3 py-4 px-7 border-b-2 border-gray-200">
+                                    <img src="../public/Imgs/product/0.png" alt="product"
+                                        class="w-18 h-18 object-cover rounded">
+                                    <div class="flex-1 ps-4">
+                                        <p class="text-xs font-bold text-gray-800">Samsung</p>
+                                        <span class="price-cart text-gray-500 text-sm font-bold">$400</span>
+
                                         <div class="flex items-center gap-4 mt-2">
-                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                    class="fa-solid fa-minus"></i></button>
-                                            <span class="text-orange-500 font-bold text-sm">1</span>
-                                            <button class="qty-btn px-2 py-1 bg-gray-100 rounded"><i
-                                                    class="fa-solid fa-plus"></i></button>
+                                            <button class="qty-btn musnis"><i class="fa-solid fa-minus"></i></button>
+                                            <span class="span-bls text-orange-500 font-bold text-sm">1</span>
+                                            <button class="qty-btn colletion"><i class="fa-solid fa-plus"></i></button>
                                         </div>
                                     </div>
                                     <button
-                                        class="delete-btn text-xl text-black hover:text-red-500 cursor-pointer absolute right-0 top-6">
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                </div>
-
-
-
+                                        class="delete-btn text-2xl text-gray-400 hover:text-red-500 cursor-pointer"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </div> -->
                             </div>
                         </div>
 
-                        <!-- Bottom Section (Totals & Button) -->
+
+
+                        <!-- Bottom Section -->
                         <div>
                             <div class="held border-t-2 border-border w-full px-8 py-5 bg-gray-50">
                                 <div class="space-y-3">
@@ -262,7 +249,7 @@
                             </div>
 
                             <button
-                                class="order bg-main text-white py-4 w-full text-xl font-bold duration-300 cursor-pointer hover:bg-orange-500">
+                                class="order bg-main text-white py-4 w-full text-xl md:text-2xl font-bold duration-300 cursor-pointer hover:bg-orange-500">
                                 Place Order
                             </button>
                         </div>
@@ -276,7 +263,8 @@
                             class="bg-white border-2 border-t-0 border-border rounded-xl overflow-hidden shadow-sm">
 
                             <div class="title border-border text-white  bg-main">
-                                <h3 class="text-2xl font-bold py-2 text-white text-center">Delivery Address</h3>
+                                <h3 class="text-2xl font-bold text-2xl md:text-3xl py-2 text-white text-center">Delivery
+                                    Address</h3>
                             </div>
 
                             <div>
@@ -298,12 +286,13 @@
                             </div>
                         </form>
 
-                        <div class="all-coupon my-5 rounded-xl overflow-hidden border-2 border-border border-t-0">
-                            <div class="title  py-3 text-center text-2xl font-bold text-white bg-main">
+                        <div
+                            class="all-coupon my-5 bg-white rounded-xl overflow-hidden border-2 border-border border-t-0">
+                            <div class="title  py-3 text-center text-2xl md:text-3xl font-bold text-white bg-main">
                                 <h3>Coupon Code</h3>
                             </div>
-                            <div class="flex flex-col bg-white px-4">
-                                <h4 class="pt-3  text-[17px] font-extrabold">Coupon Code</h4>
+                            <div class="flex flex-col bg-white px-4 py-6">
+                                <h4 class="pt-3 text-xl md:text-2xl font-extrabold">Coupon Code</h4>
                                 <input class="input-coupon" type="text" placeholder="Enter Your Coupon Code">
                                 <button
                                     class="btn-coupon cursor-pointer hover:bg-orange-500 duration-300 bg-main text-white w-fit mx-auto my-4 py-3 px-10 font-bold text-2xl">Apply
@@ -317,13 +306,6 @@
             </div>
         </section>
     </main>
-
-
-
-
-
-
-
 
 
 
