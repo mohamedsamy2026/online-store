@@ -298,13 +298,11 @@ function getitem() {
         updateCount();
     }
 }
-
-
 // LocalStorge End
-// Search Start
+
+
 
 // Search Start
-
 let iconSearch = document.querySelector(".icon-search");
 let inputSearch = document.querySelector(".inputSearch");
 
@@ -318,13 +316,11 @@ function search() {
             if (swiperEl.swiper && swiperEl.swiper.autoplay) {
                 swiperEl.swiper.autoplay.stop();
             }
-            // بنجبر الـ swiper إنه يبطل يحرك الكروت ويسمح بظهورها كلها
             let wrapper = swiperEl.querySelector('.swiper-wrapper');
             if (wrapper) {
-                wrapper.style.display = "flex";
-                wrapper.style.justifyContent = "center";
-                wrapper.style.flexWrap = "wrap";
-                wrapper.style.gap = "20px";
+                wrapper.style.display = "gird";
+                wrapper.style.gridTemplateColumns = "repeat(auto-fit, minmax(250px, 1fr))"; 
+                wrapper.style.gap = "20px 0";
                 wrapper.style.transform = "none !important";
             }
         });
