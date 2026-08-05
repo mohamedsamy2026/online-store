@@ -24,6 +24,7 @@
     <!-- Link FlowBite And Tailwind CSS And loading -->
     <link rel="stylesheet" href="/Style/style.css">
 
+    <!-- Style -->
     <style>
         main {
             padding-top: 210px;
@@ -39,6 +40,21 @@
 </head>
 
 <body class="bg-gray-50 font-sans font-bold">
+
+    <!-- Loading CSS Start -->
+    <section id="loading">
+        <div
+            class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-blue-500 w-full h-screen">
+            <div class="loader-inner ball-pulse-sync">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <span class="text-white font-bold text-lg tracking-wider animate-pulse">Loading...</span>
+        </div>
+    </section>
+    <!-- Loading CSS End -->
 
     <!-- Cart Start -->
     <section class="cart">
@@ -204,24 +220,7 @@
                             <!-- Cards -->
                             <div class="cards overflow-y-auto h-[600px] divide-y divide-border">
 
-                                <!-- Card 1 -->
-                                <!-- <div class="cart-item flex items-center gap-3 py-4 px-7 border-b-2 border-gray-200">
-                                    <img src="../public/Imgs/product/0.png" alt="product"
-                                        class="w-18 h-18 object-cover rounded">
-                                    <div class="flex-1 ps-4">
-                                        <p class="text-xs font-bold text-gray-800">Samsung</p>
-                                        <span class="price-cart text-gray-500 text-sm font-bold">$400</span>
 
-                                        <div class="flex items-center gap-4 mt-2">
-                                            <button class="qty-btn musnis"><i class="fa-solid fa-minus"></i></button>
-                                            <span class="span-bls text-orange-500 font-bold text-sm">1</span>
-                                            <button class="qty-btn colletion"><i class="fa-solid fa-plus"></i></button>
-                                        </div>
-                                    </div>
-                                    <button
-                                        class="delete-btn text-2xl text-gray-400 hover:text-red-500 cursor-pointer"><i
-                                            class="fa-solid fa-trash"></i></button>
-                                </div> -->
                             </div>
                         </div>
 
@@ -408,8 +407,8 @@
 
     <!-- Script JS -->
     <script type="module" src="../JS/script.js"></script>
-
-
+    <!-- Script JS -->
+    <script type="module" src="../JS/checkout.js"></script>
 
 </body>
 
