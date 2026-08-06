@@ -77,10 +77,16 @@ function showToast() {
 }
 // Show Aleart End
 
+
+
+
+
+
 // Add To Cart Start
 
 
 const CART_KEY = "my_cart";
+const coupon = "shop3572"
 
 // مبلغ الشحن
 const SHIPPING_COST = 20;
@@ -117,7 +123,7 @@ function addToCart(productData) {
         name: productData.name,
         price: productData.price,
         img: productData.img,
-        qty: 1
+        qty: 1,
     };
 
     cart.push(newProduct);
@@ -195,6 +201,21 @@ function buildProductCardHTML(item, index) {
 
 
 
+// Coupon Code Start
+
+function couponCode() {
+    let checkoutTotalCoupon = document.querySelector(".smallcheckout");
+    let inputCoupon = document.querySelector(".input-coupon");
+    let buttonCuopon = document.querySelector(".btn-coupon");
+
+
+    let priceText = checkoutTotalCoupon.innerText;
+    let Checkoutprice = Number(priceText.replace("$", "").trim())
+    checkoutTotalCoupon.innerText = "$" + (Checkoutprice - 50)
+}
+
+// Coupon Code End
+
 
 // ابني كل الـ HTML بتاع السلة (كل المنتجات مع بعض)
 function buildCartHTML(cart) {
@@ -221,7 +242,7 @@ function displayCartHTML(html) {
 // حدّث العدادات والأسعار (فوق الأيقونة، السلة الجانبية)
 function updateCartCounters(cart, subtotal) {
     let totalItems = calculateTotalItems(cart);
-    let distinctProducts = cart.length;    
+    let distinctProducts = cart.length;
 
     let shopIcon = document.querySelector(".shoping-count");
     let totalCountEl = document.querySelector(".total-count");
@@ -229,7 +250,7 @@ function updateCartCounters(cart, subtotal) {
 
     if (shopIcon) shopIcon.innerText = distinctProducts;
     if (totalCountEl) totalCountEl.innerText = totalItems;
-    if (totalPriceEl) totalPriceEl.innerText = "$" + subtotal.toFixed(2);
+    if (totalPriceEl) totalPriceEl.innerText = "$" + subtotal;
 }
 
 
@@ -243,8 +264,8 @@ function updateCheckoutTotals(subtotal) {
 
     let shipping = subtotal > 0 ? SHIPPING_COST : 0;
 
-    if (checkoutSub) checkoutSub.innerText = "$" + subtotal.toFixed(2);
-    if (checkoutTotal) checkoutTotal.innerText = "$" + (subtotal + shipping).toFixed(2);
+    if (checkoutSub) checkoutSub.innerText = "$" + subtotal;
+    if (checkoutTotal) checkoutTotal.innerText = "$" + (subtotal + shipping);
 }
 
 
@@ -294,6 +315,7 @@ function renderCart() {
     displayCartHTML(html);
 
     updateCartCounters(cart, subtotal);
+
     updateCheckoutTotals(subtotal);
     updateProductButtons(cart);
 }
@@ -344,6 +366,16 @@ window.addEventListener("storage", (event) => {
 document.addEventListener("DOMContentLoaded", () => {
     renderCart();
 });
+
+
+// Coupon Start
+let buttonCuopon = document.querySelector(".btn-coupon");
+
+buttonCuopon.addEventListener("click", () => {
+    couponCode();
+});
+// Coupon End
+
 
 // Add To Cart End
 

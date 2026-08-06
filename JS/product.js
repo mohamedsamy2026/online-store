@@ -1,4 +1,4 @@
-let cartItemsText = localStorage.getItem("cards") || "";
+let cartItemsText = localStorage.getItem("my_cart") || "";
 fetch("products.json")
     .then(response => response.json())
     .then(data => {
@@ -14,8 +14,8 @@ fetch("products.json")
                 </div>
             ` : `
                 <div class="div-btn-cart cursor-pointer mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
-                    <button type="button" class="btn-cart text-white shadow-xs text-[17px] font-semibold cursor-pointer w-full h-full">
-                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
+                    <button type="button" class="btn-cart text-white shadow-xs text-[14px] md:text-[17px] font-semibold cursor-pointer w-full h-full py-[3px] px-[3px]">
+                        <i class="fa-solid fa-cart-shopping text-[14px] md:text-[16px]"></i> Add to cart
                     </button>
                 </div>
             `;
@@ -49,7 +49,7 @@ fetch("products.json")
                             </div>
 
                             <a href="#" class="hover:underline duration-200">
-                                <h5 class="product-name text-xl text-heading font-semibold tracking-tight line-clamp-2">
+                                <h5 class="product-name text-sm md:text-xl text-heading font-semibold tracking-tight line-clamp-2">
                                     ${element.name}
                                 </h5>
                             </a>
@@ -57,7 +57,7 @@ fetch("products.json")
 
                         <div>
                             <div class="py-3">
-                                <p class="text-main text-2xl font-bold">
+                                <p class="text-main text-[20px] md:text-2xl font-bold">
                                     <span class="product-price">$${element.price}</span>
                                     ${element.old_price ? `<span
                                         class="product-old-price text-sm text-p line-through">$${element.old_price}</span>` : ''}

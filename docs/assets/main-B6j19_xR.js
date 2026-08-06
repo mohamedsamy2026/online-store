@@ -1,4 +1,4 @@
-import"./script-B9TUTnP2.js";/* empty css             */var e=localStorage.getItem(`cards`)||``;fetch(`products.json`).then(e=>e.json()).then(t=>{t.forEach(t=>{let n=e.includes(t.name)?`
+import"./script-CtYuKBf9.js";/* empty css             */var e=localStorage.getItem(`my_cart`)||``;fetch(`products.json`).then(e=>e.json()).then(t=>{t.forEach(t=>{let n=e.includes(t.name)?`
                 <div class="div-btn-cart active mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300 cursor-pointer">
                     <button type="button" class="btn-cart text-black border-2 border-main shadow-xs text-[18px] py-[10px] w-full font-semibold cursor-pointer">
                         <i class="fa-solid fa-cart-shopping text-main text-[17px]"></i> Item In cart
@@ -6,8 +6,8 @@ import"./script-B9TUTnP2.js";/* empty css             */var e=localStorage.getIt
                 </div>
             `:`
                 <div class="div-btn-cart cursor-pointer mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300">
-                    <button type="button" class="btn-cart text-white shadow-xs text-[17px] font-semibold cursor-pointer w-full h-full">
-                        <i class="fa-solid fa-cart-shopping text-[16px]"></i> Add to cart
+                    <button type="button" class="btn-cart text-white shadow-xs text-[14px] md:text-[17px] font-semibold cursor-pointer w-full h-full py-[3px] px-[3px]">
+                        <i class="fa-solid fa-cart-shopping text-[14px] md:text-[16px]"></i> Add to cart
                     </button>
                 </div>
             `,r=t.old_price?Math.round((t.old_price-t.price)/t.old_price*100):``,i=`
@@ -35,7 +35,7 @@ import"./script-B9TUTnP2.js";/* empty css             */var e=localStorage.getIt
                             </div>
 
                             <a href="#" class="hover:underline duration-200">
-                                <h5 class="product-name text-xl text-heading font-semibold tracking-tight line-clamp-2">
+                                <h5 class="product-name text-sm md:text-xl text-heading font-semibold tracking-tight line-clamp-2">
                                     ${t.name}
                                 </h5>
                             </a>
@@ -43,7 +43,7 @@ import"./script-B9TUTnP2.js";/* empty css             */var e=localStorage.getIt
 
                         <div>
                             <div class="py-3">
-                                <p class="text-main text-2xl font-bold">
+                                <p class="text-main text-[20px] md:text-2xl font-bold">
                                     <span class="product-price">$${t.price}</span>
                                     ${t.old_price?`<span
                                         class="product-old-price text-sm text-p line-through">$${t.old_price}</span>`:``}
