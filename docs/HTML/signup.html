@@ -21,126 +21,108 @@
 
     <!-- Link FlowBite And Tailwind CSS -->
 
-  <link rel="stylesheet" crossorigin href="/online-store/assets/sass---ofyFFW.css">
+  <script type="module" crossorigin src="/online-store/assets/sass-BR8hGQsv.js"></script>
+  <script type="module" crossorigin src="/online-store/assets/log-uqIxvwvU.js"></script>
+  <link rel="stylesheet" crossorigin href="/online-store/assets/sass-But5msFG.css">
   <link rel="stylesheet" crossorigin href="/online-store/assets/all-DoDT5-t7.css">
 </head>
 
 <body
     class="bg-gradient-to-br from-gray-900 via-slate-900 to-black min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
 
-    <main>
 
 
-        <!-- Background Glow Effects -->
-        <div class="absolute w-72 h-72 bg-orange-500/10 rounded-full blur-3xl top-10 left-10 pointer-events-none"></div>
-        <div class="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl bottom-10 right-10 pointer-events-none">
+    <!-- Background Glow Effects -->
+    <div class="absolute w-72 h-72 bg-orange-500/10 rounded-full blur-3xl top-10 left-10 pointer-events-none"></div>
+    <div class="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl bottom-10 right-10 pointer-events-none">
+    </div>
+
+
+
+    <!-- Sign Up Card Container -->
+    <div
+        class="relative w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-8 text-white z-10">
+
+        <!-- Logo / Header -->
+        <div class="text-center mb-8">
+            <a href="../index.html" class="inline-block mb-3">
+                <span class="text-2xl font-black tracking-wider text-white">Back <span class="text-orange-500">To
+                        Home</span></span>
+            </a>
+            <h1 class="text-2xl font-bold tracking-wide">Create Account</h1>
+            <p class="text-sm text-gray-400 mt-1">Please fill in the details to sign up.</p>
         </div>
 
+        <!-- Sign Up Form -->
+        <form id="signupForm" class="space-y-5">
 
-
-        <!-- Sign Up Card Container -->
-        <div
-            class="relative w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl p-8 text-white z-10">
-
-            <!-- Logo / Header -->
-            <div class="text-center mb-8">
-                <a href="../index.html" class="inline-block mb-3">
-                    <span class="text-2xl font-black tracking-wider text-white">Back <span class="text-orange-500">To
-                            Home</span></span>
-                </a>
-                <h1 class="text-2xl font-bold tracking-wide">Create Account</h1>
-                <p class="text-sm text-gray-400 mt-1">Please fill in the details to sign up.</p>
+            <!-- Full Name Field -->
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+                    <input type="text" id="name" required placeholder="Mohamed Samy"
+                        class="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm text-white placeholder-gray-500 transition-all">
+                </div>
             </div>
 
-            <!-- Sign Up Form -->
-            <form id="signupForm" class="space-y-5">
-
-                <!-- Full Name Field -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Full Name</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
-                            <i class="fa-solid fa-user"></i>
-                        </span>
-                        <input type="text" id="name" required placeholder="Mohamed Samy"
-                            class="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm text-white placeholder-gray-500 transition-all">
-                    </div>
+            <!-- Email Field -->
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input type="email" id="email" required placeholder="name@example.com"
+                        class="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm text-white placeholder-gray-500 transition-all">
                 </div>
-
-                <!-- Email Field -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Email Address</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
-                            <i class="fa-solid fa-envelope"></i>
-                        </span>
-                        <input type="email" id="email" required placeholder="name@example.com"
-                            class="w-full pl-11 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm text-white placeholder-gray-500 transition-all">
-                    </div>
-                </div>
-
-                <!-- Password Field -->
-                <div>
-                    <label class="block text-sm font-medium text-gray-300 mb-1">Password</label>
-                    <div class="relative">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
-                            <i class="fa-solid fa-lock"></i>
-                        </span>
-                        <input type="password" id="password" required placeholder="••••••••"
-                            class="w-full pl-11 pr-12 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm text-white placeholder-gray-500 transition-all">
-                        <button type="button" id="togglePassword"
-                            class="cursor-pointer absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-white transition-colors">
-                            <i class="fa-solid fa-eye" id="eyeIcon"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Terms & Conditions Checkbox -->
-                <div class="flex items-center text-sm text-gray-300">
-                    <label class="flex items-center gap-2 cursor-pointer">
-                        <input type="checkbox" required
-                            class="rounded bg-white/5 border-white/10 text-orange-500 focus:ring-orange-500 w-4 h-4">
-                        <span>I agree to the <a href="term.html" class="text-orange-400 hover:underline">Terms &
-                                Conditions</a></span>
-                    </label>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit"
-                    class="cursor-pointer w-full py-3 px-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold rounded-xl shadow-lg shadow-orange-500/20 transition-all duration-300 transform active:scale-[0.98]">
-                    Create Account
-                </button>
-
-            </form>
-
-            <!-- Footer Link to Login -->
-            <div class="text-center mt-6 text-sm text-gray-400">
-                Already have an account?
-                <a href="login.html" class="text-orange-400 font-semibold hover:underline">Sign in</a>
             </div>
 
+            <!-- Password Field -->
+            <div>
+                <label class="block text-sm font-medium text-gray-300 mb-1">Password</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input type="password" id="password" required placeholder="••••••••"
+                        class="w-full pl-11 pr-12 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 text-sm text-white placeholder-gray-500 transition-all">
+                    <button type="button" id="togglePassword"
+                        class="cursor-pointer absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-white transition-colors">
+                        <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Terms & Conditions Checkbox -->
+            <div class="flex items-center text-sm text-gray-300">
+                <label class="flex items-center gap-2 cursor-pointer">
+                    <input type="checkbox" required
+                        class="rounded bg-white/5 border-white/10 text-orange-500 focus:ring-orange-500 w-4 h-4">
+                    <span>I agree to the <a href="term.html" class="text-orange-400 hover:underline">Terms &
+                            Conditions</a></span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="cursor-pointer w-full py-3 px-4 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-bold rounded-xl shadow-lg shadow-orange-500/20 transition-all duration-300 transform active:scale-[0.98]">
+                Create Account
+            </button>
+
+        </form>
+
+        <!-- Footer Link to Login -->
+        <div class="text-center mt-6 text-sm text-gray-400">
+            Already have an account?
+            <a href="login.html" class="text-orange-400 font-semibold hover:underline">Sign in</a>
         </div>
-    </main>
-    <!-- Script for Password Toggle & Dummy Submit -->
-    <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const password = document.getElementById('password');
-        const eyeIcon = document.getElementById('eyeIcon');
 
-        togglePassword.addEventListener('click', function () {
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-            eyeIcon.classList.toggle('fa-eye');
-            eyeIcon.classList.toggle('fa-eye-slash');
-        });
+    </div>
 
-        document.getElementById('signupForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('تم إنشاء الحساب بنجاح (تجريبي)');
-            window.location.href = '../index.html';
-        });
-    </script>
-
+    <!-- Supabase JS -->
 </body>
 
 </html>
