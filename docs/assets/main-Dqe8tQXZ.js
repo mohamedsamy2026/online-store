@@ -1,4 +1,4 @@
-import"./script-CtYuKBf9.js";/* empty css             */var e=localStorage.getItem(`my_cart`)||``;fetch(`products.json`).then(e=>e.json()).then(t=>{t.forEach(t=>{let n=e.includes(t.name)?`
+import"./script-Bpa8SHzs.js";/* empty css             */var e=localStorage.getItem(`my_cart`)||``;fetch(`products.json`).then(e=>e.json()).then(t=>{t.forEach(t=>{let n=e.includes(t.name)?`
                 <div class="div-btn-cart active mt-2 bg-main w-full font-bold text-center py-[10px] rounded-sm hover:scale-105 duration-300 cursor-pointer">
                     <button type="button" class="btn-cart text-black border-2 border-main shadow-xs text-[18px] py-[10px] w-full font-semibold cursor-pointer">
                         <i class="fa-solid fa-cart-shopping text-main text-[17px]"></i> Item In cart

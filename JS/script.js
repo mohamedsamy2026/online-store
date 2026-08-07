@@ -67,12 +67,19 @@ close.forEach(element => {
 
 
 // Show Aleart Start
-function showToast() {
+function showToast(text) {
     let toast = document.getElementById("toast-message");
     if (!toast) return;
-    toast.classList.toggle("translate-x-[120%]");
+    toast.classList.remove("translate-x-[130%]");
+
+
+    let textSpan = document.querySelector(".text-span");
+    if (textSpan) {
+        textSpan.innerText = text
+    }
+
     setTimeout(() => {
-        toast.classList.toggle("translate-x-[120%]");
+        toast.classList.add("translate-x-[130%]");
     }, 2500);
 }
 // Show Aleart End
@@ -115,7 +122,7 @@ function addToCart(productData) {
     let alreadyInCart = findProductInCart(cart, productData.name);
 
     if (alreadyInCart) {
-        showToast();
+        showToast("هذا المنتج موجود بالفعل في السلة!");
         return;
     }
 
@@ -200,21 +207,6 @@ function buildProductCardHTML(item, index) {
 }
 
 
-
-// Coupon Code Start
-
-function couponCode() {
-    let checkoutTotalCoupon = document.querySelector(".smallcheckout");
-    let inputCoupon = document.querySelector(".input-coupon");
-    let buttonCuopon = document.querySelector(".btn-coupon");
-
-
-    let priceText = checkoutTotalCoupon.innerText;
-    let Checkoutprice = Number(priceText.replace("$", "").trim())
-    checkoutTotalCoupon.innerText = "$" + (Checkoutprice - 50)
-}
-
-// Coupon Code End
 
 
 // ابني كل الـ HTML بتاع السلة (كل المنتجات مع بعض)
@@ -369,11 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Coupon Start
-let buttonCuopon = document.querySelector(".btn-coupon");
 
-buttonCuopon.addEventListener("click", () => {
-    couponCode();
-});
 // Coupon End
 
 
