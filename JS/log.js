@@ -1,8 +1,6 @@
 import { supabase } from './import_supabase.js';
 
-// ==========================================
-// 1. دالة ترجمة أخطاء سوبابيز للغة العربية
-// ==========================================
+// 1. دالة ترجمة أخطاء سوبابيز للغة العربية تبدأ
 function translateError(errorMessage) {
     if (!errorMessage) return "حدث خطأ غير متوقع، يرجى المحاولة لاحقاً.";
 
@@ -26,11 +24,13 @@ function translateError(errorMessage) {
 
     return "تعذر إنشاء الحساب، يرجى التأكد من البيانات والمحاولة لاحقاً.";
 }
+// 1. دالة ترجمة أخطاء سوبابيز للغة العربية تنتهي
 
-// ==========================================
-// 2. دالة إظهار التنبيهات المضمونة 100% (Toast)
-// ==========================================
+
+
+// 2.  دالة إظهار التنبيهات المضمونة تبدأ
 function showToast(message, type = 'success') {
+
     // إزالة أي توست قديم لو موجود
     const oldToast = document.getElementById('custom-toast');
     if (oldToast) oldToast.remove();
@@ -52,7 +52,7 @@ function showToast(message, type = 'success') {
         border-radius: 12px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         z-index: 99999999999999;
-        font-size: 15px;
+        font-size: 16.5px;
         font-weight: 600;
         display: flex;
         align-items: center;
@@ -88,10 +88,11 @@ function showToast(message, type = 'success') {
         setTimeout(() => toast.remove(), 300);
     }, 3500);
 }
+// 2.  دالة إظهار التنبيهات المضمونة تنتهي
 
-// ==========================================
-// 3. تهيئة الصفحة والاستماع للأحداث
-// ==========================================
+
+
+// 3. تهيئة الصفحة والاستماع للأحداث يبدأ
 document.addEventListener('DOMContentLoaded', async () => {
     // كود إظهار وإخفاء كلمة المرور
     const togglePassword = document.getElementById('togglePassword');
@@ -128,10 +129,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     const signupForm = document.getElementById('signupForm');
     if (signupForm) signupForm.addEventListener('submit', handleSignUp);
 });
+// 3. تهيئة الصفحة والاستماع للأحداث ينتهي
 
-// ==========================================
-// 4. دالة تسجيل الدخول
-// ==========================================
+
+
+// 4. دالة تسجيل الدخول يبدأ
 async function handleLogin(e) {
     e.preventDefault();
     const submitBtn = e.target.querySelector('button[type="submit"]');
@@ -154,7 +156,7 @@ async function handleLogin(e) {
         const isSubFolder = window.location.pathname.includes('/HTML/');
         setTimeout(() => {
             window.location.href = isSubFolder ? '../index.html' : './index.html';
-        }, 1200);
+        }, 2000);
     } catch (err) {
         console.error(err);
         showToast("حدث خطأ غير متوقع، حاول مرة أخرى.", "error");
@@ -163,10 +165,11 @@ async function handleLogin(e) {
         submitBtn.innerText = "Sign In";
     }
 }
+// 4. دالة تسجيل الدخول ينتهي
 
-// ==========================================
-// 5. دالة إنشاء حساب جديد
-// ==========================================
+
+
+// 5. دالة إنشاء حساب جديد يبدأ
 async function handleSignUp(e) {
     e.preventDefault();
     const submitBtn = e.target.querySelector('button[type="submit"]');
@@ -194,33 +197,39 @@ async function handleSignUp(e) {
         const isSubFolder = window.location.pathname.includes('/HTML/');
         setTimeout(() => {
             window.location.href = isSubFolder ? '../index.html' : './index.html';
-        }, 1200);
+        }, 2000);
     } catch (err) {
         console.error(err);
         showToast("حدث خطأ غير متوقع أثناء التسجيل.", "error");
-    } finally {
+    } 
+    finally {
         submitBtn.disabled = false;
         submitBtn.innerText = "Create Account";
     }
 }
+// 5. دالة إنشاء حساب جديد ينتهي
 
-// ==========================================
-// 6. دالة تسجيل الخروج السريعة واللحظية (Logout)
-// ==========================================
+
+
+// 6. دالة تسجيل الخروج السريعة واللحظية يبدأ
 window.handleLogout = async function (e) {
-    if (e) e.preventDefault(); 
+    if (e) e.preventDefault();
 
     try {
         showToast("تم تسجيل الخروج بنجاح 👋", "success");
         updateHeaderUI(null);
         await supabase.auth.signOut();
-    } catch (err) {
+    }   catch (err) {
         console.error("Logout Error:", err);
     }
 };
-// ==========================================
-// 7. دالة تحديث أزرار الـ Header
-// ==========================================
+// 6. دالة تسجيل الخروج السريعة واللحظية ينتهي
+
+
+
+
+
+// 7. دالة تحديث أزرار الـ الهيدر يبدأ 
 function updateHeaderUI(user) {
     const desktopContainer = document.getElementById('auth-container-desktop');
     const mobileContainer = document.getElementById('auth-container-mobile');
@@ -240,11 +249,12 @@ function updateHeaderUI(user) {
             </button>
         `;
 
-        
+
 
         if (desktopContainer) desktopContainer.innerHTML = loggedInDesktopHTML;
         if (mobileContainer) mobileContainer.innerHTML = loggedInDesktopHTML;
-    } else {
+    } 
+    else {
         const loggedOutDesktopHTML = `
             <a href="${loginPath}" class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                 <span>Login</span>
@@ -271,3 +281,4 @@ function updateHeaderUI(user) {
         if (mobileContainer) mobileContainer.innerHTML = loggedOutMobileHTML;
     }
 }
+// 7. دالة تحديث أزرار الـ الهيدر ينتهي 
