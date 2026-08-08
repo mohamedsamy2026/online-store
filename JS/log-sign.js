@@ -148,19 +148,35 @@ async function handleLogin(e) {
 
         if (error) {
             showToast(translateError(error.message), "error");
+            // إعادة تفعيل الزرار في حالة وجود خطأ فقط
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Sign In";
             return;
         }
 
+        // 1. إظهار التوست للنجاح
         showToast("تم تسجيل الدخول بنجاح! 👋", "success");
 
+
         const isSubFolder = window.location.pathname.includes('/HTML/');
+        const defaultHome = isSubFolder ? '../index.html' : './index.html';
+
+        // 3. تحديد الهدف النهائي للتحويل
+        const previousPage = document.referrer;
+        let targetUrl = defaultHome;
+
+        if (previousPage && !previousPage.includes('login.html') && !previousPage.includes('signup.html')) {
+            targetUrl = previousPage;
+        }
+
+        // 4. مهلة 1.5 ثانية يقرأ فيها التوست ثم يتم التحويل
         setTimeout(() => {
-            window.location.href = isSubFolder ? '../index.html' : './index.html';
-        }, 2000);
+            window.location.href = targetUrl;
+        }, 1500);
+
     } catch (err) {
         console.error(err);
         showToast("حدث خطأ غير متوقع، حاول مرة أخرى.", "error");
-    } finally {
         submitBtn.disabled = false;
         submitBtn.innerText = "Sign In";
     }
@@ -195,13 +211,25 @@ async function handleSignUp(e) {
         showToast(`أهلاً بك يا ${name}! تم إنشاء حسابك بنجاح 🥳`, "success");
 
         const isSubFolder = window.location.pathname.includes('/HTML/');
+        const defaultHome = isSubFolder ? '../index.html' : './index.html';
+
+        // 3. تحديد الهدف النهائي للتحويل
+        const previousPage = document.referrer;
+        let targetUrl = defaultHome;
+
+        if (previousPage && !previousPage.includes('login.html') && !previousPage.includes('signup.html')) {
+            targetUrl = previousPage;
+        }
+
+        // 4. مهلة 1.5 ثانية يقرأ فيها التوست ثم يتم التحويل
         setTimeout(() => {
-            window.location.href = isSubFolder ? '../index.html' : './index.html';
-        }, 2000);
+            window.location.href = targetUrl;
+        }, 1500);
+        
     } catch (err) {
         console.error(err);
         showToast("حدث خطأ غير متوقع أثناء التسجيل.", "error");
-    } 
+    }
     finally {
         submitBtn.disabled = false;
         submitBtn.innerText = "Create Account";
@@ -219,7 +247,7 @@ window.handleLogout = async function (e) {
         showToast("تم تسجيل الخروج بنجاح 👋", "success");
         updateHeaderUI(null);
         await supabase.auth.signOut();
-    }   catch (err) {
+    } catch (err) {
         console.error("Logout Error:", err);
     }
 };
@@ -253,7 +281,7 @@ function updateHeaderUI(user) {
 
         if (desktopContainer) desktopContainer.innerHTML = loggedInDesktopHTML;
         if (mobileContainer) mobileContainer.innerHTML = loggedInDesktopHTML;
-    } 
+    }
     else {
         const loggedOutDesktopHTML = `
             <a href="${loginPath}" class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
