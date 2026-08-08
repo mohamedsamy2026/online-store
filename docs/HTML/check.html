@@ -34,9 +34,9 @@
         }
     </style>
 
-  <script type="module" crossorigin src="/online-store/assets/sass-4_YxKxnv.js"></script>
-  <script type="module" crossorigin src="/online-store/assets/script-D9vg8r1o.js"></script>
-  <link rel="stylesheet" crossorigin href="/online-store/assets/sass-B1UlS_Du.css">
+  <script type="module" crossorigin src="/online-store/assets/script-BrHmnsg2.js"></script>
+  <script type="module" crossorigin src="/online-store/assets/log-sign-CuFYx1Dj.js"></script>
+  <link rel="stylesheet" crossorigin href="/online-store/assets/script-Bih4G8sl.css">
   <link rel="stylesheet" crossorigin href="/online-store/assets/all-DoDT5-t7.css">
 </head>
 
@@ -56,11 +56,6 @@
         </div>
     </section>
     <!-- Loading CSS End -->
-
-
-    <!-- رسالة التنبيه العائمة من اليمين  للكارد من الكوبون يبدأ-->
-
-    <!-- رسالة التنبيه العائمة من اليمين  للكارد من الكوبون ينتهي-->
 
 
 
@@ -165,22 +160,23 @@
                     </ul>
                 </div>
 
-                <ul class="lg:flex hidden nav-links">
+                <ul class="xl:flex hidden nav-links">
                     <i
-                        class="fa-regular fa-circle-xmark xmark lg:!hidden block absolute right-10 top-8 text-4xl hover:text-red-500 duration-300 cursor-pointer"></i>
+                        class="fa-regular fa-circle-xmark xmark xl:!hidden block absolute right-10 top-8 text-4xl hover:text-red-500 duration-300 cursor-pointer"></i>
                     <li><a href="../index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="check.html">CheckOut</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
 
-                    <div class="flex items-center flex-col gap-4 lg:hidden">
+
+                    <div id="auth-container-mobile" class="flex items-center flex-col gap-4 lg:hidden">
                         <a href="login.html"
                             class="text-center bg-main text-white w-full ps-8 pe-3 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                             <span>Log In</span>
                             <i class="fa-solid fa-right-to-bracket"></i>
                         </a>
                         <a href="signup.html"
-                            class="text-center bg-main text-white px-6  w-full py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            class="text-center bg-main text-white px-6 w-full py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                             <span>Sign UP</span>
                             <i class="fa-solid fa-user-plus"></i>
                         </a>
@@ -188,7 +184,7 @@
 
                 </ul>
 
-                <div class="lg:flex hidden items-center gap-4">
+                <div id="auth-container-desktop" class="lg:flex hidden items-center gap-4">
                     <a href="login.html"
                         class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
                         <span>Login</span>
@@ -413,8 +409,10 @@
     </div>
     <!-- Footer End -->
 
+
     <!-- Script JS -->
 
+    <!-- Supabase JS -->
 
 </body>
 

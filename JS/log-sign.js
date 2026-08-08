@@ -1,5 +1,7 @@
 import { supabase } from './import_supabase.js';
 
+
+
 // 1. دالة ترجمة أخطاء سوبابيز للغة العربية تبدأ
 function translateError(errorMessage) {
     if (!errorMessage) return "حدث خطأ غير متوقع، يرجى المحاولة لاحقاً.";
@@ -86,7 +88,7 @@ function showToast(message, type = 'success') {
         toast.style.opacity = '0';
         toast.style.transform = 'translateY(-20px)';
         setTimeout(() => toast.remove(), 300);
-    }, 3500);
+    }, 1500);
 }
 // 2.  دالة إظهار التنبيهات المضمونة تنتهي
 
@@ -94,6 +96,33 @@ function showToast(message, type = 'success') {
 
 // 3. تهيئة الصفحة والاستماع للأحداث يبدأ
 document.addEventListener('DOMContentLoaded', async () => {
+
+
+    // البحث عن زرار تسجيل الخروج من صفحه الاكونت يبدأ
+    const logoutBtn = document.getElementById('logout-btn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', async () => {
+            const { error } = await supabase.auth.signOut();
+
+            if (error) {
+                alert('حدث خطأ أثناء تسجيل الخروج: ' + error.message);
+            } else {
+                const isSubFolder = window.location.pathname.includes('/HTML/');
+                const defaultHome = isSubFolder ? '../index.html' : './index.html';
+
+                showToast("تم تسجيل الخروج بنجاح 👋", "success");
+                updateHeaderUI(null);
+
+                setTimeout(() => {
+                    window.location.href = defaultHome;
+                }, 1500);
+            }
+        });
+    }
+    // البحث عن زرار تسجيل الخروج من صفحه الاكونت ينتهي
+
+
+
     // كود إظهار وإخفاء كلمة المرور
     const togglePassword = document.getElementById('togglePassword');
     const password = document.getElementById('password');
@@ -148,30 +177,18 @@ async function handleLogin(e) {
 
         if (error) {
             showToast(translateError(error.message), "error");
-            // إعادة تفعيل الزرار في حالة وجود خطأ فقط
             submitBtn.disabled = false;
             submitBtn.innerText = "Sign In";
             return;
         }
 
-        // 1. إظهار التوست للنجاح
         showToast("تم تسجيل الدخول بنجاح! 👋", "success");
-
 
         const isSubFolder = window.location.pathname.includes('/HTML/');
         const defaultHome = isSubFolder ? '../index.html' : './index.html';
 
-        // 3. تحديد الهدف النهائي للتحويل
-        const previousPage = document.referrer;
-        let targetUrl = defaultHome;
-
-        if (previousPage && !previousPage.includes('login.html') && !previousPage.includes('signup.html')) {
-            targetUrl = previousPage;
-        }
-
-        // 4. مهلة 1.5 ثانية يقرأ فيها التوست ثم يتم التحويل
         setTimeout(() => {
-            window.location.href = targetUrl;
+            window.location.href = defaultHome;
         }, 1500);
 
     } catch (err) {
@@ -213,19 +230,9 @@ async function handleSignUp(e) {
         const isSubFolder = window.location.pathname.includes('/HTML/');
         const defaultHome = isSubFolder ? '../index.html' : './index.html';
 
-        // 3. تحديد الهدف النهائي للتحويل
-        const previousPage = document.referrer;
-        let targetUrl = defaultHome;
-
-        if (previousPage && !previousPage.includes('login.html') && !previousPage.includes('signup.html')) {
-            targetUrl = previousPage;
-        }
-
-        // 4. مهلة 1.5 ثانية يقرأ فيها التوست ثم يتم التحويل
         setTimeout(() => {
-            window.location.href = targetUrl;
+            window.location.href = defaultHome;
         }, 1500);
-        
     } catch (err) {
         console.error(err);
         showToast("حدث خطأ غير متوقع أثناء التسجيل.", "error");
@@ -244,8 +251,16 @@ window.handleLogout = async function (e) {
     if (e) e.preventDefault();
 
     try {
+        const isSubFolder = window.location.pathname.includes('/HTML/');
+        const defaultHome = isSubFolder ? '../index.html' : './index.html';
+
         showToast("تم تسجيل الخروج بنجاح 👋", "success");
         updateHeaderUI(null);
+
+        setTimeout(() => {
+            window.location.href = defaultHome;
+        }, 1500);
+
         await supabase.auth.signOut();
     } catch (err) {
         console.error("Logout Error:", err);
@@ -310,3 +325,47 @@ function updateHeaderUI(user) {
     }
 }
 // 7. دالة تحديث أزرار الـ الهيدر ينتهي 
+
+
+
+
+
+
+
+// صفحه بيانات العميل يبدأ 
+
+// دالة لجلب بيانات المستحدم وعرضها في صفحة الحساب
+async function displayUserProfile() {
+    const accountCard = document.getElementById('account-card');
+    const guestView = document.getElementById('guest-view');
+
+    // لو العناصر دي مش موجودة في الصفحة الحالية يخرج وما يعملش خطأ
+    if (!accountCard || !guestView) return;
+
+    // 1. فحص المستخدم الحالي من Supabase
+    const { data: { user }, error } = await supabase.auth.getUser();
+
+    if (user) {
+        // --- المستخدم مسجل دخول ---
+        accountCard.classList.remove('hidden'); // إظهار كارت الحساب
+        guestView.classList.add('hidden');       // إخفاء رسالة الزائر
+
+        // استخراج البيانات من user_metadata أو البيانات الأساسية
+        const fullName = user.user_metadata?.full_name || 'مستخدم جديد';
+        const email = user.email || 'غير متاح';
+
+        // طباعة البيانات في الـ HTML
+        document.getElementById('user-header-name').textContent = fullName;
+        document.getElementById('user-full-name').textContent = fullName;
+        document.getElementById('user-email').textContent = email;
+
+    } else {
+        // --- المستخدم غير مسجل دخول ---
+        accountCard.classList.add('hidden');    // إخفاء كارت الحساب
+        guestView.classList.remove('hidden');  // إظهار رسالة الزائر
+    }
+}
+
+// تشغيل الدالة فور تحميل الصفحة
+document.addEventListener('DOMContentLoaded', displayUserProfile);
+// صفحه بيانات العميل ينتهي

@@ -3,9 +3,11 @@ let btnCategory = document.getElementById("btn");
 let category_list = document.querySelector(".category-list");
 let links = document.querySelectorAll(".category-list li a");
 
-btnCategory.addEventListener("click", () => {
-    category_list.classList.toggle("active")
-})
+if (btnCategory) {
+    btnCategory.addEventListener('click', () => {
+        category_list.classList.toggle("active")
+    });
+}
 
 links.forEach(link => {
     link.addEventListener("click", () => {
@@ -21,19 +23,29 @@ let bars = document.querySelector(".fa-bars");
 let nav_links = document.querySelector(".nav-links");
 let links_hum = document.querySelectorAll(".nav-links li a");
 
-bars.addEventListener("click", () => {
-    nav_links.classList.toggle("active")
-})
 
-xmark.addEventListener("click", () => {
-    nav_links.classList.toggle("active")
-})
 
-links_hum.forEach(link => {
-    link.addEventListener("click", () => {
+
+if (bars) {
+    bars.addEventListener('click', () => {
         nav_links.classList.toggle("active")
-    })
-})
+    });
+}
+
+if (xmark && nav_links) {
+    xmark.addEventListener("click", () => {
+        nav_links.classList.toggle("active");
+    });
+}
+
+// 2. القائمة links_hum
+if (links_hum && links_hum.length > 0 && nav_links) {
+    links_hum.forEach(link => {
+        link.addEventListener("click", () => {
+            nav_links.classList.toggle("active");
+        });
+    });
+}
 // Media Humborger End
 
 

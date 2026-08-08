@@ -2,25 +2,47 @@
 <html lang="en">
 
 <head>
+
     <!-- Language Arabic -->
     <meta charset="UTF-8">
+
     <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Title WebSite Online Store -->
     <title>Login | Mohamed Samy</title>
+
     <!-- Link Font Awesome  -->
     <link rel="stylesheet" href="../public/Font awesome/font css/all.min.css">
+
     <!-- Link Favaicon -->
     <link rel="shortcut icon" href="../public/Imgs/icon.png" type="image/x-icon">
+
     <!-- Link Style SASS -->
     <link rel="stylesheet" href="../Style/sass.css">
+
     <!-- Link FlowBite And Tailwind CSS -->
     <link rel="stylesheet" href="../Style/style.css">
+    
 </head>
 
 <body
     class="bg-gradient-to-br from-gray-900 via-slate-900 to-black min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
 
+    <!-- Loading CSS Start -->
+    <section id="loading">
+        <div
+            class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-orange-400 w-full h-screen">
+            <div class="loader-inner ball-pulse-sync">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <span class="text-white font-bold text-lg tracking-wider animate-pulse">Loading...</span>
+        </div>
+    </section>
+    <!-- Loading CSS End -->
 
     <!-- Background Glow Effects -->
     <div class="absolute w-72 h-72 bg-orange-500/10 rounded-full blur-3xl top-10 left-10 pointer-events-none"></div>
@@ -110,6 +132,9 @@
 
     </div>
 
+    <!-- Script JS -->
+    <script type="module" src="../JS/script.js"></script>
+    
     <!-- Supabase JS -->
     <script type="module" src="../JS/log-sign.js"></script>
 
