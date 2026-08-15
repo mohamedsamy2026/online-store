@@ -1,7 +1,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 const supabaseUrl = 'https://vjvrpabmbereiegvsmam.supabase.co';
-const supabaseAnonKey = 'sb_publishable_...'; // ⚠️ ضع مفتاحك العام (Publishable Key) هنا
+const supabaseAnonKey = 'sb_publishable_L7q3xMc8uZfpDBDzz02iMg_TaZ3Ta9o';
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
