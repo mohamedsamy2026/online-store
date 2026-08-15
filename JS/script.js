@@ -156,17 +156,15 @@ function deleteItem(index) {
     cart.splice(index, 1);
     saveCart(cart);
 
-
     // التحقق لو إحنا في صفحة product-details
-    const currentPage = window.location.pathname.split('/').pop();
+    const currentPage = window.location.href;
     
-    if (currentPage === 'product-details.html') {
+    if (currentPage.includes('product-details.html')) {
         setTimeout(() => {
             location.reload();
         }, 300);
     }
 }
-
 
 // احسب إجمالي عدد القطع في السلة
 function calculateTotalItems(cart) {
