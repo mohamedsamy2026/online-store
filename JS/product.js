@@ -1,53 +1,57 @@
-// Import
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 const supabaseUrl = 'https://vjvrpabmbereiegvsmam.supabase.co';
-const supabaseAnonKey = 'sb_publishable_L7q3xMc8uZfpDBDzz02iMg_TaZ3Ta9o'; 
+const supabaseAnonKey = 'sb_publishable_...'; // ⚠️ ضع مفتاحك العام (Publishable Key) هنا
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 async function loadAllProducts() {
     try {
-        // 1. جلب المنتجات من Supabase (الجديدة)
-        const { data: supabaseProducts, error: supabaseError } = await supabase
+        let allProducts = [];
+
+        // 1. محاولة جلب المنتجات من Supabase أولاً
+        const { data: supabaseProducts, error } = await supabase
             .from('products')
             .select('*')
             .order('created_at', { ascending: false });
 
-        if (supabaseError) {
-            console.error("خطأ في جلب المنتجات من Supabase:", supabaseError);
+        if (!error && supabaseProducts && supabaseProducts.length > 0) {
+            // نجاح: تحويل الأسماء لتطابق كود العرض الخاص بك
+            allProducts = supabaseProducts.map(p => ({
+                id: p.id,
+                name: p.name,
+                price: p.price,
+                old_price: p.old_price,
+                Imgs: p.image_url,       // تحويل image_url إلى Imgs
+                catetory: p.category     // تحويل category إلى catetory
+            }));
+        } else {
+            // 2. إذا كانت Supabase فارغة أو بها خطأ، نقرأ من ملف JSON كملاذ أخير
+            try {
+                // في Vite، ملفات مجلد public تُخدم من الجذر مباشرة، لذا المسار هو /products.json
+                const response = await fetch('products.json');
+                
+                // نتأكد أن الاستجابة ناجحة وأنها فعلاً JSON وليست صفحة HTML
+                if (response.ok && response.headers.get("content-type")?.includes("application/json")) {
+                    const jsonProducts = await response.json();
+                    allProducts = jsonProducts.map(p => ({
+                        id: p.id,
+                        name: p.name,
+                        price: p.price,
+                        old_price: p.old_price,
+                        Imgs: p.Imgs,
+                        catetory: p.catetory
+                    }));
+                }
+            } catch (jsonError) {
+                console.warn("لم يتم العثور على products.json أو حدث خطأ في قراءته (هذا طبيعي إذا كنت تعتمد على Supabase فقط)");
+            }
         }
 
-        const response = await fetch('/public/products.json');
-        const jsonProducts = await response.json();
-
-        // 3. تحويل أسماء المنتجات من JSON لتطابق الكود بتاعك
-        const mappedJsonProducts = jsonProducts.map(p => ({
-            id: p.id,
-            name: p.name,
-            price: p.price,
-            old_price: p.old_price,
-            Imgs: p.Imgs,
-            catetory: p.catetory
-        }));
-
-        // 4. تحويل أسماء المنتجات من Supabase
-        const mappedSupabaseProducts = (supabaseProducts || []).map(p => ({
-            id: p.id,
-            name: p.name,
-            price: p.price,
-            old_price: p.old_price,
-            Imgs: p.image_url,
-            catetory: p.category
-        }));
-
-        // 5. دمج المنتجات من المصدرين
-        const allProducts = [...mappedSupabaseProducts, ...mappedJsonProducts];
-
-        // 6. استخدام الكود بتاعك الأصلي بالظبط على allProducts
+        // 3. كود العرض الأصلي الخاص بك (لم نغير فيه شيئاً)
         let cart = JSON.parse(localStorage.getItem("my_cart")) || [];
 
-        // تفريغ المحتوى القديم قبل الإضافة
+        // تفريغ المحتوى القديم لتجنب التكرار
         document.querySelectorAll('.products1, .products2, .products3, .products4').forEach(el => {
             if(el) el.innerHTML = '';
         });
@@ -105,8 +109,7 @@ async function loadAllProducts() {
                         <div class="py-3">
                             <p class="text-main text-[20px] md:text-2xl font-bold">
                                 <span class="product-price">$${element.price}</span>
-                                ${element.old_price ? `<span
-                                    class="product-old-price text-sm text-p line-through">$${element.old_price}</span>` : ''}
+                                ${element.old_price ? `<span class="product-old-price text-sm text-p line-through">$${element.old_price}</span>` : ''}
                             </p>
                         </div>
                       ${btnHTML}
