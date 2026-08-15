@@ -8,14 +8,33 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
     "@tailwindcss/vite": "^4.3.3",
     "vite": "^8.1.5"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/electron": "^2.5.0",
     "@supabase/supabase-js": "^2.112.2",
     "flowbite": "^4.0.2",
     "loaders.css": "^0.1.2",
     "swiper": "^14.0.6",
     "tailwindcss": "^4.3.3"
-  }
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedsamy2026/online-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedsamy2026/online-store/issues"
+  },
+  "homepage": "https://github.com/mohamedsamy2026/online-store#readme"
 }
