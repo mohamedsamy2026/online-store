@@ -35,5 +35,8 @@ export default defineConfig({
   },
   server: {
     open: true,
-  },
+    watch: {
+      ignored: ['**/src-tauri/**']  // ← هنا بقى مرة واحدة بس
+    }
+  }
 })

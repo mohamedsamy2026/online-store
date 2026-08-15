@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +23,32 @@
     <!-- Link FlowBite And Tailwind CSS And loading -->
 
     <!-- Style -->
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Language Arabic -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title WebSite Online Store -->
+    <title> Mohamed Samy | Online Store</title>
+
+    <!-- Link Font Awesome  -->
+
+    <!-- Link Favaicon -->
+    <link rel="shortcut icon" href="/assets/icon-CcAOcUAS.png" type="image/x-icon">
+
+    <!-- Link Style SASS -->
+
+    <!-- Link FlowBite And Tailwind CSS And loading -->
+
+    <!-- Style -->
+>>>>>>> 4210ad81642f8f064cd21bc27b4d44e3087a1e70
     <style>
         main {
             margin-top: 210px;
@@ -33,6 +60,7 @@
                 margin-top: 270px;
             }
         }
+<<<<<<< HEAD
     </style>
 
   <script type="module" crossorigin src="/assets/script-supabase-DO3he8cv.js"></script>
@@ -412,4 +440,385 @@
 
 </body>
 
+=======
+    </style>
+
+  <script type="module" crossorigin src="/assets/script-supabase-Dw_SUOeI.js"></script>
+  <script type="module" crossorigin src="/assets/orders-BnjsFu2Q.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/script-supabase-DWdWX6TW.css">
+  <link rel="stylesheet" crossorigin href="/assets/all-oWjJCnUD.css">
+</head>
+
+<body class="font-sans font-bold bg-gray-50">
+
+    <!-- Loading CSS Start -->
+    <section id="loading">
+        <div
+            class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-orange-400 w-full h-screen">
+            <div class="loader-inner ball-pulse-sync">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <span class="text-white font-bold text-lg tracking-wider animate-pulse">Loading...</span>
+        </div>
+    </section>
+    <!-- Loading CSS End -->
+
+
+
+    <!-- Cart Start -->
+    <section class="cart">
+        <div class="cart-drawer bg-white shadow-xl p-6 flex flex-col justify-between h-full">
+
+            <!-- الهيدر -->
+            <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                <h3 class="font-bold text-xl text-gray-800">Cart Items : <span
+                        class="total-count text-orange-500 font-bold">0</span></h3>
+                <button class="close-btn text-gray-600 hover:text-black cursor-pointer">
+                    <i
+                        class="fa-regular fa-circle-xmark text-3xl close-cart text-black hover:text-red-500 duration-300"></i>
+                </button>
+            </div>
+
+            <div class="cart-items flex-1 overflow-y-auto py-2">
+
+            </div>
+
+            <!-- الفوتر -->
+            <div class="cart-footer pt-4 border-t border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600 font-medium">subtotal</span>
+                    <span class="total-price text-orange-500 font-bold text-lg">0</span>
+                </div>
+                <div class="flex justify-between flex-wrap items-center gap-3 mt-8">
+                    <a href="" class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
+                    <a href="../index.html" class="main-btn shop-more-btn cursor-pointer close-cart">SHOP MORE</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Carts End -->
+
+
+
+    <!-- Header Start -->
+    <header class=" bg-gray-50">
+
+        <!-- Header Top Start -->
+        <div class="header-top py-5 px-6 pb-7">
+            <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-center gap-6 lg:gap-y-8">
+
+                <div class="md:w-[180px] w-[120px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
+                    <img src="/assets/logo-BvDDqQcB.png" alt="Logo">
+                </div>
+
+                <div
+                    class="w-full lg:w-[800px] flex items-center bg-border rounded-lg overflow-hidden h-14 order-3 lg:order-2">
+
+
+
+                    <input
+                        class="inputSearch w-full md:flex-1 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
+                        type="text" placeholder="Search For Products">
+                    <button
+                        class="icon-search w-20 text-white h-full bg-main cursor-pointer hover:bg-orange-500 duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass text-[22px]"></i>
+                    </button>
+                </div>
+
+                <!-- 3. أيقونات المفضلة والسلة -->
+                <div class="icons flex items-center order-2 lg:order-3">
+
+                    <button class="close-cart relative">
+                        <i class="fa-solid fa-cart-shopping md:text-[30px] text-[25px]"></i>
+                        <span
+                            class="shoping-count absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!-- Header Top End -->
+
+
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom border-t border-border w-full shadow-sm">
+
+            <div class="container mx-auto flex justify-center lg:justify-between items-center">
+
+                <div class="relative">
+                    <div class="flex items-center gap-5">
+                        <i class="fa-solid fa-bars hum"></i> <button id="btn"
+                            class="bg-main text-white h-17 px-2 lg:px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
+                            <i class="fa-solid fa-bars text-sm lg:text-lg"></i>
+                            <span class="font-bold lg:text-lg text-sm">Browse Category</span>
+                            <i class="fa-solid fa-chevron-down text-sm lg:text-lg"></i>
+                        </button>
+                    </div>
+
+                    <ul class="category-list">
+                        <li><a href="../index.html#hero-bottom">Special Discounts</a></li>
+                        <li><a href="../index.html#products1">Top 7 Offers</a></li>
+                        <li><a href="../index.html#products2">Electronics</a></li>
+                        <li><a href="../index.html#products3">Appliances</a></li>
+                        <li><a href="../index.html#products4">Phones & Tablets</a></li>
+                    </ul>
+                </div>
+
+                <ul class="lg:flex hidden nav-links">
+                    <i
+                        class="fa-regular fa-circle-xmark xmark lg:!hidden block absolute right-10 top-8 text-4xl hover:text-red-500 duration-300 cursor-pointer"></i>
+                    <li><a href="../index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="check.html">CheckOut</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+
+
+                    <div id="auth-container-mobile" class="flex items-center flex-col gap-4 lg:hidden">
+                        <a href="login.html"
+                            class="text-center bg-main text-white w-full ps-8 pe-3 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            <span>Log In</span>
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+                        <a href="signup.html"
+                            class="text-center bg-main text-white px-6 w-full py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            <span>Sign UP</span>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </a>
+                    </div>
+
+                </ul>
+
+                <div id="auth-container-desktop" class="lg:flex hidden items-center gap-4">
+                    <a href="login.html"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Login</span>
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </a>
+                    <a href="signup.html"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Sign UP</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Header Bottom End -->
+
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+
+
+
+
+
+
+    <!-- Main Content -->
+    <main dir="rtl"
+        class="max-w-4xl mx-auto px-6 py-10 bg-white shadow-xl rounded-2xl mb-12 flex-grow w-full border border-gray-100">
+
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-3 border-b-2 border-orange-500 pb-4 inline-block">رحلة
+                شحنتك معنا</h1>
+            <p class="text-gray-600 max-w-xl mx-auto text-base leading-relaxed">
+                نحن لا نقوم فقط بتوصيل الطلبات، بل نضمن لك تجربة نقل آمنة وسريعة من مستودعاتنا وحتى باب منزلك.
+            </p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="relative border-r-2 border-orange-200 pr-6 mr-4 space-y-10">
+
+            <!-- Step 1: Delivery Areas -->
+            <div class="relative group">
+                <span
+                    class="absolute -right-[35px] top-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </span>
+                <div
+                    class="p-6 bg-orange-50/40 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <h2 class="text-xl font-bold text-orange-600 mb-2 flex items-center gap-2">
+                        1. مناطق التوصيل الواسعة
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        نقوم بالشحن والتوصيل لكافة المحافظات والمدن داخل الجمهورية بكفاءة عالية، ونسعى دائماً لتوسيع
+                        نطاق خدماتنا لتصل أينما كنت.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2: Shipping Costs -->
+            <div class="relative group">
+                <span
+                    class="absolute -right-[35px] top-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-calculator"></i>
+                </span>
+                <div
+                    class="p-6 bg-orange-50/40 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <h2 class="text-xl font-bold text-orange-600 mb-2 flex items-center gap-2">
+                        2. تكاليف شحن شفافة
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        تختلف التكلفة بناءً على مدينتك، ويتم حسابها ووضوحها تلقائياً بالكامل أثناء خطوة إتمام الطلب
+                        (<span class="font-bold text-gray-800">Checkout</span>) قبل تأكيده نهائياً.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 3: Tracking -->
+            <div class="relative group">
+                <span
+                    class="absolute -right-[35px] top-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-md group-hover:scale-110 transition duration-300">
+                    <i class="fa-solid fa-route"></i>
+                </span>
+                <div
+                    class="p-6 bg-orange-50/40 border border-orange-100 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+                    <h2 class="text-xl font-bold text-orange-600 mb-2 flex items-center gap-2">
+                        3. تتبع الشحنة لحظة بلحظة
+                    </h2>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        بمجرد خروج طلبك مع شركة الشحن، تصلك رسالة نصية أو بريد إلكتروني برقم التتبع الخاص بك لتتمكن من
+                        متابعة خط سير الطلب حتى الاستلام.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Extra Banner Box -->
+        <div
+            class="mt-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-6 text-white text-center shadow-lg">
+            <h3 class="text-xl font-bold mb-2">هل لديك استفسار خاص عن موعد التوصيل؟</h3>
+            <p class="text-orange-100 text-sm mb-4">فريق الخدمات اللوجستية متاح دائماً للإجابة على أسئلتك.</p>
+            <a href="support.html"
+                class="inline-block bg-white text-orange-600 font-bold px-6 py-2.5 rounded-xl hover:bg-gray-100 transition duration-300 shadow">
+                تواصل مع الدعم الفني
+            </a>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+    <footer id="contact" class="bg-heading py-12">
+        <div class="container mx-auto px-4 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-center">
+
+                <div class="big-row lg:col-span-2 space-y-4">
+                    <img src="/assets/logo-white-CVhvGE9d.png" alt="Logo" class="w-[60%] -ms-5">
+                    <span class="text-gray-300 text-sm block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid libero, beatae magnam dolor
+                        ipsum a?
+                    </span>
+                    <div class="icons flex items-center gap-3 text-lg">
+
+                        <!-- تيليجرام -->
+                        <a href="https://t.me/mohamed1_2_3_4" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <!-- واتس -->
+                        <a href="https://wa.me/201115083459" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <!-- فيسبوك -->
+                        <a href="https://www.facebook.com/MohamedSamym/" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <!-- تليفون -->
+                        <a href="tel:01115083459">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Find It Fast</h4>
+                    <div class="links flex flex-col space-y-5 text-sm text-gray-300">
+
+                        <a href="../index.html#hero-bottom"><i class="fa-solid fa-caret-right"></i>
+                            Special Discounts</a>
+                        <a href="../index.html#products1"><i class="fa-solid fa-caret-right"></i>
+                            Top 7 Offers</a>
+                        <a href="../index.html#products2"><i class="fa-solid fa-caret-right"></i>
+                            Electronics</a>
+                        <a href="../index.html#products3"><i class="fa-solid fa-caret-right"></i>
+                            Appliances</a>
+                        <a href="../index.html#products4"><i class="fa-solid fa-caret-right"></i>
+                            Phones & Tablets</a>
+                    </div>
+                </div>
+
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Quick Links</h4>
+                    <div class="links flex flex-col space-y-3 text-sm text-gray-300">
+                        <!-- لغايه ما اربطه بالباك اند -->
+                        <a href="acount.html"><i class="fa-solid fa-caret-right"></i> Your Account</a>
+
+                        <a href="returns.html"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
+                        <a href="shipping.html"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
+                        <a href="time.html"><i class="fa-solid fa-caret-right"></i> Estimated Delivery Time</a>
+
+                        <!-- لغايه ما اربطه بالباك -->
+                        <a href="history.html"><i class="fa-solid fa-caret-right"></i> Purchase History</a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Service us</h4>
+                    <div class="links flex flex-col space-y-3 text-sm text-gray-300">
+                        <a href="support.html"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                        <a href="term.html"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                        <a href="privacy.html"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                        <a href="help.html"><i class="fa-solid fa-caret-right"></i> Help</a>
+                        <a href="faqs.html"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </footer>
+    <div class="footer-bottom bg-gray-700">
+        <div class="container">
+            <div class="py-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+                <p class="font-bold text-[17px] text-white">&copy; <span class="text-main">Mohamed Samy.</span> All
+                    Rights Reserved</p>
+                <img src="/assets/payment_method-Cp7mMZDT.png" alt="Payment Methods"
+                    class="cursor-pointer h-12 mt-4 md:mt-0">
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Script JS -->
+
+    <!-- Supabase JS -->
+
+    <!-- Coupon JS -->
+
+    <!-- Orders JS -->
+
+
+
+</body>
+
+>>>>>>> 4210ad81642f8f064cd21bc27b4d44e3087a1e70
 </html>
