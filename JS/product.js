@@ -1,57 +1,64 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
 const supabaseUrl = 'https://vjvrpabmbereiegvsmam.supabase.co';
-const supabaseAnonKey = 'sb_publishable_L7q3xMc8uZfpDBDzz02iMg_TaZ3Ta9o';
+// ⚠️ تأكد إن المفتاح ده هو الـ Anon Key الصحيح والطويل (اللي بيبدأ بـ eyJhbGci...)
+const supabaseAnonKey = 'sb_publishable_L7q3xMc8uZfpDBDzz02iMg_TaZ3Ta9o'; 
 
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 async function loadAllProducts() {
     try {
-        let allProducts = [];
+        let supabaseProducts = [];
+        let jsonProducts = [];
 
-        // 1. محاولة جلب المنتجات من Supabase أولاً
-        const { data: supabaseProducts, error } = await supabase
-            .from('products')
-            .select('*')
-            .order('created_at', { ascending: false });
+        // 1. محاولة جلب المنتجات من Supabase
+        try {
+            const { data, error } = await supabase
+                .from('products')
+                .select('*')
+                .order('created_at', { ascending: false });
 
-        if (!error && supabaseProducts && supabaseProducts.length > 0) {
-            // نجاح: تحويل الأسماء لتطابق كود العرض الخاص بك
-            allProducts = supabaseProducts.map(p => ({
-                id: p.id,
-                name: p.name,
-                price: p.price,
-                old_price: p.old_price,
-                Imgs: p.image_url,       // تحويل image_url إلى Imgs
-                catetory: p.category     // تحويل category إلى catetory
-            }));
-        } else {
-            // 2. إذا كانت Supabase فارغة أو بها خطأ، نقرأ من ملف JSON كملاذ أخير
-            try {
-                // في Vite، ملفات مجلد public تُخدم من الجذر مباشرة، لذا المسار هو /products.json
-                const response = await fetch('products.json');
-                
-                // نتأكد أن الاستجابة ناجحة وأنها فعلاً JSON وليست صفحة HTML
-                if (response.ok && response.headers.get("content-type")?.includes("application/json")) {
-                    const jsonProducts = await response.json();
-                    allProducts = jsonProducts.map(p => ({
-                        id: p.id,
-                        name: p.name,
-                        price: p.price,
-                        old_price: p.old_price,
-                        Imgs: p.Imgs,
-                        catetory: p.catetory
-                    }));
-                }
-            } catch (jsonError) {
-                console.warn("لم يتم العثور على products.json أو حدث خطأ في قراءته (هذا طبيعي إذا كنت تعتمد على Supabase فقط)");
+            if (!error && data) {
+                supabaseProducts = data.map(p => ({
+                    id: p.id,
+                    name: p.name,
+                    price: p.price,
+                    old_price: p.old_price,
+                    Imgs: p.image_url,       // توحيد الاسم
+                    catetory: p.category     // توحيد الاسم
+                }));
             }
+        } catch (dbError) {
+            console.warn("فشل جلب البيانات من Supabase، سيتم الاعتماد على JSON", dbError);
         }
 
-        // 3. كود العرض الأصلي الخاص بك (لم نغير فيه شيئاً)
+        // 2. محاولة جلب المنتجات من ملف JSON (كمصدر إضافي)
+        try {
+            // في Vite، ملفات مجلد public تُخدم من الجذر مباشرة، لذا المسار هو /products.json
+            const response = await fetch('/products.json');
+            
+            if (response.ok && response.headers.get("content-type")?.includes("application/json")) {
+                const data = await response.json();
+                jsonProducts = data.map(p => ({
+                    id: p.id,
+                    name: p.name,
+                    price: p.price,
+                    old_price: p.old_price,
+                    Imgs: p.Imgs,
+                    catetory: p.catetory
+                }));
+            }
+        } catch (jsonError) {
+            console.warn("لم يتم العثور على products.json أو حدث خطأ في قراءته", jsonError);
+        }
+
+        // 3. دمج المصدرين معاً في مصفوفة واحدة
+        const allProducts = [...supabaseProducts, ...jsonProducts];
+
+        // 4. كود العرض الأصلي الخاص بك (لم نغير فيه شيئاً)
         let cart = JSON.parse(localStorage.getItem("my_cart")) || [];
 
-        // تفريغ المحتوى القديم لتجنب التكرار
+        // تفريغ المحتوى القديم لتجنب التكرار عند إعادة التحميل
         document.querySelectorAll('.products1, .products2, .products3, .products4').forEach(el => {
             if(el) el.innerHTML = '';
         });
@@ -117,6 +124,7 @@ async function loadAllProducts() {
                 </div>
             `;
 
+            // توزيع المنتجات حسب القسم أو الخصم
             if (element.old_price) {
                 let swiper_wrapper1 = document.querySelector(".products1");
                 if (swiper_wrapper1) swiper_wrapper1.innerHTML += productHTML;
