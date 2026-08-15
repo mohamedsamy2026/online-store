@@ -104,7 +104,7 @@ fetch('../products.json')
                     // عمل Refresh بعد ثانية عشان كل حاجة تتحدث
                     setTimeout(() => {
                         location.reload();
-                    }, 500);
+                    }, 300);
                 });
 
 
