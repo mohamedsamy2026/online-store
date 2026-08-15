@@ -159,7 +159,7 @@ function deleteItem(index) {
     // التحقق لو إحنا في صفحة product-details
     const currentPage = window.location.href;
     
-    if (currentPage.includes('product-details.html')) {
+    if (currentPage.includes('product-details')) {
         setTimeout(() => {
             location.reload();
         }, 300);
