@@ -18,7 +18,7 @@ async function loadAllProducts() {
             console.error("خطأ في جلب المنتجات من Supabase:", supabaseError);
         }
 
-        const response = await fetch('public/products.json');
+        const response = await fetch('/public/products.json');
         const jsonProducts = await response.json();
 
         // 3. تحويل أسماء المنتجات من JSON لتطابق الكود بتاعك
