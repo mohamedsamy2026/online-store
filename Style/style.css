@@ -1,0 +1,23 @@
+/* Import Tailwind CSS */
+@import "tailwindcss";
+
+/* Import Flowbite */
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+/* Import Loading CSS */
+@import "loaders.css/loaders.min.css";
+
+
+/* Virbiles Start */
+@theme {
+  /* Colors */
+  --color-main: #ff8716;
+  --color-p: #7b7b7b;
+  --color-bg: #f3f3f3;
+  --color-white: #fff;
+  --color-heading: #121416;
+  --color-border: #e5e5e5d5;
+  --color-sale: #e51a1a;
+}
+/* Virbiles End */

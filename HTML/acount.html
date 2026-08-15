@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Language Arabic -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title WebSite Online Store -->
+    <title>Online Store | Mohamed Samy</title>
+
+    <!-- Link Font Awesome  -->
+    <link rel="stylesheet" href="/public/Font awesome/font css/all.min.css">
+
+    <!-- Link Favaicon -->
+    <link rel="shortcut icon" href="/public/Imgs/icon.png" type="image/x-icon">
+
+    <!-- Link Style SASS -->
+    <link rel="stylesheet" href="/Style/sass.css">
+
+    <!-- Link FlowBite And Tailwind CSS -->
+    <link rel="stylesheet" href="/Style/style.css">
+
+
+    <!-- Style -->
+    <style>
+        main {
+            padding-top: 230px;
+        }
+
+        @media(max-width:1024px) {
+            main {
+                padding-top: 250px;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="font-sans font-bold flex flex-col min-h-screen">
+
+    <!-- Loading CSS Start -->
+    <section id="loading">
+        <div
+            class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-orange-400 w-full h-screen">
+            <div class="loader-inner ball-pulse-sync">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <span class="text-white font-bold text-lg tracking-wider animate-pulse">Loading...</span>
+        </div>
+    </section>
+    <!-- Loading CSS End -->
+
+
+    <!-- Cart Start -->
+    <section class="cart">
+        <div class="cart-drawer bg-white shadow-xl p-5 flex flex-col justify-between h-full">
+
+            <!-- الهيدر -->
+            <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                <h3 class="font-bold text-xl text-gray-800">Cart Items : <span
+                        class="text-orange-500 font-bold">2</span></h3>
+                <button class="close-btn text-gray-600 hover:text-black cursor-pointer">
+                    <i
+                        class="fa-regular fa-circle-xmark text-3xl close-cart text-black hover:text-red-500 duration-300"></i>
+                </button>
+            </div>
+
+            <!-- 1 -->
+            <div class="cart-items flex-1 overflow-y-auto py-2">
+                <div class="cart-item flex items-center gap-3 py-3 border-b border-gray-100">
+                    <img src="../public/Imgs/product/11.png" alt="product" class="w-18 h-18 object-cover rounded">
+                    <div class="flex-1 ps-4">
+                        <p class="text-xs font-semibold text-gray-800">Lorem ipsum dolor sit amet consectetur
+                            adipisicing.</p>
+                        <span class="text-gray-500 text-sm font-medium">$300</span>
+                        <div class="flex items-center gap-4 mt-2">
+                            <button class="qty-btn"><i class="fa-solid fa-minus"></i></button>
+                            <span class="text-orange-500 font-bold text-sm">1</span>
+                            <button class="qty-btn"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <button class="delete-btn text-2xl text-gray-400 hover:text-red-500 cursor-pointer"><i
+                            class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+
+            <!-- الفوتر -->
+            <div class="cart-footer pt-4 border-t border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600 font-medium">subtotal</span>
+                    <span class="text-orange-500 font-bold text-lg">$ 580</span>
+                </div>
+                <div class="flex justify-between flex-wrap items-center gap-3 mt-8">
+                    <a href="HTML/check.html"
+                        class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
+                    <button class="main-btn shop-more-btn cursor-pointer close-cart">SHOP MORE</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Carts End -->
+
+    <!-- Header Start -->
+    <header class="py-4">
+
+        <!-- Header Top Start -->
+        <div class="header-top py-5 px-6 pb-7">
+            <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-center gap-6 lg:gap-y-8">
+
+                <div class="md:w-[180px] w-[120px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
+                    <img src="../public/Imgs/logo.png" alt="Logo">
+                </div>
+
+                <div
+                    class="w-full lg:w-[800px] flex items-center bg-border rounded-lg overflow-hidden h-14 order-3 lg:order-2">
+
+
+
+                    <input
+                        class="inputSearch w-full md:flex-1 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
+                        type="text" placeholder="Search For Products">
+                    <button
+                        class="icon-search w-20 text-white h-full bg-main cursor-pointer hover:bg-orange-500 duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass text-[22px]"></i>
+                    </button>
+                </div>
+
+                <!-- 3. أيقونات المفضلة والسلة -->
+                <div class="icons flex items-center order-2 lg:order-3">
+
+                    <button class="close-cart relative">
+                        <i class="fa-solid fa-cart-shopping md:text-[30px] text-[25px]"></i>
+                        <span
+                            class="shoping-count absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <!-- Header Top End -->
+
+
+
+        <!-- Header Bottom Start -->
+        <div class="header-bottom border-t border-border w-full shadow-sm">
+
+            <div class="container mx-auto flex justify-center lg:justify-between items-center">
+
+                <div class="relative">
+                    <div class="flex items-center gap-5">
+                        <i class="fa-solid fa-bars hum"></i> <button id="btn"
+                            class="bg-main text-white h-17 px-2 lg:px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
+                            <i class="fa-solid fa-bars text-sm lg:text-lg"></i>
+                            <span class="font-bold lg:text-lg text-sm">Browse Category</span>
+                            <i class="fa-solid fa-chevron-down text-sm lg:text-lg"></i>
+                        </button>
+                    </div>
+
+                    <ul class="category-list">
+                        <li><a href="../index.html#hero-bottom">Special Discounts</a></li>
+                        <li><a href="../index.html#products1">Top 7 Offers</a></li>
+                        <li><a href="../index.html#products2">Electronics</a></li>
+                        <li><a href="../index.html#products3">Appliances</a></li>
+                        <li><a href="../index.html#products4">Phones & Tablets</a></li>
+                    </ul>
+                </div>
+
+                <ul class="xl:flex hidden nav-links">
+                    <i
+                        class="fa-regular fa-circle-xmark xmark xl:!hidden block absolute right-10 top-8 text-4xl hover:text-red-500 duration-300 cursor-pointer"></i>
+                    <li><a href="../index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="check.html">CheckOut</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+
+
+                    <div id="auth-container-mobile" class="flex items-center flex-col gap-4 lg:hidden">
+                        <a href="login.html"
+                            class="text-center bg-main text-white w-full ps-8 pe-3 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            <span>Log In</span>
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+                        <a href="signup.html"
+                            class="text-center bg-main text-white px-6 w-full py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            <span>Sign UP</span>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </a>
+                    </div>
+
+                </ul>
+
+                <div id="auth-container-desktop" class="lg:flex hidden items-center gap-4">
+                    <a href="login.html"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Login</span>
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </a>
+                    <a href="signup.html"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Sign UP</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Header Bottom End -->
+
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+
+
+
+
+
+
+
+
+    <!-- Main Content -->
+    <main class="max-w-3xl mx-auto px-4 py-10 w-full flex-grow h-full">
+
+        <!-- 1. كارت الحساب (يظهر فقط للمسجلين) -->
+        <div id="account-card" class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hidden">
+
+            <!-- Card Header Banner -->
+            <div
+                class="bg-gradient-to-r from-orange-500 to-amber-500 px-6 py-8 text-white flex flex-col sm:flex-row items-center gap-4">
+                <div class="mx-auto sm:text-center w-full">
+                    <!-- id للـ اسم في الهيدر -->
+                    <h2 id="user-header-name" class="text-2xl font-bold">---</h2>
+                    <p class="text-orange-100 text-sm mt-1">عميل مميز</p>
+                </div>
+            </div>
+
+            <!-- Profile Info Body -->
+            <div class="p-6 sm:p-8 space-y-6 font-bold">
+                <h3 class="text-lg font-bold text-gray-800 border-b pb-3">البيانات الشخصية</h3>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Name -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="block text-[16px] font-semibold text-gray-400 mb-1">الاسم بالكامل</span>
+                        <!-- id للـ اسم بالكامل -->
+                        <span id="user-full-name" class="text-gray-800 text-base font-bold">---</span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <span class="block text-[16px] font-semibold text-gray-400 mb-1">البريد الإلكتروني</span>
+                        <!-- id للـ إيميل -->
+                        <span id="user-email" class="text-gray-800 font-bold text-base" dir="ltr">---</span>
+                    </div>
+
+                    <div
+                        class="col-span-1 sm:col-span-2 bg-gray-50 p-4 rounded-xl border border-gray-100 flex items-center justify-center text-center">
+                        <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[16px] font-semibold text-gray-400 mb-1">كلمة المرور</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-gray-700 font-bold text-sm">مشفرة ومحمية بالكامل</span>
+                                    <span
+                                        class="text-[11px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-md flex items-center gap-1">
+                                        <i class="fa-solid fa-shield-halved text-[10px]"></i> آمنة
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 border-t">
+                    <!-- زرار ينقل للصفحة الرئيسية أو المنتجات -->
+                    <a href="../index.html"
+                        class="cursor-pointer flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl transition shadow-sm text-center">
+                        العودة للتسوق
+                    </a>
+
+                    <!-- زرار تسجيل الخروج -->
+                    <button id="logout-btn"
+                        class="cursor-pointer flex-1 text-white  bg-red-500 hover:bg-red-600 font-semibold py-3 px-6 rounded-xl transition text-center border border-red-100">
+                        تسجيل الخروج
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 2. رسالة الزائر (تظهر فقط لو مش مسجل دخول) -->
+        <div id="guest-view" class="bg-[#f7f8f8] rounded-2xl shadow-md p-8 text-center border border-gray-100 hidden">
+            <i class="fa-solid fa-user-lock text-5xl text-orange-500 mb-4"></i>
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">عفواً، أنت غير مسجل دخول</h2>
+            <p class="text-gray-500 mb-6 font-semibold">يرجى تسجيل الدخول لعرض بيانات حسابك الشخصي ومتابعة طلباتك.</p>
+            <a href="login.html"
+                class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-xl transition">
+                تسجيل الدخول الآن
+            </a>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer Start -->
+
+    <footer id="contact" class=" bg-heading py-12">
+        <div class="container mx-auto px-4 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-center">
+
+                <div class="big-row lg:col-span-2 space-y-4">
+                    <img src="/public/Imgs/logo-white.png" alt="Logo" class="w-[60%] -ms-5">
+                    <span class="text-gray-300 text-sm block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid libero, beatae magnam
+                        dolor
+                        ipsum a?
+                    </span>
+                    <div class="icons flex items-center gap-3 text-lg">
+
+                        <!-- تيليجرام -->
+                        <a href="https://t.me/mohamed1_2_3_4" target="_blank">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                        <!-- واتس -->
+                        <a href="https://wa.me/201115083459" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <!-- فيسبوك -->
+                        <a href="https://www.facebook.com/MohamedSamym/" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <!-- تليفون -->
+                        <a href="tel:01115083459">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Find It Fast</h4>
+                    <div class="links flex flex-col space-y-5 text-sm text-gray-300">
+
+                        <a href="../index.html#hero-bottom"><i class="fa-solid fa-caret-right"></i>
+                            Special Discounts</a>
+                        <a href="../index.html#products1"><i class="fa-solid fa-caret-right"></i>
+                            Top 7 Offers</a>
+                        <a href="../index.html#products2"><i class="fa-solid fa-caret-right"></i>
+                            Electronics</a>
+                        <a href="../index.html#products3"><i class="fa-solid fa-caret-right"></i>
+                            Appliances</a>
+                        <a href="../index.html#products4"><i class="fa-solid fa-caret-right"></i>
+                            Phones & Tablets</a>
+                    </div>
+                </div>
+
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Quick Links</h4>
+                    <div class="links flex flex-col space-y-3 text-sm text-gray-300">
+                        <!-- لغايه ما اربطه بالباك اند -->
+                        <a href="acount.html"><i class="fa-solid fa-caret-right"></i> Your Account</a>
+
+                        <a href="returns.html"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
+                        <a href="shipping.html"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
+                        <a href="time.html"><i class="fa-solid fa-caret-right"></i> Estimated Delivery Time</a>
+
+                        <!-- لغايه ما اربطه بالباك -->
+                        <a href="history.html"><i class="fa-solid fa-caret-right"></i> Purchase History</a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Service us</h4>
+                    <div class="links flex flex-col space-y-3 text-sm text-gray-300">
+                        <a href="support.html"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                        <a href="term.html"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                        <a href="privacy.html"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                        <a href="help.html"><i class="fa-solid fa-caret-right"></i> Help</a>
+                        <a href="faqs.html"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </footer>
+    <div class=" footer-bottom bg-gray-700">
+        <div class="container">
+            <div class="py-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+                <p class="font-bold text-[17px] text-white">&copy; <span class="text-main">Mohamed Samy.</span> All
+                    Rights Reserved</p>
+                <img src="/public/Imgs/payment_method.png" alt="Payment Methods"
+                    class="cursor-pointer h-12 mt-4 md:mt-0">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer End -->
+
+    <!-- Script JS -->
+    <script type="module" src="../JS/script.js"></script>
+
+    <!-- supabase JS -->
+    <script type="module" src="../JS/script-supabase.js"></script>
+
+
+
+</body>
+
+</html>
