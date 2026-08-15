@@ -1,0 +1,209 @@
+[
+  {
+    "id": 0,
+    "Imgs": "Imgs/product/0.png",
+    "name": "SAMSUNG 55 Inch UHD 4K Smart TV With Receiver",
+    "price": 350,
+    "catetory": "electronics",
+    "description": "Experience stunning 4K UHD picture quality with this 55-inch Samsung Smart TV, featuring a built-in receiver for seamless home entertainment."
+  },
+  {
+    "id": 1,
+    "Imgs": "Imgs/product/1.png",
+    "name": "Redmi 13C Dual SIM with 6GB RAM",
+    "price": 280,
+    "catetory": "mobiles",
+    "description": "Enjoy smooth multitasking and reliable daily performance with the Redmi 13C, featuring a dual SIM setup and 6GB of RAM."
+  },
+  {
+    "id": 2,
+    "Imgs": "Imgs/product/2.png",
+    "name": "Dell Laptop Latitude 5530 Core i7-1255U 8GB SSD",
+    "price": 400,
+    "catetory": "electronics",
+    "description": "Boost your productivity with the Dell Latitude 5530, powered by a 12th Gen Core i7 processor, 8GB RAM, and fast SSD storage."
+  },
+  {
+    "id": 3,
+    "Imgs": "Imgs/product/3.png",
+    "name": "Canon EOS RP Mirrorless Camera",
+    "price": 530,
+    "catetory": "electronics",
+    "description": "Capture breathtaking photos and videos with the lightweight Canon EOS RP mirrorless camera, designed for both beginners and professionals."
+  },
+  {
+    "id": 4,
+    "Imgs": "Imgs/product/4.png",
+    "name": "OPPO A18 128GB 4GB Glowing Black",
+    "price": 250,
+    "catetory": "mobiles",
+    "description": "Stand out with the stylish OPPO A18 in Glowing Black, offering 128GB of storage and 4GB of RAM for a smooth mobile experience."
+  },
+  {
+    "id": 5,
+    "Imgs": "Imgs/product/5.png",
+    "name": "Samsung 27-Inch G55C Odyssey QHD 4k",
+    "price": 280,
+    "catetory": "electronics",
+    "description": "Immerse yourself in gaming with the Samsung 27-inch Odyssey G55C monitor, delivering crisp QHD resolution and stunning visual clarity."
+  },
+  {
+    "id": 6,
+    "Imgs": "Imgs/product/6.png",
+    "name": "Infinix Smart (Galaxy White, 4GB RAM, 64GB Storage)",
+    "price": 220,
+    "old_price": 300,
+    "catetory": "mobiles",
+    "description": "A perfect budget-friendly choice, the Infinix Smart in Galaxy White offers 4GB RAM and 64GB storage for all your daily apps."
+  },
+  {
+    "id": 7,
+    "Imgs": "Imgs/product/7.png",
+    "name": "HP Victus Gaming Laptop 8RAM SSD",
+    "price": 370,
+    "catetory": "electronics",
+    "description": "Dominate your games with the HP Victus gaming laptop, equipped with 8GB RAM and a fast SSD for lag-free, high-performance gaming."
+  },
+  {
+    "id": 8,
+    "Imgs": "Imgs/product/8.png",
+    "name": "Xiaomi Redmi 13C Dual SIM 8GB",
+    "price": 320,
+    "catetory": "mobiles",
+    "description": "Upgrade your mobile experience with the Xiaomi Redmi 13C, featuring a generous 8GB of RAM for effortless multitasking and speed."
+  },
+  {
+    "id": 9,
+    "Imgs": "Imgs/product/9.png",
+    "name": "Handheld Barcode Scanner 1D/2D/QR Code",
+    "price": 80,
+    "old_price": 100,
+    "catetory": "electronics",
+    "description": "Streamline your inventory management with this reliable handheld barcode scanner, supporting 1D, 2D, and QR codes effortlessly."
+  },
+  {
+    "id": 10,
+    "Imgs": "Imgs/product/10.png",
+    "name": "Large Venue building mapping Projector",
+    "price": 300,
+    "catetory": "electronics",
+    "description": "Transform any large venue with this high-performance building mapping projector, ideal for events, exhibitions, and immersive displays."
+  },
+  {
+    "id": 11,
+    "Imgs": "Imgs/product/11.png",
+    "name": "Infinix Hot 40i (RAM: 4+4GB, 128GB)",
+    "price": 260,
+    "old_price": 300,
+    "catetory": "mobiles",
+    "description": "Enjoy extended memory and storage with the Infinix Hot 40i, featuring 4+4GB of RAM and 128GB of space for all your media."
+  },
+  {
+    "id": 12,
+    "Imgs": "Imgs/product/12.png",
+    "name": "HP DeskJet 2710 Printer, All-in-One",
+    "price": 370,
+    "catetory": "electronics",
+    "description": "Handle all your home office needs with the HP DeskJet 2710, a compact all-in-one printer for printing, scanning, and copying."
+  },
+  {
+    "id": 13,
+    "Imgs": "Imgs/product/13.png",
+    "name": "Fuzzy Logic Rice Cooker DIGITAL-JAR 1.8L 940W – HD4515/67",
+    "price": 490,
+    "catetory": "appliances",
+    "description": "Cook perfect rice every time with this 1.8L digital fuzzy logic rice cooker, featuring advanced technology for consistent, delicious results."
+  },
+  {
+    "id": 14,
+    "Imgs": "Imgs/product/14.png",
+    "name": "Sencor STS 5070SS Electric Toaster for Four Slices",
+    "price": 340,
+    "catetory": "appliances",
+    "description": "Make breakfast faster with the Sencor four-slice electric toaster, featuring a sleek stainless steel design and even toasting capabilities."
+  },
+  {
+    "id": 15,
+    "Imgs": "Imgs/product/15.png",
+    "name": "Infinix Smart 6 Plus (Miracle Black)",
+    "price": 240,
+    "old_price": 300,
+    "catetory": "mobiles",
+    "description": "Experience reliable performance and a sleek look with the Infinix Smart 6 Plus in Miracle Black, perfect for everyday tasks."
+  },
+  {
+    "id": 16,
+    "Imgs": "Imgs/product/16.png",
+    "name": "Washing Machine 959 Series 8kg Senator Aqua SX, Silver",
+    "price": 600,
+    "old_price": 700,
+    "catetory": "appliances",
+    "description": "Keep your clothes fresh and clean with the 8kg Senator Aqua SX washing machine, featuring advanced washing technology and a premium silver finish."
+  },
+  {
+    "id": 17,
+    "Imgs": "Imgs/product/17.png",
+    "name": "HIKVISION PTZ Camera 4K Outdoo",
+    "price": 185,
+    "catetory": "electronics",
+    "description": "Secure your property with the HIKVISION 4K PTZ outdoor camera, offering high-resolution surveillance and wide-angle coverage."
+  },
+  {
+    "id": 18,
+    "Imgs": "Imgs/product/18.png",
+    "name": "OPPO Reno11 5G 256GB 12GB",
+    "price": 225,
+    "catetory": "mobiles",
+    "description": "Step into the future with the OPPO Reno11 5G, boasting a massive 12GB of RAM and 256GB of storage for ultimate speed and performance."
+  },
+  {
+    "id": 19,
+    "Imgs": "Imgs/product/19.png",
+    "name": "VIVAX kettle WH-175L with a capacity of 1.7 ",
+    "price": 140,
+    "catetory": "appliances",
+    "description": "Boil water quickly and safely with the VIVAX 1.7L electric kettle, designed for maximum efficiency and everyday kitchen convenience."
+  },
+  {
+    "id": 20,
+    "Imgs": "Imgs/product/20.png",
+    "name": "Kenstar Ester ABS Plastic 750W Mixer Grinder",
+    "price": 280,
+    "old_price": 330,
+    "catetory": "appliances",
+    "description": "Simplify your kitchen chores with the Kenstar Ester 750W mixer grinder, featuring durable ABS plastic and powerful grinding capabilities."
+  },
+  {
+    "id": 21,
+    "Imgs": "Imgs/product/21.png",
+    "name": "Multifunctional Food Processor",
+    "price": 350,
+    "catetory": "appliances",
+    "description": "Chop, blend, and mix with ease using this multifunctional food processor, an essential and versatile tool for any modern kitchen."
+  },
+  {
+    "id": 22,
+    "Imgs": "Imgs/product/22.png",
+    "name": "Zanussi Washing Machine 8 Kg 1200 RPM ",
+    "price": 580,
+    "catetory": "appliances",
+    "description": "Achieve superior cleaning results with the Zanussi 8kg washing machine, featuring a powerful 1200 RPM spin cycle for faster drying."
+  },
+  {
+    "id": 23,
+    "Imgs": "Imgs/product/23.png",
+    "name": "Sharp 42 Lt Electronic Oven Convection",
+    "price": 400,
+    "catetory": "appliances",
+    "description": "Bake, roast, and grill to perfection with the Sharp 42L electronic convection oven, offering precise temperature control and even heating."
+  },
+  {
+    "id": 24,
+    "Imgs": "Imgs/product/24.png",
+    "name": "Lenovo Monitor Legion R27fc-30 Gaming Curved",
+    "price": 300,
+    "old_price": 380,
+    "catetory": "electronics",
+    "description": "Elevate your gaming setup with the Lenovo Legion R27fc-30 curved monitor, delivering immersive visuals and smooth, tear-free gameplay."
+  }
+]
