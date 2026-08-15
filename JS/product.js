@@ -1,12 +1,58 @@
-fetch("products.json")
-    .then(response => response.json())
-    .then(data => {
-        // نجيب السلة الحقيقية (Array من Objects)، مش نص خام
+// Import
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+
+const supabaseUrl = 'https://vjvrpabmbereiegvsmam.supabase.co';
+const supabaseAnonKey = 'sb_publishable_L7q3xMc8uZfpDBDzz02iMg_TaZ3Ta9o'; 
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+async function loadAllProducts() {
+    try {
+        // 1. جلب المنتجات من Supabase (الجديدة)
+        const { data: supabaseProducts, error: supabaseError } = await supabase
+            .from('products')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (supabaseError) {
+            console.error("خطأ في جلب المنتجات من Supabase:", supabaseError);
+        }
+
+        const response = await fetch('public/products.json');
+        const jsonProducts = await response.json();
+
+        // 3. تحويل أسماء المنتجات من JSON لتطابق الكود بتاعك
+        const mappedJsonProducts = jsonProducts.map(p => ({
+            id: p.id,
+            name: p.name,
+            price: p.price,
+            old_price: p.old_price,
+            Imgs: p.Imgs,
+            catetory: p.catetory
+        }));
+
+        // 4. تحويل أسماء المنتجات من Supabase
+        const mappedSupabaseProducts = (supabaseProducts || []).map(p => ({
+            id: p.id,
+            name: p.name,
+            price: p.price,
+            old_price: p.old_price,
+            Imgs: p.image_url,
+            catetory: p.category
+        }));
+
+        // 5. دمج المنتجات من المصدرين
+        const allProducts = [...mappedSupabaseProducts, ...mappedJsonProducts];
+
+        // 6. استخدام الكود بتاعك الأصلي بالظبط على allProducts
         let cart = JSON.parse(localStorage.getItem("my_cart")) || [];
 
-        data.forEach(element => {
+        // تفريغ المحتوى القديم قبل الإضافة
+        document.querySelectorAll('.products1, .products2, .products3, .products4').forEach(el => {
+            if(el) el.innerHTML = '';
+        });
 
-            // نتأكد من وجود المنتج بالـ ID، مش بمقارنة نص عشوائية
+        allProducts.forEach(element => {
             let isInCart = cart.some(item => item.id === element.id);
 
             let btnHTML = isInCart ? `
@@ -26,47 +72,47 @@ fetch("products.json")
             let over = element.old_price ? Math.round(((element.old_price - element.price) / element.old_price) * 100) : "";
 
             let productHTML = `
-                    <div data-id="${element.id}"
-                        class="swiper-slide relative max-w-sm p-6 border-2 border-border rounded-base shadow-xl group flex flex-col justify-between h-[500px]">
-                        <div>
-                            ${element.old_price ? `
-                            <span class="over absolute top-2 right-0 bg-red-500 text-white text-xs font-bold ps-7 px-4 py-1.5 shadow-md">
-                                ${over}%
-                            </span>` : ''}
+                <div data-id="${element.id}"
+                    class="swiper-slide relative max-w-sm p-6 border-2 border-border rounded-base shadow-xl group flex flex-col justify-between h-[500px]">
+                    <div>
+                        ${element.old_price ? `
+                        <span class="over absolute top-2 right-0 bg-red-500 text-white text-xs font-bold ps-7 px-4 py-1.5 shadow-md">
+                            ${over}%
+                        </span>` : ''}
 
-                          <a href="HTML/product-details.html?id=${element.id}" class="h-48 flex items-center justify-center mb-6 overflow-hidden">
-                                <img class="product-img max-h-full max-w-full object-contain group-hover:scale-110 duration-200"
-                                    src="${element.Imgs}" alt="product image" />
-                            </a>
+                      <a href="HTML/product-details.html?id=${element.id}" class="h-48 flex items-center justify-center mb-6 overflow-hidden">
+                            <img class="product-img max-h-full max-w-full object-contain group-hover:scale-110 duration-200"
+                                src="${element.Imgs}" alt="product image" />
+                        </a>
 
-                            <div class="start flex items-center space-x-3 mb-4">
-                                <div class="flex items-center space-x-1 rtl:space-x-reverse text-orange-400">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
+                        <div class="start flex items-center space-x-3 mb-4">
+                            <div class="flex items-center space-x-1 rtl:space-x-reverse text-orange-400">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
                             </div>
-                            <a href="HTML/product-details.html?id=${element.id}" class="hover:underline duration-200">
-                                <h5 class="product-name text-sm md:text-xl text-heading font-semibold tracking-tight line-clamp-2">
-                                    ${element.name}
-                                </h5>
-                            </a>
                         </div>
-
-                        <div>
-                            <div class="py-3">
-                                <p class="text-main text-[20px] md:text-2xl font-bold">
-                                    <span class="product-price">$${element.price}</span>
-                                    ${element.old_price ? `<span
-                                        class="product-old-price text-sm text-p line-through">$${element.old_price}</span>` : ''}
-                                </p>
-                            </div>
-                          ${btnHTML}
-                        </div>
+                        <a href="HTML/product-details.html?id=${element.id}" class="hover:underline duration-200">
+                            <h5 class="product-name text-sm md:text-xl text-heading font-semibold tracking-tight line-clamp-2">
+                                ${element.name}
+                            </h5>
+                        </a>
                     </div>
-                    `;
+
+                    <div>
+                        <div class="py-3">
+                            <p class="text-main text-[20px] md:text-2xl font-bold">
+                                <span class="product-price">$${element.price}</span>
+                                ${element.old_price ? `<span
+                                    class="product-old-price text-sm text-p line-through">$${element.old_price}</span>` : ''}
+                            </p>
+                        </div>
+                      ${btnHTML}
+                    </div>
+                </div>
+            `;
 
             if (element.old_price) {
                 let swiper_wrapper1 = document.querySelector(".products1");
@@ -87,7 +133,11 @@ fetch("products.json")
             }
         });
 
-        // بعد ما كل الكروت اتبنت، نادِ على renderCart عشان تأكيد كل الحالات صح
         if (window.renderCart) window.renderCart();
 
-    }).catch(error => console.error("Error loading products:", error));
+    } catch (error) {
+        console.error("Error loading products:", error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadAllProducts);
