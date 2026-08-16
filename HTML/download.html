@@ -14,15 +14,16 @@
         main {
             margin-top: 181px;
         }
-        @media(max-width:1024px){
-            main{
+
+        @media(max-width:1024px) {
+            main {
                 margin-top: 230px;
             }
         }
 
         /* ===== تصميم خاص بصفحة التحميل - مختلف عن باقي الموقع ===== */
 
-        
+
         .download-page {
             background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
             min-height: 100vh;
@@ -386,8 +387,9 @@
 <body class="font-sans font-bold bg-gray-50">
 
     <!-- Loading -->
- <section id="loading">
-        <div class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-orange-400 w-full h-screen">
+    <section id="loading">
+        <div
+            class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-orange-400 w-full h-screen">
             <div class="loader-inner ball-pulse-sync">
                 <div></div>
                 <div></div>
@@ -423,14 +425,21 @@
     </section>
 
     <!-- Header -->
-    <header class="bg-gray-50">
+    <header class=" bg-gray-50">
+
+        <!-- Header Top Start -->
         <div class="header-top py-5 px-6 pb-7">
             <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-center gap-6 lg:gap-y-8">
+
                 <div class="md:w-[180px] w-[120px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
-                    <img src="/Imgs/logo.png" alt="Logo">
+                    <img src="../public/Imgs/logo.png" alt="Logo">
                 </div>
+
                 <div
                     class="w-full lg:w-[800px] flex items-center bg-border rounded-lg overflow-hidden h-14 order-3 lg:order-2">
+
+
+
                     <input
                         class="inputSearch w-full md:flex-1 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
                         type="text" placeholder="Search For Products">
@@ -439,28 +448,38 @@
                         <i class="fa-solid fa-magnifying-glass text-[22px]"></i>
                     </button>
                 </div>
+
+                <!-- 3. أيقونات المفضلة والسلة -->
                 <div class="icons flex items-center order-2 lg:order-3">
+
                     <button class="close-cart relative">
                         <i class="fa-solid fa-cart-shopping md:text-[30px] text-[25px]"></i>
                         <span
                             class="shoping-count absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
                     </button>
                 </div>
+
             </div>
         </div>
+        <!-- Header Top End -->
 
+
+
+        <!-- Header Bottom Start -->
         <div class="header-bottom border-t border-border w-full shadow-sm">
+
             <div class="container mx-auto flex justify-center lg:justify-between items-center">
+
                 <div class="relative">
                     <div class="flex items-center gap-5">
-                        <i class="fa-solid fa-bars hum"></i>
-                        <button id="btn"
+                        <i class="fa-solid fa-bars hum"></i> <button id="btn"
                             class="bg-main text-white h-17 px-2 lg:px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
                             <i class="fa-solid fa-bars text-sm lg:text-lg"></i>
                             <span class="font-bold lg:text-lg text-sm">Browse Category</span>
                             <i class="fa-solid fa-chevron-down text-sm lg:text-lg"></i>
                         </button>
                     </div>
+
                     <ul class="category-list">
                         <li><a href="../index.html#hero-bottom">Special Discounts</a></li>
                         <li><a href="../index.html#products1">Top 7 Offers</a></li>
@@ -473,10 +492,25 @@
                 <ul class="lg:flex hidden nav-links">
                     <i
                         class="fa-regular fa-circle-xmark xmark lg:!hidden block absolute right-10 top-8 text-4xl hover:text-red-500 duration-300 cursor-pointer"></i>
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="check.html">CheckOut</a></li>
                     <li><a href="../index.html#contact">Contact</a></li>
+
+
+                    <div id="auth-container-mobile" class="flex items-center flex-col gap-4 lg:hidden">
+                        <a href="login.html"
+                            class="text-center bg-main text-white w-full ps-8 pe-3 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            <span>Log In</span>
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </a>
+                        <a href="signup.html"
+                            class="text-center bg-main text-white px-6 w-full py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                            <span>Sign UP</span>
+                            <i class="fa-solid fa-user-plus"></i>
+                        </a>
+                    </div>
+
                 </ul>
 
                 <div id="auth-container-desktop" class="lg:flex hidden items-center gap-4">
@@ -492,6 +526,9 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <!-- Header Bottom End -->
+
         </div>
     </header>
 
@@ -535,7 +572,7 @@
                                 lightning-fast performance and a smooth user experience.
                             </p>
 
-                            <a href="" download="OnlineStore.apk" class="download-btn">
+                            <a href="../src-tauri/gen/android/app/build/outputs/apk/universal/debug/app-universal-debug.apk" download="OnlineStore.apk" class="download-btn">
                                 <i class="fa-solid fa-download"></i>
                                 Download APK
                             </a>
@@ -577,7 +614,8 @@
                                 enhanced features, faster performance, and offline capabilities.
                             </p>
 
-                            <a href="../src-tauri/target/release/bundle/msi/online store_0.1.0_x64_en-US.msi" download="OnlineStore-Setup.exe" class="download-btn">
+                            <a href="../src-tauri/target/release/bundle/msi/online store_0.1.0_x64_en-US.msi"
+                                download="OnlineStore-Setup.exe" class="download-btn">
                                 <i class="fa-solid fa-download"></i>
                                 Download EXE
                             </a>
