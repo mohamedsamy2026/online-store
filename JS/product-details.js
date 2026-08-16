@@ -49,66 +49,61 @@ fetch('../products.json')
             // ==========================================
             const detailsAddBtn = document.getElementById('details-add-to-cart');
 
-            if (detailsAddBtn) {
-                // التحقق من حالة المنتج عند تحميل الصفحة
+            if (detailsAddBtn && product) {
+                // دالة مساعدة لتحديث شكل الزر (عشان نستخدمها في التحميل وعند الضغط)
+                const updateButtonUI = (isInCart) => {
+                    if (isInCart) {
+                        detailsAddBtn.innerHTML = '<i class="fa-solid fa-cart-shopping text-main text-[17px]"></i> Item In cart';
+                        detailsAddBtn.className = 'w-full bg-white py-4 cursor-default px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 shadow-lg mt-6 border-2 border-main text-black';
+                        // ملاحظة: غيرت cursor-pointer إلى cursor-default عشان المستخدم يحس إنه مضاف فعلاً
+                    } else {
+                        detailsAddBtn.innerHTML = '<i class="fa-solid fa-cart-shopping text-[14px] md:text-[16px]"></i> Add to cart';
+                        detailsAddBtn.className = 'w-full bg-main text-white py-4 cursor-pointer px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 shadow-lg mt-6 hover:bg-orange-500 duration-300';
+                    }
+                };
+
+                // 1. التحقق فوراً عند تحميل الصفحة (هنا كان الخلل)
                 const cart = JSON.parse(localStorage.getItem('my_cart')) || [];
-                const isInCart = cart.some(item => item.id === product.id);
+                // الحل السحري: تحويل الاثنين لنصوص لضمان المقارنة الصحيحة حتى لو النوع مختلف
+                const isInCart = cart.some(item => String(item.id) === String(product.id));
 
-                if (isInCart) {
-                    detailsAddBtn.innerHTML = '<i class="fa-solid fa-cart-shopping text-main text-[17px]"></i> Item In cart';
-                    detailsAddBtn.className = 'w-full bg-white py-4 cursor-pointer px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 shadow-lg mt-6 border-2 border-main text-black';
-                }
+                // تطبيق الشكل الصحيح فوراً
+                updateButtonUI(isInCart);
 
-                // حدث الضغط على الزر
-                detailsAddBtn.addEventListener('click', () => {
-                    // تجهيز البيانات
+                // 2. حدث الضغط على الزر
+                detailsAddBtn.addEventListener('click', (e) => {
+                    // إعادة التحقق لحظياً قبل الإضافة
+                    const currentCart = JSON.parse(localStorage.getItem('my_cart')) || [];
+                    const alreadyExists = currentCart.some(item => String(item.id) === String(product.id));
+
+                    if (alreadyExists) {
+                        showToast("هذا المنتج موجود بالفعل في السلة!", "error");
+                        return; // إيقاف التنفيذ فوراً لمنع الإضافة المكررة
+                    }
+
+                    // تجهيز البيانات وإضافتها
                     const productData = {
                         id: product.id,
                         name: product.name,
                         price: product.price,
-                        img: product.Imgs
+                        img: product.Imgs.startsWith('http') ? product.Imgs : '../' + product.Imgs
                     };
 
-                    // جلب السلة الحالية
-                    let cart = JSON.parse(localStorage.getItem('my_cart')) || [];
+                    currentCart.push({ ...productData, qty: 1 });
+                    localStorage.setItem('my_cart', JSON.stringify(currentCart));
 
-                    // التحقق من التكرار
-                    let exists = cart.find(item => item.id === product.id);
+                    // تحديث شكل الزر فوراً بدون عمل Refresh (أفضل لتجربة المستخدم)
+                    updateButtonUI(true);
 
-                    if (exists) {
-                        showToast("هذا المنتج موجود بالفعل في السلة!", "error")
-                        return;
-                    }
-
-                    // إضافة المنتج
-                    cart.push({
-                        id: productData.id,
-                        name: productData.name,
-                        price: productData.price,
-                        img:  '../' + product.Imgs,
-                        qty: 1
-                    });
-
-                    // حفظ في localStorage
-                    localStorage.setItem('my_cart', JSON.stringify(cart));
-
-                    // تحديث العداد في الهيدر فوراً
+                    // تحديث عداد السلة في الهيدر
                     document.querySelectorAll('.shoping-count, .total-count').forEach(el => {
-                        el.textContent = cart.length;
+                        el.textContent = currentCart.length;
                     });
 
-                    // تغيير شكل الزرار
-                    detailsAddBtn.innerHTML = '<i class="fa-solid fa-cart-shopping text-main text-[17px]"></i> Item In cart';
-                    detailsAddBtn.className = 'w-full bg-white py-4 cursor-pointer px-6 rounded-lg font-bold text-lg flex items-center justify-center gap-3 shadow-lg mt-6 border-2 border-main text-black';
-
-                    // عمل Refresh بعد ثانية عشان كل حاجة تتحدث
                     setTimeout(() => {
-                        location.reload();
-                    }, 300);
+                        location.reload()
+                    }, 300)
                 });
-
-
-
             }
 
         } else {
