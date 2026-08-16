@@ -189,11 +189,34 @@ async function loadOrders() {
 // ميزة البحث
 if (searchInput) {
   searchInput.addEventListener('input', (e) => {
-    const searchTerm = e.target.value.toLowerCase();
+    const searchTerm = e.target.value.toLowerCase().trim();
     const orderCards = ordersContainer.querySelectorAll('.bg-white.rounded-2xl');
+    const noResultsMessage = document.getElementById('no-results-message');
+    const searchTermDisplay = document.getElementById('search-term-display');
+    
+    let visibleCount = 0; // عداد الكروت الظاهرة
+    
     orderCards.forEach(card => {
-      card.style.display = card.textContent.toLowerCase().includes(searchTerm) ? '' : 'none';
+      const isVisible = card.textContent.toLowerCase().includes(searchTerm);
+      card.style.display = isVisible ? '' : 'none';
+      
+      if (isVisible) {
+        visibleCount++;
+      }
     });
+    
+    // إظهار/إخفاء رسالة "لا توجد نتائج"
+    if (searchTerm === '') {
+      // لو البحث فاضي، نخفي الرسالة ونظهر كل الكروت
+      noResultsMessage.classList.add('hidden');
+    } else if (visibleCount === 0) {
+      // لو مفيش نتائج، نظهر الرسالة
+      noResultsMessage.classList.remove('hidden');
+      searchTermDisplay.textContent = `"${e.target.value}"`;
+    } else {
+      // لو فيه نتائج، نخفي الرسالة
+      noResultsMessage.classList.add('hidden');
+    }
   });
 }
 
