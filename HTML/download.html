@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download App - Mohamed Samy Store</title>
+    <link rel="stylesheet" href="/Font awesome/font css/all.min.css">
+    <link rel="shortcut icon" href="/Imgs/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Style/sass.css">
+    <link rel="stylesheet" href="/Style/style.css">
+
+    <style>
+        main {
+            margin-top: 181px;
+        }
+        @media(max-width:1024px){
+            main{
+                margin-top: 230px;
+            }
+        }
+
+        /* ===== تصميم خاص بصفحة التحميل - مختلف عن باقي الموقع ===== */
+
+        
+        .download-page {
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 20px;
+        }
+
+        /* خلفية متحركة */
+        .download-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .download-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* العنوان الرئيسي */
+        .download-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .download-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .download-header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* التبويبات */
+        .download-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 15px 35px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tab-btn:hover {
+            background: rgba(255, 107, 0, 0.2);
+            border-color: #ff6b00;
+            transform: translateY(-3px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
+            border-color: transparent;
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+        }
+
+        .tab-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* محتوى التبويبات */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* الكارد */
+        .download-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* الجانب الأيمن - المعلومات */
+        .info-side h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .info-side .description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* زر التحميل */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(255, 107, 0, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.6);
+        }
+
+        .download-btn i {
+            font-size: 1.3rem;
+        }
+
+        /* معلومات الملف */
+        .file-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-item i {
+            color: #ff6b00;
+        }
+
+        /* الجانب الأيسر - الصورة */
+        .image-side {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .device-mockup {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .device-mockup img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* المميزات */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 107, 0, 0.1);
+            border-color: #ff6b00;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* خطوات التثبيت */
+        .steps-section {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        .steps-section h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .steps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .step-item:hover {
+            background: rgba(255, 107, 0, 0.1);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #ff6b00, #ffa500);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .download-header h1 {
+                font-size: 2rem;
+            }
+
+            .download-card {
+                padding: 30px 20px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .image-side {
+                order: -1;
+            }
+
+            .device-mockup {
+                max-width: 250px;
+            }
+
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans font-bold bg-gray-50">
+
+    <!-- Loading -->
+ <section id="loading">
+        <div class="loader fixed inset-0 z-[99999999] flex flex-col items-center justify-center gap-4 bg-orange-400 w-full h-screen">
+            <div class="loader-inner ball-pulse-sync">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <span class="text-white font-bold text-lg tracking-wider animate-pulse">Loading...</span>
+        </div>
+    </section>
+
+    <!-- Cart -->
+    <section class="cart">
+        <div class="cart-drawer bg-white shadow-xl p-6 flex flex-col justify-between h-full">
+            <div class="flex items-center justify-between pb-4 border-b border-gray-200">
+                <h3 class="font-bold text-xl text-gray-800">Cart Items : <span
+                        class="total-count text-orange-500 font-bold">0</span></h3>
+                <button class="close-btn text-gray-600 hover:text-black cursor-pointer">
+                    <i
+                        class="fa-regular fa-circle-xmark text-3xl close-cart text-black hover:text-red-500 duration-300"></i>
+                </button>
+            </div>
+            <div class="cart-items flex-1 overflow-y-auto py-2"></div>
+            <div class="cart-footer pt-4 border-t border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-gray-600 font-medium">subtotal</span>
+                    <span class="total-price text-orange-500 font-bold text-lg">0</span>
+                </div>
+                <div class="flex justify-between flex-wrap items-center gap-3 mt-8">
+                    <a href="" class="main-btn checkout-btn cursor-pointer block text-center">CheckOut</a>
+                    <a href="../index.html" class="main-btn shop-more-btn cursor-pointer close-cart">SHOP MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="bg-gray-50">
+        <div class="header-top py-5 px-6 pb-7">
+            <div class="container mx-auto flex flex-wrap lg:flex-nowrap justify-between items-center gap-6 lg:gap-y-8">
+                <div class="md:w-[180px] w-[120px] cursor-pointer hover:scale-[1.1] ease-in-out duration-300">
+                    <img src="/Imgs/logo.png" alt="Logo">
+                </div>
+                <div
+                    class="w-full lg:w-[800px] flex items-center bg-border rounded-lg overflow-hidden h-14 order-3 lg:order-2">
+                    <input
+                        class="inputSearch w-full md:flex-1 h-full bg-transparent px-4 border-0 text-[16px] font-bold outline-none"
+                        type="text" placeholder="Search For Products">
+                    <button
+                        class="icon-search w-20 text-white h-full bg-main cursor-pointer hover:bg-orange-500 duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-magnifying-glass text-[22px]"></i>
+                    </button>
+                </div>
+                <div class="icons flex items-center order-2 lg:order-3">
+                    <button class="close-cart relative">
+                        <i class="fa-solid fa-cart-shopping md:text-[30px] text-[25px]"></i>
+                        <span
+                            class="shoping-count absolute -top-2 -right-2 bg-orange-500 text-white rounded-full text-xs px-1.5">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom border-t border-border w-full shadow-sm">
+            <div class="container mx-auto flex justify-center lg:justify-between items-center">
+                <div class="relative">
+                    <div class="flex items-center gap-5">
+                        <i class="fa-solid fa-bars hum"></i>
+                        <button id="btn"
+                            class="bg-main text-white h-17 px-2 lg:px-5 flex items-center gap-4 cursor-pointer hover:bg-orange-500 duration-300">
+                            <i class="fa-solid fa-bars text-sm lg:text-lg"></i>
+                            <span class="font-bold lg:text-lg text-sm">Browse Category</span>
+                            <i class="fa-solid fa-chevron-down text-sm lg:text-lg"></i>
+                        </button>
+                    </div>
+                    <ul class="category-list">
+                        <li><a href="../index.html#hero-bottom">Special Discounts</a></li>
+                        <li><a href="../index.html#products1">Top 7 Offers</a></li>
+                        <li><a href="../index.html#products2">Electronics</a></li>
+                        <li><a href="../index.html#products3">Appliances</a></li>
+                        <li><a href="../index.html#products4">Phones & Tablets</a></li>
+                    </ul>
+                </div>
+
+                <ul class="lg:flex hidden nav-links">
+                    <i
+                        class="fa-regular fa-circle-xmark xmark lg:!hidden block absolute right-10 top-8 text-4xl hover:text-red-500 duration-300 cursor-pointer"></i>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="check.html">CheckOut</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+
+                <div id="auth-container-desktop" class="lg:flex hidden items-center gap-4">
+                    <a href="login.html"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Login</span>
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                    </a>
+                    <a href="signup.html"
+                        class="bg-main text-white px-6 py-3 font-bold flex items-center gap-2 hover:bg-orange-500 duration-300">
+                        <span>Sign UP</span>
+                        <i class="fa-solid fa-user-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى صفحة التحميل -->
+
+
+
+
+
+
+
+    <main class="download-page">
+        <div class="download-container">
+
+            <!-- العنوان -->
+            <div class="download-header">
+                <h1>Download Our App</h1>
+                <p>Get the best shopping experience on your favorite device</p>
+            </div>
+
+            <!-- التبويبات -->
+            <div class="download-tabs">
+                <button class="tab-btn active" data-tab="mobile">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    Mobile Version
+                </button>
+                <button class="tab-btn" data-tab="desktop">
+                    <i class="fa-solid fa-desktop"></i>
+                    Desktop Version
+                </button>
+            </div>
+
+            <!-- محتوى الموبايل -->
+            <div class="tab-content active" id="mobile-content">
+                <div class="download-card">
+                    <div class="card-grid">
+                        <div class="info-side">
+                            <h2>Mobile App for Android</h2>
+                            <p class="description">
+                                Shop anytime, anywhere! Our mobile app brings the entire store to your pocket with
+                                lightning-fast performance and a smooth user experience.
+                            </p>
+
+                            <a href="../src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release-unsigned.apk" download="OnlineStore.apk" class="download-btn">
+                                <i class="fa-solid fa-download"></i>
+                                Download APK
+                            </a>
+
+                            <div class="file-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-box"></i>
+                                    <span>23 MB</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-code-branch"></i>
+                                    <span>v1.0.0</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-brands fa-android"></i>
+                                    <span>Android 8+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-side">
+                            <div class="device-mockup">
+                                <img src="../public/Imgs/undraw_mobile-application_uc2q.svg"
+                                    onerror="this.src='https://via.placeholder.com/300x600/ff6b00/ffffff?text=Mobile+App'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- محتوى الديسكتوب -->
+            <div class="tab-content" id="desktop-content">
+                <div class="download-card">
+                    <div class="card-grid">
+                        <div class="info-side">
+                            <h2>Desktop App for Windows</h2>
+                            <p class="description">
+                                Enjoy a full-screen shopping experience on your computer. Our desktop app offers
+                                enhanced features, faster performance, and offline capabilities.
+                            </p>
+
+                            <a href="../src-tauri/target/release/bundle/nsis/online store_0.1.0_x64-setup.exe" download="OnlineStore-Setup.exe" class="download-btn">
+                                <i class="fa-solid fa-download"></i>
+                                Download EXE
+                            </a>
+
+                            <div class="file-info">
+                                <div class="info-item">
+                                    <i class="fa-solid fa-box"></i>
+                                    <span>45 MB</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-solid fa-code-branch"></i>
+                                    <span>v1.0.0</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fa-brands fa-windows"></i>
+                                    <span>Windows 10+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-side">
+                            <div class="device-mockup">
+                                <img src="../public/Imgs/undraw_web-app_141a.svg" alt="Desktop App"
+                                    onerror="this.src='https://via.placeholder.com/400x300/ff6b00/ffffff?text=Desktop+App'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المميزات -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚡</span>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized performance for instant loading and smooth navigation</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Secure & Encrypted</h3>
+                    <p>Your data is protected with industry-standard encryption</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📦</span>
+                    <h3>Lightweight</h3>
+                    <p>Small file size that won't slow down your device</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🛒</span>
+                    <h3>Smooth Shopping</h3>
+                    <p>Intuitive interface designed for the best user experience</p>
+                </div>
+            </div>
+
+            <!-- خطوات التثبيت -->
+            <div class="steps-section">
+                <h2>Installation Steps</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Download the File</h4>
+                            <p>Click the download button above to get the installer file</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Open the File</h4>
+                            <p>Locate the downloaded file in your Downloads folder and open it</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Install the App</h4>
+                            <p>Follow the installation wizard and wait for it to complete</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Start Shopping!</h4>
+                            <p>Launch the app and enjoy your shopping experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-heading py-12">
+        <div class="container mx-auto px-4 text-white">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-center">
+                <div class="big-row lg:col-span-2 space-y-4">
+                    <img src="/Imgs/logo-white.png" alt="Logo" class="w-[60%] -ms-5">
+                    <span class="text-gray-300 text-sm block">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid libero, beatae magnam dolor
+                        ipsum a?
+                    </span>
+                    <div class="icons flex items-center gap-3 text-lg">
+                        <a href="https://t.me/mohamed1_2_3_4" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="https://wa.me/201115083459" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/MohamedSamym/" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="tel:01115083459"><i class="fa-solid fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Find It Fast</h4>
+                    <div class="links flex flex-col space-y-5 text-sm text-gray-300">
+                        <a href="../index.html#hero-bottom"><i class="fa-solid fa-caret-right"></i> Special
+                            Discounts</a>
+                        <a href="../index.html#products1"><i class="fa-solid fa-caret-right"></i> Top 7 Offers</a>
+                        <a href="../index.html#products2"><i class="fa-solid fa-caret-right"></i> Electronics</a>
+                        <a href="../index.html#products3"><i class="fa-solid fa-caret-right"></i> Appliances</a>
+                        <a href="../index.html#products4"><i class="fa-solid fa-caret-right"></i> Phones & Tablets</a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Quick Links</h4>
+                    <div class="links flex flex-col space-y-3 text-sm text-gray-300">
+                        <a href="acount.html"><i class="fa-solid fa-caret-right"></i> Your Account</a>
+                        <a href="returns.html"><i class="fa-solid fa-caret-right"></i> Returns & Exchanges</a>
+                        <a href="shipping.html"><i class="fa-solid fa-caret-right"></i> Shipping & Delivery</a>
+                        <a href="time.html"><i class="fa-solid fa-caret-right"></i> Estimated Delivery Time</a>
+                        <a href="history.html"><i class="fa-solid fa-caret-right"></i> Purchase History</a>
+                        <a href="download.html"><i class="fa-solid fa-caret-right"></i> Download App</a>
+                    </div>
+                </div>
+
+                <div class="row space-y-3">
+                    <h4 class="text-lg font-bold pb-2">Service us</h4>
+                    <div class="links flex flex-col space-y-3 text-sm text-gray-300">
+                        <a href="support.html"><i class="fa-solid fa-caret-right"></i> Support Center</a>
+                        <a href="term.html"><i class="fa-solid fa-caret-right"></i> Term & Conditions</a>
+                        <a href="privacy.html"><i class="fa-solid fa-caret-right"></i> Privacy Policy</a>
+                        <a href="help.html"><i class="fa-solid fa-caret-right"></i> Help</a>
+                        <a href="faqs.html"><i class="fa-solid fa-caret-right"></i> FAQS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom bg-gray-700">
+        <div class="container">
+            <div class="py-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
+                <p class="font-bold text-[17px] text-white">&copy; <span class="text-main">Mohamed Samy.</span> All
+                    Rights Reserved</p>
+                <img src="/Imgs/payment_method.png" alt="Payment Methods" class="cursor-pointer h-12 mt-4 md:mt-0">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Scripts -->
+    <script type="module" src="../JS/script.js"></script>
+    <script type="module" src="../JS/script-supabase.js"></script>
+    <script type="module" src="../JS/coupon.js"></script>
+    <script type="module" src="../JS/orders.js"></script>
+    <script type="module" src="../JS/download.js"></script>
+
+
+
+</body>
+
+</html>
